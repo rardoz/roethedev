@@ -1,10 +1,15 @@
 import React from "react"
+import SectionTitle from "../../../../section-title"
+import Section from "../../../../section"
+import './styles.scss'
 
 const ContactForm: React.FC = () => {
   return (
-    <section>
-      <h2>Let me help or teach you</h2>
-      <hr />
+    <Section className="contact-form-section">
+      <SectionTitle>
+        Let me help or teach you
+      </SectionTitle>
+
       <form action="some-lamda-in-aws" method="POST">
         <div>
           <fieldset name="services[]">
@@ -53,7 +58,7 @@ const ContactForm: React.FC = () => {
           <input type="submit" value="Send to Roe" />
         </div>
       </form>
-    </section>
+    </Section>
   )
 }
 
