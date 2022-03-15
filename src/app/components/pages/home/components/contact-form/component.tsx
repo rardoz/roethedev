@@ -7,7 +7,7 @@ const ContactForm: React.FC = () => {
   return (
     <Section className="contact-form-section">
       <SectionTitle>
-        Let me help or teach you
+        Let me help &amp; teach you
       </SectionTitle>
 
       <form action="some-lamda-in-aws" method="POST">
