@@ -11,7 +11,8 @@
     "lint:js": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
     "lint:ts": "tsc",
     "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
-    "lint": "npm run lint:ts && npm run lint:js && npm run lint:css"
+    "lint:ci": "npm run lint:ts && npm run lint:js && npm run lint:css",
+    "prepare": "husky install"
   },
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
@@ -41,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "eslint": "^8.11.0",
+    "husky": "^7.0.4",
     "jest": "^27.5.1",
     "parcel": "^2.3.2",
     "stylelint": "^14.5.3",
