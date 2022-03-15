@@ -8,3 +8,11 @@
 @function px-to-rem($pxValue) {
   @return #{math.div(strip-unit($pxValue), strip-unit($base-font-size))}rem;
 }
+
+@function spacer($index) {
+  @return 1rem * ($index * $spacer-increment);
+}
+
+@function font-size($index) {
+  @return 1rem + ($index * $spacer-increment);
+}
