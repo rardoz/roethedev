@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
+
 const fakeArticles = [
-  {
+  { 
     title: "Test 1",
     description: "This is a test description of doom!",
     to: "/",
