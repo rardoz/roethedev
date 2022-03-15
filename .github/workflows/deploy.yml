@@ -31,3 +31,7 @@ jobs:
         run: npm install && npm run build
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./dist/ s3://roethedev --delete
+      - name: Start clearing cloudfront cache
+        run: aws configure set preview.cloudfront true
+      - name: Flush cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_ID }} --paths "/*"
