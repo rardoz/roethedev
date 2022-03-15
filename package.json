@@ -9,9 +9,12 @@
     "start": "parcel --open",
     "build": "npm run clean && parcel build",
     "lint:js": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
+    "lint:js:cli": "eslint --fix",
     "lint:ts": "tsc",
     "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
-    "lint": "npm run lint:ts && npm run lint:js && npm run lint:css"
+    "lint:css:cli": "stylelint --fix",
+    "lint:ci": "npm run lint:ts && npm run lint:js && npm run lint:css",
+    "prepare": "husky install"
   },
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
@@ -41,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "eslint": "^8.11.0",
+    "husky": "^7.0.4",
     "jest": "^27.5.1",
     "parcel": "^2.3.2",
     "stylelint": "^14.5.3",
@@ -51,6 +55,7 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
+    "lint-staged": "^12.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
