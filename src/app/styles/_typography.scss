@@ -1,0 +1,16 @@
+@import "tokens";
+@import "functions";
+
+html {
+  font-family: $default-font-family;
+  font-size: $base-font-size;
+}
+
+body {
+  color: $default-text-color;
+  font-family: $default-font-family;
+}
+
+h1 {
+  font-size: px-to-rem(80px);
+}
