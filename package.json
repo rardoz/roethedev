@@ -5,6 +5,7 @@
   "scripts": {
     "clean": "rm -rf ./dist | exit",
     "test": "jest",
+    "test:ci": "jest --coverage",
     "start": "parcel --open",
     "build": "npm run clean && parcel build",
     "lint:js": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
