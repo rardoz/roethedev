@@ -14,12 +14,12 @@ const Application: React.FC = () => (
   <BrowserRouter>
     <Layout>
       <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-              <Route index element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />}/>
-            </Routes>
-        </Suspense>
-        </Layout>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />}/>
+        </Routes>
+      </Suspense>
+    </Layout>
   </BrowserRouter>
 )
 

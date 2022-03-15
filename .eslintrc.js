@@ -6,21 +6,57 @@ module.exports = {
     amd: true,
     node: true,
   },
-  plugins: [ "@typescript-eslint" ],
+  plugins: [ 
+    "@typescript-eslint",
+    "react-hooks",
+    "jsx-a11y",
+    "import",
+    "react" ],
   extends: [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
   ],
   rules: {
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "max-len": [ "warn", { "code": 80 } ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": [ "error" ],
     semi: [ "error", "never" ],
     "object-curly-spacing": [ "error", "always" ],
     "array-bracket-spacing": [ "error", "always" ],
     "computed-property-spacing": [ "error", "always" ],
     "space-in-parens": [ "error", "always" ],
-    "no-multiple-empty-lines":  [ "error", { "max": 1, "maxEOF": 0 } ]
+    "no-multiple-empty-lines":  [ "error", { "max": 1, "maxEOF": 0 } ],
+    "react/jsx-filename-extension": [ "warn", { "extensions": [ ".tsx" ] } ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [ "error" ],
+    "indent": [ "error", 2 ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ] ,
+    "array-element-newline": [ "error", {
+      "ArrayExpression": "consistent",
+      "ArrayPattern": { "minItems": 2 },
+    } ]
   },
   settings: {
+    "import/resolver": {
+      "typescript": {}
+    },
     react: {
       version: "detect",
     },
