@@ -1,4 +1,4 @@
 {
-  "*.{ts,tsx,js,jsx}": "npm run lint:js:cli",
+  "*.{ts,tsx,js,jsx,json}": "npm run lint:js:cli",
   "**/*.{css,scss}": "npm run lint:css:cli"
 }

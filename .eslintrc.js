@@ -11,7 +11,9 @@ module.exports = {
     "react-hooks",
     "jsx-a11y",
     "import",
-    "react" ],
+    "react",
+    "json-format"
+  ],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -27,7 +29,7 @@ module.exports = {
         "allowExpressions": true
       }
     ],
-    "max-len": [ "warn", { "code": 80 } ],
+    "max-len": [ "error", { "code": 80 } ],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": [ "error" ],
     semi: [ "error", "never" ],

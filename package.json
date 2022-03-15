@@ -2,26 +2,6 @@
   "name": "roethedev",
   "version": "0.0.1",
   "description": "Personal website made with JavaScript",
-  "scripts": {
-    "clean": "rm -rf ./dist | exit",
-    "test": "jest",
-    "test:ci": "jest --coverage",
-    "start": "parcel --open",
-    "build": "npm run clean && parcel build",
-    "lint:js": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
-    "lint:js:cli": "eslint --fix",
-    "lint:ts": "tsc",
-    "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
-    "lint:css:cli": "stylelint --fix",
-    "lint:ci": "npm run lint:ts && npm run lint:js && npm run lint:css",
-    "prepare": "husky install"
-  },
-  "source": "src/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rardoz/roethedev.git"
-  },
   "keywords": [
     "nodejs",
     "react",
@@ -29,12 +9,39 @@
     "parcel",
     "javascript"
   ],
-  "author": "Roe Greene",
-  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/rardoz/roethedev#readme",
   "bugs": {
     "url": "https://github.com/rardoz/roethedev/issues"
   },
-  "homepage": "https://github.com/rardoz/roethedev#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rardoz/roethedev.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "Roe Greene",
+  "source": "src/index.html",
+  "scripts": {
+    "build": "npm run clean && parcel build",
+    "clean": "rm -rf ./dist | exit",
+    "lint:ci": "npm run lint:ts && npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
+    "lint:css:cli": "stylelint --fix",
+    "lint:js": "eslint \"**/*.{ts,tsx,js,jsx,json}\" --fix",
+    "lint:js:cli": "eslint --fix",
+    "lint:ts": "tsc",
+    "prepare": "husky install",
+    "start": "parcel --open",
+    "test": "jest",
+    "test:ci": "jest --coverage"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "dependencies": {
+    "lint-staged": "^12.3.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^6.2.2",
+    "react-router-dom": "^6.2.2"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.3.2",
     "@testing-library/react": "^12.1.4",
@@ -46,6 +53,7 @@
     "eslint": "^8.11.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -58,12 +66,5 @@
     "ts-jest": "^27.1.3",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
-  },
-  "dependencies": {
-    "lint-staged": "^12.3.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router": "^6.2.2",
-    "react-router-dom": "^6.2.2"
   }
 }
