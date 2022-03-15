@@ -6,5 +6,5 @@
 }
 
 @function px-to-rem($pxValue) {
-  @return #{math.div(stripUnit($pxValue), stripUnit($base-font-size))}rem;
+  @return #{math.div(strip-unit($pxValue), strip-unit($base-font-size))}rem;
 }
