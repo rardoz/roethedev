@@ -1,4 +1,12 @@
+@import "tokens";
+@import "typography";
+
+html,
 body {
-  background: black;
-  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: $black-color;
 }
