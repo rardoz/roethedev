@@ -75,7 +75,7 @@ const BlogFeed: React.FC = () => {
                     aria-label="featured image"
                     style={{ backgroundImage: `url(${featuredImage})` }}
                   />
-                  <title>{title}</title>
+                  <h4>{title}</h4>
                   <p>{description}</p>
                 </Link>
                 <Link to={to}>Read</Link>

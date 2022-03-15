@@ -29,6 +29,7 @@ module.exports = {
         "allowExpressions": true
       }
     ],
+    "no-irregular-whitespace": "off",
     "max-len": [ "error", { "code": 80 } ],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": [ "error" ],
