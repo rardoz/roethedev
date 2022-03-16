@@ -28,3 +28,15 @@
 .col-4 {
   flex: 1 1 40%;
 }
+
+.flex-grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-grid-item {
+  flex-basis: 33.3333%;
+  width: 33.3333%;
+  overflow: hidden;
+  display: flex;
+}

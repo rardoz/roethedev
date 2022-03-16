@@ -9,4 +9,5 @@ const WaveContainer: React.FC<JSX.IntrinsicElements["div"]> = ( { children, clas
     </div>
   )
 }
+
 export default WaveContainer
