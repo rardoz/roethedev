@@ -1,11 +1,13 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import './styles.scss'
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className="app-footer">
       <nav>
-        <Link to="about">About Roe</Link>
+        <div>
+            &copy; 2022. <a href="https://byrojo.com" target="_blank">Find more at byrojo.com</a>.
+        </div>
       </nav>
     </footer>
   )
