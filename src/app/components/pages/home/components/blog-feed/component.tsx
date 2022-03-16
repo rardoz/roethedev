@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import React from "react"
 import { Link } from "react-router-dom"
+import Section from "../../../../section"
+import SectionTitle from "../../../../section-title"
 
 const fakeArticles = [
   { 
@@ -62,9 +64,8 @@ const fakeArticles = [
 ]
 const BlogFeed: React.FC = () => {
   return (
-    <section>
-      <h2>From my desk</h2>
-      <hr />
+    <Section>
+      <SectionTitle>From my desk</SectionTitle>
       <div>
         {fakeArticles.map(
           ( { title, description, to, featuredImage }, index ) => {
@@ -85,7 +86,7 @@ const BlogFeed: React.FC = () => {
         )}
       </div>
       <Link to="/blog">See blog</Link>
-    </section>
+    </Section>
   )
 }
 

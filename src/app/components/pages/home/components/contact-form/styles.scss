@@ -1,6 +1,8 @@
 @import "../../../../../styles/functions";
 
 .contact-form {
+  color: $white-color;
+
   .contact-form-section {
     .row {
       &:nth-child(n + 2) {
