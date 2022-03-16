@@ -2,6 +2,8 @@ import React from "react"
 import SectionTitle from "../../../../section-title"
 import Section from "../../../../section"
 import './styles.scss'
+import RadioFieldset from "./components/radio-fieldset"
+import SERVICES_OPTIONS from "./constants"
 
 const ContactForm: React.FC = () => {
   return (
@@ -12,28 +14,7 @@ const ContactForm: React.FC = () => {
 
       <form action="some-lamda-in-aws" method="POST">
         <div>
-          <fieldset name="services[]">
-            <legend>Select services</legend>
-            {[
-              { name: "project-consulting", label: "Project consulting" },
-              { name: "project-development", label: "Project development" },
-              { name: "react-tutoring", label: "React tutoring" },
-              { name: "javascript-tutoring", label: "Javascript tutoring" },
-              { name: "nodejs-tutoring", label: "NodeJS tutoring" },
-              { name: "css-tutoring", label: "CSS tutoring" },
-              { name: "architecture", label: "Architecture" },
-              { name: "other", label: "Other" },
-            ].map( ( { name, label } ) => (
-              <div key={name}>
-                <input
-                  type="radio"
-                  name={`services[${name}]`}
-                  id={`services-${name}`}
-                />
-                <label htmlFor={`services-${name}`}>{label}</label>
-              </div>
-            ) )}
-          </fieldset>
+          <RadioFieldset options={SERVICES_OPTIONS} title="Select services" />
           <div>
             <label htmlFor="message-textarea">Message to Roe</label>
             <textarea

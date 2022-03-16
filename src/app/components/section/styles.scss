@@ -1,4 +1,8 @@
+@import "../../styles/functions";
+
 .section {
-  width: 100%;
-  padding: 0 spacer(5);
+  padding: spacer(12) spacer(8);
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
 }
