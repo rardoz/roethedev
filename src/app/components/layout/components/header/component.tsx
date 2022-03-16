@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         <nav>
           <Link to="/" aria-label="Logo">
             <h1 className="app-logo">
-            • Roe <small>the</small> Dev •
+              <small>•</small>Roe <small>the</small> Dev<small>•</small>
             </h1>
           </Link>
         </nav>
