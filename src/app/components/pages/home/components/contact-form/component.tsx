@@ -4,6 +4,7 @@ import Section from "../../../../section"
 import './styles.scss'
 import RadioFieldset from "./components/radio-fieldset"
 import SERVICES_OPTIONS from "./constants"
+import Textarea from "./components/textarea/component"
 
 const ContactForm: React.FC = () => {
   return (
@@ -13,18 +14,15 @@ const ContactForm: React.FC = () => {
       </SectionTitle>
 
       <form action="some-lamda-in-aws" method="POST">
-        <div>
-          <RadioFieldset options={SERVICES_OPTIONS} title="Select services" />
-          <div>
-            <label htmlFor="message-textarea">Message to Roe</label>
-            <textarea
-              id="message-textarea"
-              placeholder="Include any important details."
-              required
-            />
+        <div className="row">
+          <div className="col-3">
+            <RadioFieldset options={SERVICES_OPTIONS} title="Select services" />
+          </div>
+          <div className="col-7">
+            <Textarea />
           </div>
         </div>
-        <div>
+        <div className="row">
           <div>
             <label htmlFor="name-field">Your name</label>
             <input type="name" id="name-field" />
@@ -35,7 +33,7 @@ const ContactForm: React.FC = () => {
             <input type="email" id="email-field" />
           </div>
         </div>
-        <div>
+        <div className="row">
           <input type="submit" value="Send to Roe" />
         </div>
       </form>
