@@ -1,0 +1,9 @@
+@import "../../styles/tokens";
+@import "../../styles/functions";
+
+.wave-container {
+  width: 100%;
+  background: url("./assets/wave-bg.svg") no-repeat center center;
+  background-size: 100%;
+  padding: spacer(24) 0;
+}

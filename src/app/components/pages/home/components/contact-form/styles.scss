@@ -1,11 +1,11 @@
 @import "../../../../../styles/functions";
 
-.contact-form-section {
-  background-color: $primary-color;
-
-  .row {
-    &:nth-child(n + 2) {
-      margin-top: spacer(10);
+.contact-form {
+  .contact-form-section {
+    .row {
+      &:nth-child(n + 2) {
+        margin-top: spacer(10);
+      }
     }
   }
 }
