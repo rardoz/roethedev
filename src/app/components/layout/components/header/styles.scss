@@ -1,13 +1,17 @@
 @import "../../../../styles/tokens";
 @import "../../../../styles/functions";
 
+.nav-observer {
+  position: absolute;
+  top: 200px;
+}
+
 .app-nav {
+  transition: background-color 1s ease;
   position: sticky;
   top: 0;
-
-  nav {
-    background: $white-color;
-  }
+  z-index: $nav-index;
+  background-color: transparent;
 
   .app-logo {
     text-align: center;
@@ -24,5 +28,12 @@
       padding: 0 spacer(6);
       font-size: px-to-rem(56px);
     }
+  }
+}
+
+.nav-shadow {
+  .app-nav {
+    box-shadow: 10px 0 20px $primary-color;
+    background-color: $white-color;
   }
 }

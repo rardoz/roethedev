@@ -1,5 +1,6 @@
 @import "tokens";
 @import "typography";
+@import "flex";
 
 html,
 body {
@@ -7,6 +8,12 @@ body {
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background: $primary-color;
+  background: $white-color;
 }

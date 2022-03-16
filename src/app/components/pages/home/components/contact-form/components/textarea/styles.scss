@@ -1,0 +1,37 @@
+@import "../../../../../../../styles/tokens";
+@import "../../../../../../../styles/functions";
+
+.textarea {
+  height: 100%;
+
+  label {
+    visibility: hidden;
+    position: absolute;
+    left: -10000px;
+  }
+
+  textarea {
+    transition: background-color 1s ease;
+    background-color: $white-color;
+
+    &:focus {
+      background-color: $bright-white-color;
+    }
+
+    width: 100%;
+    resize: none;
+    height: 100%;
+    padding: spacer(4);
+    font-size: font-size(1);
+    color: $black-color;
+    font-family: $secondary-font-family;
+    border-radius: px-to-rem(10px);
+    border-width: 0;
+
+    &::placeholder {
+      font-family: $default-font-family;
+      color: $primary-color;
+      font-size: font-size(2);
+    }
+  }
+}

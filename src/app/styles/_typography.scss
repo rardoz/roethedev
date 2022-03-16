@@ -15,6 +15,18 @@ h1 {
   font-size: px-to-rem(80px);
 }
 
+h2 {
+  font-size: px-to-rem(61px);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  padding: spacer(4) 0;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }

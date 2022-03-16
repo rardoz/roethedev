@@ -3,15 +3,10 @@
 .section-title {
   text-align: center;
 
-  h2 {
-    font-size: px-to-rem(61px);
-  }
-
   .hr {
     border-style: dotted !important;
     border-width: spacer(2);
     border-bottom: 0;
+    margin: spacer(4) 0 spacer(12) 0;
   }
-
-  padding-top: spacer(10);
 }

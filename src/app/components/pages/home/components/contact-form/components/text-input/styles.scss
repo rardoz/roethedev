@@ -1,0 +1,51 @@
+@import "../../../../../../../styles/tokens";
+@import "../../../../../../../styles/functions";
+
+.text-input {
+  width: 100%;
+
+  label {
+    visibility: hidden;
+    position: absolute;
+    left: -10000px;
+  }
+
+  input {
+    background-color: $white-color;
+    width: 100%;
+    height: px-to-rem(50px);
+    padding: spacer(4);
+    font-size: font-size(1);
+    color: $black-color;
+    font-family: $secondary-font-family;
+    border-radius: px-to-rem(10px);
+    border-width: 0;
+    transition: background-color 1s ease;
+
+    &:focus {
+      background-color: $bright-white-color;
+    }
+
+    &::placeholder,
+    &[type="submit"] {
+      font-family: $default-font-family;
+      color: $primary-color;
+      font-size: font-size(2);
+    }
+
+    &[type="submit"] {
+      padding: 0;
+      cursor: pointer;
+      font-weight: bold;
+      transform: translateY(10%);
+      transition: all 1s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $bright-white-color;
+        transform: translateY(0%);
+        box-shadow: 0 10px 100px $black-color;
+      }
+    }
+  }
+}

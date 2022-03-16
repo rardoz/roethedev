@@ -1,5 +1,11 @@
 @import "../../../../../styles/functions";
 
-.contact-form-section {
-  color: currentcolor;
+.contact-form {
+  .contact-form-section {
+    .row {
+      &:nth-child(n + 2) {
+        margin-top: spacer(10);
+      }
+    }
+  }
 }

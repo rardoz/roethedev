@@ -16,4 +16,7 @@
         "*.{jsx}": "javascriptreact",
         "*.{tsx}": "typescriptreact",
     },
+    "[scss]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
 }

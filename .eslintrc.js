@@ -30,7 +30,7 @@ module.exports = {
       }
     ],
     "no-irregular-whitespace": "off",
-    "max-len": [ "error", { "code": 80 } ],
+    "max-len": [ "warn", { "code": 160 } ],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": [ "error" ],
     semi: [ "error", "never" ],
