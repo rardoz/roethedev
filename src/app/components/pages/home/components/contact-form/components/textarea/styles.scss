@@ -11,6 +11,13 @@
   }
 
   textarea {
+    transition: background-color 1s ease;
+    background-color: $white-color;
+
+    &:focus {
+      background-color: $bright-white-color;
+    }
+
     width: 100%;
     resize: none;
     height: 100%;

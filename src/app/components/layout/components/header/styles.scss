@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   z-index: $nav-index;
+  box-shadow: 10px 0 20px $primary-color;
 
   nav {
     background: $white-color;
