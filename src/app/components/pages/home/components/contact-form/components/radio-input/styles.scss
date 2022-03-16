@@ -2,9 +2,11 @@
 @import "../../../../../../../styles/functions";
 
 .radio-input {
+  margin-bottom: 5px;
+
   label {
+    text-transform: capitalize;
     font-size: px-to-rem(20px);
-    font-weight: 600;
     margin-left: spacer(2);
   }
 

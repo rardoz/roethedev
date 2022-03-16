@@ -16,7 +16,7 @@ h1 {
 }
 
 h2 {
-  font-size: px-to-rem(61px);
+  font-size: 2.8rem;
 }
 
 h1,
@@ -25,6 +25,7 @@ h3,
 h4 {
   padding: spacer(4) 0;
   margin: 0;
+  text-transform: uppercase;
 }
 
 a {
