@@ -22,10 +22,12 @@
 
     .card-content {
       padding: 0 spacer(4) spacer(4);
+      height: 100%;
     }
   }
 
   .read {
+    flex-grow: 0;
     width: 100%;
     text-align: right;
     display: block;

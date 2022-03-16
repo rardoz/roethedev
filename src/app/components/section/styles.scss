@@ -1,15 +1,16 @@
 @import "../../styles/functions";
 
-.section {
+.section,
+.section-wider {
   padding: spacer(12) spacer(8);
-  max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
 }
 
+.section {
+  max-width: 1000px;
+}
+
 .section-wider {
-  padding: spacer(12) spacer(8);
   max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
 }

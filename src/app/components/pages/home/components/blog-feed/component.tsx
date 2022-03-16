@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import AppLink from "../../../../app-link"
 import Section from "../../../../section"
 import SectionTitle from "../../../../section-title"
 import Card from "./components/card"
+import './styles.scss'
 
 const fakeArticles = [
   { 
@@ -66,10 +67,8 @@ const fakeArticles = [
 const BlogFeed: React.FC = () => {
   return (
     <>
-      <Section>
+      <Section className="section-wider blog-feed">
         <SectionTitle>From my desk</SectionTitle>
-      </Section>
-      <Section className="section-wider">
         <div className="flex-grid">
           {fakeArticles.map(
             ( article, index ) => {
@@ -79,7 +78,9 @@ const BlogFeed: React.FC = () => {
             }
           )}
         </div>
-        <Link to="/blog">See blog</Link>
+        <p>
+          <AppLink to="/blog" className="app-link-lg">See blog</AppLink>
+        </p>
       </Section>
     </>
   )

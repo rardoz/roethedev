@@ -2,6 +2,9 @@
 
 .section-title {
   text-align: center;
+  max-width: px-to-rem(936px);
+  margin-left: auto;
+  margin-right: auto;
 
   .hr {
     border-style: dotted;

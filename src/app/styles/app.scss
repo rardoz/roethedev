@@ -18,16 +18,3 @@ body {
   background: $white-color;
   color: $primary-color;
 }
-
-.clamp-title {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.clamp-content {
-  display: box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
