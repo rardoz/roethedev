@@ -5,6 +5,7 @@ import './styles.scss'
 import RadioFieldset from "./components/radio-fieldset"
 import SERVICES_OPTIONS from "./constants"
 import Textarea from "./components/textarea/component"
+import TextInput from "./components/text-input"
 
 const ContactForm: React.FC = () => {
   return (
@@ -23,18 +24,16 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
         <div className="row">
-          <div>
-            <label htmlFor="name-field">Your name</label>
-            <input type="name" id="name-field" />
+          <div className="col-4">
+            <TextInput title="Enter your name" name="name" id="name-field" type="name" required />
           </div>
-
-          <div>
-            <label htmlFor="email-field">Your email</label>
-            <input type="email" id="email-field" />
+          <div className="col-spacer" />
+          <div className="col-4">
+            <TextInput title="Enter your email" name="email" id="email-field" type="email" required />
           </div>
         </div>
-        <div className="row">
-          <input type="submit" value="Send to Roe" />
+        <div className="row" >
+          <TextInput value="Send to Roe" title="Send message" id="submit-field" type="submit" required />
         </div>
       </form>
     </Section>

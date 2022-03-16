@@ -1,8 +1,8 @@
 @import "../../../../../../../styles/tokens";
 @import "../../../../../../../styles/functions";
 
-.textarea {
-  height: 100%;
+.text-input {
+  width: 100%;
 
   label {
     visibility: hidden;
@@ -10,10 +10,9 @@
     left: -10000px;
   }
 
-  textarea {
+  input {
     width: 100%;
-    resize: none;
-    height: 100%;
+    height: px-to-rem(50px);
     padding: spacer(4);
     font-size: font-size(1);
     color: $black-color;
@@ -21,10 +20,24 @@
     border-radius: px-to-rem(10px);
     border-width: 0;
 
-    &::placeholder {
+    &::placeholder,
+    &[type="submit"] {
       font-family: $default-font-family;
       color: $primary-color;
       font-size: font-size(2);
+    }
+
+    &[type="submit"] {
+      padding: 0;
+      cursor: pointer;
+      font-weight: bold;
+      transform: translateY(10%);
+      transition: all 1s ease;
+
+      &:hover {
+        transform: translateY(0%);
+        box-shadow: 0 10px 100px $black-color;
+      }
     }
   }
 }

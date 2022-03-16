@@ -1,0 +1,30 @@
+@import "functions";
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.col-3 {
+  flex: 1 1 30%;
+}
+
+.col-7 {
+  flex: 1 1 70%;
+}
+
+.col-1 {
+  flex: 1 1 10%;
+}
+
+.col-spacer {
+  flex: 0 0 spacer(12);
+}
+
+.col-5 {
+  flex: 1 1 50%;
+}
+
+.col-4 {
+  flex: 1 1 40%;
+}

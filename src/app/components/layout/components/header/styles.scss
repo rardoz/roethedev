@@ -4,6 +4,7 @@
 .app-nav {
   position: sticky;
   top: 0;
+  z-index: $nav-index;
 
   nav {
     background: $white-color;

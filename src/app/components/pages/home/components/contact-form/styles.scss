@@ -4,15 +4,8 @@
   background-color: $primary-color;
 
   .row {
-    display: flex;
-    flex-flow: row wrap;
-
-    .col-3 {
-      flex: 1 1 30%;
-    }
-
-    .col-7 {
-      flex: 1 1 70%;
+    &:nth-child(n + 2) {
+      margin-top: spacer(10);
     }
   }
 }
