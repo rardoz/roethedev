@@ -1,4 +1,7 @@
 {
   "extends": "stylelint-config-standard-scss",
-  "ignoreFiles": ["./dist/**/*", "./coverage/**/*"]
+  "ignoreFiles": ["./dist/**/*", "./coverage/**/*"],
+  "rules": {
+    "no-descending-specificity": null
+  }
 }
