@@ -1,0 +1,41 @@
+@import "../../styles/tokens";
+@import "../../styles/functions";
+
+.app-link {
+  display: inline-block;
+  position: relative;
+  color: $primary-color;
+  text-decoration: none;
+  padding: 0.2em 0.05em;
+  border-bottom: px-to-rem(2px) solid $primary-color;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $white-color;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $primary-color;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $primary-color;
+    z-index: -1;
+  }
+}

@@ -2,9 +2,12 @@
 
 .section-title {
   text-align: center;
+  max-width: px-to-rem(936px);
+  margin-left: auto;
+  margin-right: auto;
 
   .hr {
-    border-style: dotted !important;
+    border-style: dotted;
     border-width: spacer(2);
     border-bottom: 0;
     margin: spacer(4) 0 spacer(12) 0;
