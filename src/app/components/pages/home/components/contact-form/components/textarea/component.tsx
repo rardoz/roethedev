@@ -5,7 +5,11 @@ const Textarea: React.FC = () => {
   return (
     <div className='textarea'>
       <label htmlFor="message-textarea">Write a message</label>
-      <textarea id="message-textarea" className='textarea-input' placeholder="Please tell me your needs. Be sure to include helpful details."  />
+      <textarea
+        id="message-textarea"
+        className='textarea-input'
+        placeholder="Please tell me your needs. Be sure to include helpful details."
+      />
     </div>
   )
 }

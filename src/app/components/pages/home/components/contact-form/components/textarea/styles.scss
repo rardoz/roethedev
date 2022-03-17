@@ -11,27 +11,20 @@
   }
 
   textarea {
-    transition: background-color 1s ease;
     background-color: $white-color;
-
-    &:focus {
-      background-color: $bright-white-color;
-    }
-
-    width: 100%;
+    font-family: $default-font-family;
     resize: none;
     height: 100%;
-    padding: spacer(4);
-    font-size: font-size(1);
-    color: $black-color;
-    font-family: $secondary-font-family;
+    width: 100%;
     border-radius: px-to-rem(10px);
-    border-width: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
+    color: $primary-color;
 
     &::placeholder {
-      font-family: $default-font-family;
       color: $primary-color;
-      font-size: font-size(2);
     }
   }
 }
