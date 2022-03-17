@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import LazyImage from '../../../../../../lazy-image'
+import LazyImage from '../lazy-image'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 

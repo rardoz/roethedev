@@ -28,12 +28,13 @@ const fakeArticles = [
       "https://cdn.dribbble.com/users/125948/screenshots/11261672/media/ea2fda61c1647eadca0f7d2607505673.jpg?compress=1&resize=400x300",
   },
 ]
+// same as blog-feed - merge if we end up using this
 
-const BlogFeed: React.FC = () => {
+const PortfolioFeed: React.FC = () => {
   return (
     <>
-      <Section className="section-wider blog-feed">
-        <SectionTitle>From my desk</SectionTitle>
+      <Section className="section-wider portfolio-feed">
+        <SectionTitle>Portfolio</SectionTitle>
         <div className="flex-grid">
           {fakeArticles.map(
             ( article, index ) => {
@@ -44,11 +45,11 @@ const BlogFeed: React.FC = () => {
           )}
         </div>
         <p className="text-right">
-          <AppLink to="/blog" className="app-link-lg">See blog</AppLink>
+          <AppLink to="/portfolio" className="app-link-lg">See portfolio</AppLink>
         </p>
       </Section>
     </>
   )
 }
 
-export default BlogFeed
+export default PortfolioFeed

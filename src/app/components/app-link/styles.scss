@@ -41,4 +41,23 @@
     background: $primary-color;
     z-index: -1;
   }
+
+  &.inverted {
+    color: $white-color;
+    border-bottom: px-to-rem(2px) solid $white-color;
+    background: $primary-color;
+
+    &:hover {
+      color: $primary-color;
+      background: $white-color;
+    }
+
+    &::after {
+      background: $white-color;
+    }
+
+    &:hover::after {
+      background: $white-color;
+    }
+  }
 }

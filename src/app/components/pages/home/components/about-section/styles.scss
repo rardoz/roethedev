@@ -1,0 +1,16 @@
+@import "../../../../../styles/functions";
+
+.about-section {
+  color: $white-color;
+
+  .flex-grid {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .app-link {
+      align-self: flex-end;
+      justify-self: flex-end;
+    }
+  }
+}

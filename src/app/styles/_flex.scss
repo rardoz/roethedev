@@ -34,9 +34,28 @@
   flex-flow: row wrap;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-grid-item {
   flex-basis: 33.3333%;
   width: 33.3333%;
   overflow: hidden;
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.d-flex {
   display: flex;
 }
