@@ -42,7 +42,7 @@ const Header: React.FC = () => {
               <a title="Email" href="mailto:robert@byrojo.com?subject=Hello Roe!" aria-label="link to email"><FontAwesomeIcon icon={faEnvelope} /></a>
             </li>
             <li>
-              <a title="Linkedin" href="https://linkedin.com/in/rardoz" aria-label="link to linkedin"><FontAwesomeIcon icon={faLinkedin} /></a>
+              <a title="Linkedin" href="https://linkedin.com/in/rardoz" aria-label="link to linkedin" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
             </li>
             <li>
               <a
