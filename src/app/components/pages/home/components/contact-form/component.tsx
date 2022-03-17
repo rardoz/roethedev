@@ -27,11 +27,11 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="row">
             <div className="col-4">
-              <TextInput title="Enter your name" name="name" id="name-field" type="name" required />
+              <TextInput title="Name" name="name" id="name-field" type="name" required />
             </div>
             <div className="col-spacer" />
             <div className="col-4">
-              <TextInput title="Enter your email" name="email" id="email-field" type="email" required />
+              <TextInput title="Email" name="email" id="email-field" type="email" required />
             </div>
           </div>
           <div className="row" >
