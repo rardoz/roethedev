@@ -27,9 +27,7 @@ const AboutSection: React.FC = () => {
             </div>
           </ContentBlock>
         </div>
-       
       </Section>
-
     </WaveContainer>
   )
 }
