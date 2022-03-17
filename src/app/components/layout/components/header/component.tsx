@@ -5,7 +5,9 @@ import { useInView } from 'react-intersection-observer'
 import logo from './assets/logo.svg'
 
 const Header: React.FC = () => {
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView( {
+    threshold: 1
+  } )
 
   useEffect( () => {
     if( !inView ) {
@@ -17,15 +19,16 @@ const Header: React.FC = () => {
 
   return (
     <>
-      
+      <span ref={ref} className="nav-observer" />
       <header className="app-nav">
         <nav>
           <Link to="/" aria-label="Logo" className="app-logo">
-            <img src={logo} height="200"/>
+            <img src={logo} width="200"/>
           </Link>
+
         </nav>
       </header>
-      <span ref={ref} className="nav-observer" />
+
     </>
   )
 }

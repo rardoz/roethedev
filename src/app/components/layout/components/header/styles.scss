@@ -1,11 +1,6 @@
 @import "../../../../styles/tokens";
 @import "../../../../styles/functions";
 
-.nav-observer {
-  position: absolute;
-  top: 200px;
-}
-
 .app-nav {
   transition: background-color 1s ease;
   position: sticky;
@@ -21,12 +16,23 @@
 
     img {
       transition: all 0.25s ease;
+      max-width: 200px;
 
       &:hover {
-        transform: translateY(-10px);
+        filter: drop-shadow(0 0 200px $primary-color);
       }
     }
   }
+}
+
+/* finicky */
+.nav-observer {
+  position: absolute;
+  bottom: 100%;
+  height: 200px;
+  width: 200px;
+  pointer-events: none;
+  top: 200px;
 }
 
 .nav-shadow {
@@ -34,8 +40,12 @@
     box-shadow: 10px 0 20px $primary-color;
     background-color: $white-color;
 
-    img {
-      height: 100px;
+    .app-logo {
+      padding: 10px 0;
+
+      img {
+        max-width: 100px;
+      }
     }
   }
 }
