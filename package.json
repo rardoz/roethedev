@@ -23,6 +23,7 @@
   "scripts": {
     "build": "npm run clean && parcel build",
     "clean": "rm -rf ./dist | exit",
+    "dev": "npm run start",
     "lint:ci": "npm run lint:ts && npm run lint:js && npm run lint:css",
     "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
     "lint:css:cli": "stylelint --fix",

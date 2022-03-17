@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import './styles.scss'
 import { useInView } from 'react-intersection-observer'
+import logo from './assets/logo.svg'
 
 const Header: React.FC = () => {
   const { ref, inView } = useInView()
@@ -19,10 +20,8 @@ const Header: React.FC = () => {
       
       <header className="app-nav">
         <nav>
-          <Link to="/" aria-label="Logo">
-            <h1 className="app-logo">
-              <small>•</small>Roe <small>the</small> Dev<small>•</small>
-            </h1>
+          <Link to="/" aria-label="Logo" className="app-logo">
+            <img src={logo} height="200"/>
           </Link>
         </nav>
       </header>
