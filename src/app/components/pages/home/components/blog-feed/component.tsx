@@ -78,7 +78,7 @@ const BlogFeed: React.FC = () => {
             }
           )}
         </div>
-        <p>
+        <p className="text-right">
           <AppLink to="/blog" className="app-link-lg">See blog</AppLink>
         </p>
       </Section>
