@@ -8,6 +8,26 @@
   z-index: $nav-index;
   background-color: transparent;
 
+  .nav-link-bank {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: spacer(6);
+    top: 0;
+
+    a {
+      margin: spacer(2);
+      font-size: 1.75rem;
+      display: inline-block;
+      transition: all 1s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
   .app-logo {
     display: flex;
     justify-content: center;
