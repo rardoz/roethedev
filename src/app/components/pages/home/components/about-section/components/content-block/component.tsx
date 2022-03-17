@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.scss'
 import classnames from 'classnames'
 
-const ContentBlock: React.FC<{className?: string}> = ( { className } ) => {
+const ContentBlock: React.FC<{className?: string}> = ( { className, children } ) => {
   return (
     <div className={classnames( 'content-block', className )}>
       <h3 className='text-capitalize'>
@@ -19,6 +19,7 @@ const ContentBlock: React.FC<{className?: string}> = ( { className } ) => {
         There I earned my associates degree in visual communications.
         I have over 10 years of professional software development experience.
       </p>
+      {children}
     </div>
   )
 }

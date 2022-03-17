@@ -20,12 +20,14 @@ const AboutSection: React.FC = () => {
       
         <div className="flex-grid space-between">
           <BigAvatar avatarImg={avatarImg} avatarImgAlt={avatarImgAlt} />
-          <ContentBlock className="col-5" />
-        </div>
-        <div className="d-flex flex-end">
-          <AppLink to="/about" inverted>Learn more</AppLink>
+          <ContentBlock className="col-5" >
+            <div className="d-flex flex-end">
+              <AppLink to="/about" inverted>Learn more</AppLink>
       
+            </div>
+          </ContentBlock>
         </div>
+       
       </Section>
 
     </WaveContainer>
