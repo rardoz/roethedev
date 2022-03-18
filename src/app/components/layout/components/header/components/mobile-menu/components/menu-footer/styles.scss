@@ -1,0 +1,16 @@
+@import "../../../../../../../../styles/functions";
+
+.mobile-menu-footer {
+  flex-basis: 0;
+  height: 100%;
+  padding-top: spacer(4);
+
+  .social-icons-list {
+    list-style: none;
+    padding: 0;
+
+    > li {
+      padding: spacer(2);
+    }
+  }
+}

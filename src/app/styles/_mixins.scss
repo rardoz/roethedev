@@ -1,0 +1,29 @@
+@import "tokens";
+
+/*
+    Use like so:
+
+    .selector {
+        @include breakpoint-mixin('small') {
+            color: blue;
+        }
+    }
+
+    Outputs like so:
+
+    @media (min-width: 767px) {
+    .selector {
+            color: blue;
+        }
+    }
+*/
+
+@mixin breakpoint-mixin($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "There is not a key for `#{$breakpoint}`.";
+  }
+}

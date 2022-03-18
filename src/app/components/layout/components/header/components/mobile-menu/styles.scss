@@ -1,0 +1,26 @@
+@import "../../../../../../styles/tokens";
+@import "../../../../../../styles/functions";
+@import "../../../../../../styles/mixins";
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: $primary-color;
+  z-index: $mobile-menu-z-index;
+  color: $white-color;
+  padding: spacer(8);
+  left: 0;
+  pointer-events: none;
+  transition: bottom 0.5s ease-in-out;
+
+  @include breakpoint-mixin("medium-or-less") {
+    &.mobile-menu-open {
+      pointer-events: initial;
+      bottom: 0;
+    }
+  }
+}
