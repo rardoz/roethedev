@@ -8,7 +8,9 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faNpm } from '@fortawesome/free-brands-svg-icons/faNpm'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
+import { faFile } from '@fortawesome/free-solid-svg-icons/faFile'
+import MobileMenu from "./components/mobile-menu"
+import { HeaderContext } from "./context"
 
 const Header: React.FC = () => {
   const { ref, inView } = useInView( {
@@ -53,10 +55,15 @@ const Header: React.FC = () => {
                 <FontAwesomeIcon icon={faFile} />
               </a>
             </li>
+            <li>
+              <HeaderContext>
+                <MobileMenu />
+              </HeaderContext>
+            </li>
           </ul>
         </nav>
       </header>
-
+      
     </>
   )
 }

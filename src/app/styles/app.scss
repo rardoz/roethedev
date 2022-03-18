@@ -22,3 +22,7 @@ body {
 #root {
   position: relative;
 }
+
+.app-lock-scroll {
+  overflow-y: hidden;
+}

@@ -1,0 +1,43 @@
+@import "../../../../../../../../styles/functions";
+@import "../../../../../../../../styles/mixins";
+
+.header-mobile-menu-button {
+  display: none;
+
+  @include breakpoint-mixin("medium-or-less") {
+    display: inline-block;
+  }
+
+  padding: 0;
+  background: transparent;
+  border: 0;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  top: px-to-rem(-7px);
+  cursor: pointer;
+  margin: spacer(2);
+
+  &:hover,
+  &:focus {
+    img {
+      animation-play-state: running;
+    }
+  }
+
+  img {
+    margin: px-to-rem(5px);
+    animation: menu-button-hover-effect 5s linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+@keyframes menu-button-hover-effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

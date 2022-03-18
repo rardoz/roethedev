@@ -14,13 +14,21 @@ $base-font-size: 16px;
 $spacer-increment: 0.25;
 $breakpoints: (
   "tiny": (
-    min-width: 300px,
+    max-width: 765px,
+  ),
+  "small-or-less": (
+    min-width: 989px,
   ),
   "small": (
-    min-width: 767px,
+    min-width: 600px,
+    max-width: 989px,
+  ),
+  "medium-or-less": (
+    max-width: 1199px,
   ),
   "medium": (
-    min-width: 992px,
+    min-width: 900px,
+    max-width: 1199px,
   ),
   "large": (
     min-width: 1200px,
@@ -29,3 +37,4 @@ $breakpoints: (
 
 /* Z-Index */
 $nav-index: 1000;
+$mobile-menu-z-index: 2000;

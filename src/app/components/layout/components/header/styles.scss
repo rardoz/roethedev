@@ -1,5 +1,6 @@
 @import "../../../../styles/tokens";
 @import "../../../../styles/functions";
+@import "../../../../styles/mixins";
 
 .app-nav {
   transition: background-color 1s ease;
@@ -17,9 +18,14 @@
     top: 0;
 
     a {
+      display: inline-block;
+
+      @include breakpoint-mixin("medium-or-less") {
+        display: none;
+      }
+
       margin: spacer(2);
       font-size: 1.75rem;
-      display: inline-block;
       transition: all 1s ease;
 
       &:hover {
