@@ -14,9 +14,11 @@ const MobileMenu: React.FC = () => {
     <>
       <MenuButton />
       <div className={classnames( 'mobile-menu', { 'mobile-menu-open' : toggled } )}>
-        <CloseButton />
-        <MenuItems />
-        <MenuFooter />
+        <div className='mobile-menu-content-wrapper'>
+          <CloseButton />
+          <MenuItems />
+          <MenuFooter />
+        </div>
       </div>
  
     </>
