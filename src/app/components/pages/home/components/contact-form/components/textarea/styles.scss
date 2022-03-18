@@ -1,5 +1,6 @@
 @import "../../../../../../../styles/tokens";
 @import "../../../../../../../styles/functions";
+@import "../../../../../../../styles/mixins";
 
 .textarea {
   height: 100%;
@@ -25,6 +26,10 @@
 
     &::placeholder {
       color: $primary-color;
+    }
+
+    @include breakpoint-mixin("medium-or-less") {
+      height: px-to-rem(200px);
     }
   }
 }

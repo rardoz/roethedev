@@ -25,7 +25,7 @@ const ContactForm: React.FC = () => {
               <Textarea />
             </div>
           </div>
-          <div className="row">
+          <div className="row contact-form-name-row">
             <div className="col-4">
               <TextInput title="Name" name="name" id="name-field" type="name" required />
             </div>

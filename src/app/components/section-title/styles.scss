@@ -1,4 +1,5 @@
 @import "../../styles/functions";
+@import "../../styles/mixins";
 
 .section-title {
   text-align: center;
@@ -11,5 +12,9 @@
     border-style: dotted;
     border-bottom: 0;
     border-width: 0.3rem;
+
+    @include breakpoint-mixin("medium-or-less") {
+      border-width: 0.2rem;
+    }
   }
 }
