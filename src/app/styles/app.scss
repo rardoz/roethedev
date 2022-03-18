@@ -1,6 +1,7 @@
 @import "tokens";
 @import "typography";
 @import "flex";
+@import "mixins";
 
 html,
 body {
@@ -25,4 +26,10 @@ body {
 
 .app-lock-scroll {
   overflow-y: hidden;
+}
+
+.d-none-medium-or-less {
+  @include breakpoint-mixin("medium-or-less") {
+    display: none;
+  }
 }

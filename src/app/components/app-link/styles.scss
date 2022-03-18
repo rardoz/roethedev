@@ -1,17 +1,24 @@
 @import "../../styles/tokens";
 @import "../../styles/functions";
 
+$app-link-border-height: 2px !default;
+$app-link-xxl-multiplier: 5 !default;
+
 .app-link {
+  &.app-link-xxl {
+    border-bottom: $app-link-border-height * $app-link-xxl-multiplier solid $primary-color;
+  }
+
   display: inline-block;
   position: relative;
   color: $primary-color;
   text-decoration: none;
-  border-bottom: px-to-rem(2px) solid $primary-color;
+  border-bottom: $app-link-border-height solid $primary-color;
   transition: all 0.3s ease;
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.5em 0.05em;
-  margin: 20px 0;
+  margin: #{$app-link-border-height * 10} 0;
 
   &:hover {
     color: $white-color;
@@ -43,9 +50,14 @@
   }
 
   &.inverted {
+    &.app-link-xxl {
+      font-size: px-to-rem(48px);
+      border-bottom: $app-link-border-height * $app-link-xxl-multiplier solid $white-color;
+    }
+
     color: $white-color;
-    border-bottom: px-to-rem(2px) solid $white-color;
-    background: $primary-color;
+    border-bottom: px-to-rem($app-link-border-height) solid $white-color;
+    background: transparent;
 
     &:hover {
       color: $primary-color;

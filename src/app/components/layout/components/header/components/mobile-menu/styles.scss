@@ -3,7 +3,8 @@
 @import "../../../../../../styles/mixins";
 
 .mobile-menu {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   bottom: 100%;
   width: 100vw;
@@ -14,7 +15,7 @@
   padding: spacer(8);
   left: 0;
   pointer-events: none;
-  transition: all 1s ease-in-out;
+  transition: bottom 0.5s ease-in-out;
 
   @include breakpoint-mixin("medium-or-less") {
     &.mobile-menu-open {
