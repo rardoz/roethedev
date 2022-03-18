@@ -12,6 +12,20 @@ $base-font-size: 16px;
 
 /* Sizes */
 $spacer-increment: 0.25;
+$breakpoints: (
+  "tiny": (
+    min-width: 300px,
+  ),
+  "small": (
+    min-width: 767px,
+  ),
+  "medium": (
+    min-width: 992px,
+  ),
+  "large": (
+    min-width: 1200px,
+  ),
+);
 
 /* Z-Index */
 $nav-index: 1000;
