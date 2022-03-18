@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 100%;
+  top: -100%;
   width: 100vw;
   height: 100vh;
   background: $primary-color;
@@ -15,12 +15,14 @@
   padding: spacer(8);
   left: 0;
   pointer-events: none;
-  transition: bottom 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+  opacity: 0;
 
   @include breakpoint-mixin("medium-or-less") {
     &.mobile-menu-open {
       pointer-events: initial;
-      bottom: 0;
+      top: 0;
+      opacity: 1;
     }
   }
 }
