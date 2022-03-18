@@ -1,9 +1,14 @@
 @import "../../../../../../../styles/tokens";
 @import "../../../../../../../styles/functions";
+@import "../../../../../../../styles/mixins";
 
 .radio-fieldset {
   border: none;
   padding: 0;
+
+  @include breakpoint-mixin("medium-or-less") {
+    margin-bottom: spacer(4);
+  }
 
   legend {
     color: $primary-color;
