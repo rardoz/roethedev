@@ -17,13 +17,11 @@ const AboutSection: React.FC = () => {
         <SectionTitle>
           About Roe
         </SectionTitle>
-      
         <div className="flex-grid space-between">
           <BigAvatar avatarImg={avatarImg} avatarImgAlt={avatarImgAlt} />
           <ContentBlock className="col-5" >
-            <div className="d-flex flex-end">
+            <div className="d-flex flex-end app-link-container">
               <AppLink to="/about" inverted>Learn more</AppLink>
-      
             </div>
           </ContentBlock>
         </div>

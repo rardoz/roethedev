@@ -1,4 +1,5 @@
 @import "../../../../../styles/functions";
+@import "../../../../../styles/mixins";
 
 .about-section {
   color: $white-color;
@@ -8,9 +9,15 @@
     margin-left: auto;
     margin-right: auto;
 
-    .app-link {
-      align-self: flex-end;
-      justify-self: flex-end;
+    @include breakpoint-mixin("small-or-less") {
+      flex-direction: column;
+      text-align: center;
+
+      .app-link-container {
+        margin-top: spacer(4);
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 }

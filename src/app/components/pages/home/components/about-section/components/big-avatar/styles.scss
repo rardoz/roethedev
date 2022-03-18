@@ -9,6 +9,9 @@
   border-radius: 100%;
   display: inline-block;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: spacer(4);
 
   &:hover {
     cursor: pointer;
