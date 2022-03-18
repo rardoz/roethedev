@@ -14,7 +14,7 @@ const Card: React.FC<{
   return ( 
     <div className={classnames( 'card', className )}>
       <Link to={to} tabIndex={1} className="card-link-wrapper">
-        <div>
+        <div className='card-image'>
           <LazyImage imgSrc={featuredImage}  />
         </div>
         <div className='card-content'>

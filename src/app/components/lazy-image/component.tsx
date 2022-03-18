@@ -13,6 +13,7 @@ const LazyImage:React.FC<{
     <img
       className='lazy-image'
       ref={ref}
+      width="100%"
       src={inView || loadedRef.current ? imgSrc : placeholderSrc}
     />
   )

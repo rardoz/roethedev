@@ -13,24 +13,22 @@ $base-font-size: 16px;
 /* Sizes */
 $spacer-increment: 0.25;
 $breakpoints: (
-  "tiny": (
+  "tiny-orless": (
     max-width: 765px,
   ),
   "small-or-less": (
-    min-width: 989px,
-  ),
-  "small": (
-    min-width: 600px,
     max-width: 989px,
+  ),
+  "small-or-greater": (
+    min-width: 600px,
   ),
   "medium-or-less": (
     max-width: 1199px,
   ),
-  "medium": (
+  "medium-or-greater": (
     min-width: 900px,
-    max-width: 1199px,
   ),
-  "large": (
+  "large-or-greater": (
     min-width: 1200px,
   ),
 );

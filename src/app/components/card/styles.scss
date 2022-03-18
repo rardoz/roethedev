@@ -4,6 +4,17 @@
 .card {
   min-width: 300px;
 
+  .card-image {
+    max-height: 300px;
+    overflow: hidden;
+    min-height: 300px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
   .card-link-wrapper {
     margin: spacer(4);
     overflow: hidden;
@@ -13,6 +24,7 @@
     transition: all 1s ease;
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     &:hover,
     &:focus {
