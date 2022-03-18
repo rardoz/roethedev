@@ -38,3 +38,8 @@ There are more but these are the main ones and they must be written in logical o
     width: 33.3333%;
   }
 ```
+
+### CMS - Contentful
+
+This app is using the contentful SDK to gather posts.
+See https://www.npmjs.com/package/contentful
