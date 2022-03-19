@@ -1,44 +1,29 @@
-import React from "react"
+import React, { useContext } from "react"
 import AppLink from "../../../../app-link"
 import Section from "../../../../section"
 import SectionTitle from "../../../../section-title"
 import Card from "../../../../card"
 import './styles.scss'
-
-const fakeArticles = [
-  { 
-    title: "Test 1 Test 1 Test 1 Test 1 Test 1",
-    description: "This is a test description of doom! This is a test description of doom! This is a test description of doom!",
-    to: "/",
-    featuredImage:
-      "https://cdn.dribbble.com/users/125948/screenshots/11261672/media/ea2fda61c1647eadca0f7d2607505673.jpg?compress=1&resize=400x300",
-  },
-  {
-    title: "Test 1",
-    description: "This is a test description of doom!",
-    to: "/",
-    featuredImage:
-      "https://cdn.dribbble.com/users/125948/screenshots/11261672/media/ea2fda61c1647eadca0f7d2607505673.jpg?compress=1&resize=400x300",
-  },
-  {
-    title: "Test 1",
-    description: "This is a test description of doom!",
-    to: "/",
-    featuredImage:
-      "https://cdn.dribbble.com/users/125948/screenshots/11261672/media/ea2fda61c1647eadca0f7d2607505673.jpg?compress=1&resize=400x300",
-  },
-]
+import cmsContext from '../../../../../context/cms'
 
 const BlogFeed: React.FC = () => {
+  const { items } = useContext( cmsContext )
   return (
     <>
       <Section className="section-wider blog-feed">
         <SectionTitle>From my desk</SectionTitle>
         <div className="flex-grid">
-          {fakeArticles.map(
-            ( article, index ) => {
+          {items?.map(
+            ( article ) => {
               return (
-                <Card className="flex-grid-item" key={index} {...article} />
+                <Card
+                  className="flex-grid-item"
+                  key={article.slug} 
+                  description={article.description || ''}
+                  title={article.title || ''}
+                  to={`/blog/${article.slug}`}
+                  featuredImage={article.featuredImage?.url || ''}
+                />
               )
             }
           )}
