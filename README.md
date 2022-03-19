@@ -4,6 +4,11 @@ Personal website made with ReactJS, NodeJS, SCSS, Jest, Typescript, and Parcel.
 [![Deploy](https://github.com/rardoz/roethedev/actions/workflows/deploy.yml/badge.svg)](https://github.com/rardoz/roethedev/actions/workflows/deploy.yml)
 
 ## Development
+1. Copy the `.env.example` file to `.env` file in the project root
+1. Setup env tokens with contentful
+1. Then start the app
+1. The app will run even if contentful is not setup
+
 ### Install the app
 `npm i`
 ### Start the app
