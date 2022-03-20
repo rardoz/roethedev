@@ -1,35 +1,34 @@
 import React, { useState } from 'react'
 import './styles.scss'
 
-const RadioInput: React.FC<RadioFieldOption> = ( { id, name, label } ) => {
+const RadioInput: React.FC<RadioFieldOption> = ( { name, label } ) => {
   const [ 
     checked,
     setChecked 
   ] = useState( false )
 
   return (
-    <div key={id} className="radio-input">
+    <div className="radio-input">
       <input
         type="radio"
         name={name}
-        id={id}
+        id={name}
         checked={checked}
-
-        onChange={( e ) => {
+        value={label}
+        onChange={() => {
           setChecked( !checked )
         }}
         onClick={() =>{
           setChecked( !checked )
         }}
         onKeyDown={( e ) => {
-
           if( e.key == " " ) {
             e.preventDefault()
             setChecked( !checked )
           }
         }}
       />
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={name}>{label}</label>
     </div>
   )
 }

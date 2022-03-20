@@ -1,7 +1,6 @@
 interface RadioFieldOption {
     name: string,
-    label: string,
-    id: string
+    label: string
 }
 
 type radioFieldOptionsType = RadioFieldOption[]

@@ -3,6 +3,14 @@
 
 .contact-form {
   color: $white-color;
+  margin-bottom: spacer(-4);
+
+  .form-message {
+    color: $white-color;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: spacer(4);
+  }
 
   .contact-form-section {
     .row {

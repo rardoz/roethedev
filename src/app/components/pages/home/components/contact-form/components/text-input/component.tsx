@@ -9,6 +9,7 @@ const TextInput: React.FC<{
     required?: boolean
     placeholder?: string
     value?: string
+    disabled?: boolean
 }> = ( {
   name,
   title,
@@ -16,12 +17,13 @@ const TextInput: React.FC<{
   type,
   required,
   placeholder,
-  value
+  value,
+  disabled
 } ) => {
   return (
     <div className='text-input'>
       <label htmlFor={id}>{title}</label>
-      <input value={value} placeholder={placeholder || title} required={required} type={type} name={name} id={id} />
+      <input disabled={disabled} value={value} placeholder={placeholder || title} required={required} type={type} name={name} id={id} />
     </div>
   )
 }
