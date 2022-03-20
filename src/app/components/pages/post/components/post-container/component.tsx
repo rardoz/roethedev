@@ -2,14 +2,14 @@ import React, {  useContext } from 'react'
 import Section from '../../../../section'
 import ContentfulToReact from '../../../../contentful-to-react'
 import cMSContext from '../../../../../context/cms'
-import { contentType as ctype } from '../../../../../context/cms/hooks/types'
+import { ContentType } from '../../../../../context/cms/hooks/types'
 import { Helmet } from 'react-helmet-async'
 import { useParams
 } from "react-router-dom"
 import SectionTitle from '../../../../section-title'
 import { DiscussionEmbed } from 'disqus-react'
 
-const PostContainer: React.FC<{contentType: ctype}> = ( { contentType } )=> {
+const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=> {
   const postRecord = useContext( cMSContext )
   const { slug } = useParams()
   const record = postRecord.items ? postRecord.items.find( item => item.slug === slug ) || {} : {}

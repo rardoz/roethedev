@@ -31,8 +31,8 @@ const Application: React.FC = () => (
             <Route path="/about" element={<AboutPage />}/>
             <Route path="/blog" element={<BlogPage />}/> 
             <Route path="/portfolio" element={<PortfolioPage />}/>
-            <Route path="/blog/:slug" element={<PostPage />} />
-            <Route path="/portfolio/:slug" element={<PostPage />} />
+            <Route path="/blog/:slug" element={<PostPage  contentType='blog' />} />
+            <Route path="/portfolio/:slug" element={<PostPage contentType='portfolio' />} />
           </Routes>
         </Suspense>
       </Layout>

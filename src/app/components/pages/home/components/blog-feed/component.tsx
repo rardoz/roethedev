@@ -7,7 +7,11 @@ import './styles.scss'
 import cmsContext from '../../../../../context/cms'
 import classNames from 'classnames'
 
-const BlogFeed: React.FC<{className?: string, enableTitle: boolean, linkEnabled: boolean}> = ( { enableTitle = true, linkEnabled = true, className } ) => {
+const BlogFeed: React.FC<{
+  className?: string,
+  enableTitle?: boolean,
+  linkEnabled?: boolean
+}> = ( { enableTitle = true, linkEnabled = true, className } ) => {
   const { items } = useContext( cmsContext )
   return (
     <>
