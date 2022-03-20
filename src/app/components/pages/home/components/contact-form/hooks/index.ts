@@ -21,6 +21,6 @@ export const useSubmitContactForm = ():{
     data: response.data || {},
     loading: loading,
     message: 
-     error?.message  || !response.data?.success ? "There was an error! Try again or email me directly at robert@byrojo.com." : response.data?.message
+     error?.message  || !( response.data?.success && error?.message ) ? "There was an error! Try again or email me directly at robert@byrojo.com." : response.data?.message
   }
 }
