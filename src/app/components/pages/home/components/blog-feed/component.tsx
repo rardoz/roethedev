@@ -5,13 +5,14 @@ import SectionTitle from "../../../../section-title"
 import Card from "../../../../card"
 import './styles.scss'
 import cmsContext from '../../../../../context/cms'
+import classNames from 'classnames'
 
-const BlogFeed: React.FC = () => {
+const BlogFeed: React.FC<{className?: string, enableTitle: boolean, linkEnabled: boolean}> = ( { enableTitle = true, linkEnabled = true, className } ) => {
   const { items } = useContext( cmsContext )
   return (
     <>
-      <Section className="section-wider blog-feed">
-        <SectionTitle>From my desk</SectionTitle>
+      <Section className={classNames( "section-wider","blog-feed", className )}>
+        { enableTitle && <SectionTitle>From my desk</SectionTitle>}
         <div className="flex-grid">
           {items?.map(
             ( article ) => {
@@ -28,9 +29,9 @@ const BlogFeed: React.FC = () => {
             }
           )}
         </div>
-        <p className="text-right">
+        {linkEnabled && <p className="text-right">
           <AppLink to="/blog" className="app-link-lg">See blog</AppLink>
-        </p>
+        </p>}
       </Section>
     </>
   )

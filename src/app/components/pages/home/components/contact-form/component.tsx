@@ -34,7 +34,7 @@ const ContactForm: React.FC = () => {
           onSubmit( new FormData( e.currentTarget ) )
           e.preventDefault()
         }}>
-          <div className="row">
+          <div className="row contact-form-first-row">
             <div className="col-3">
               <RadioFieldset options={SERVICES_OPTIONS} title="Select services" />
             </div>

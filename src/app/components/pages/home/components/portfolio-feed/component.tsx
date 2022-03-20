@@ -5,13 +5,13 @@ import SectionTitle from "../../../../section-title"
 import Card from "../../../../card"
 import './styles.scss'
 import cmsContext from '../../../../../context/cms'
-
-const PortfolioFeed: React.FC = () => {
+import classNames from "classnames"
+const PortfolioFeed: React.FC<{className: string,  enableTitle: boolean, linkEnabled: boolean}> = ( { enableTitle = true, linkEnabled = true, className } ) => {
   const { items } = useContext( cmsContext )
   return (
     <>
-      <Section className="section-wider portfolio-feed">
-        <SectionTitle>Portfolio</SectionTitle>
+      <Section className={classNames( "section-wider", "portfolio-feed", className )}>
+        { enableTitle && <SectionTitle>Portfolio</SectionTitle>}
         <div className="flex-grid">
           {items?.map(
             ( article ) => {
@@ -28,9 +28,9 @@ const PortfolioFeed: React.FC = () => {
             }
           )}
         </div>
-        <p className="text-right">
+        {linkEnabled && <p className="text-right">
           <AppLink to="/portfolio" className="app-link-lg">See portfolio</AppLink>
-        </p>
+        </p>}
       </Section>
     </>
   )

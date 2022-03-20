@@ -1,0 +1,19 @@
+@import "../../../../styles/tokens";
+@import "../../../../styles/functions";
+@import "../../../../styles/mixins";
+
+.wave-hero-title {
+  &.row {
+    justify-content: center;
+    align-items: center;
+    white-space: break-spaces;
+
+    @include breakpoint-mixin("small-or-less") {
+      .row,
+      & {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
