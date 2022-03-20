@@ -17,7 +17,6 @@ const ContactForm: React.FC = () => {
     message,
     loading } = useSubmitContactForm()
 
-  console.log( data )
   useEffect( () => {
     if( data?.success ) {
       form.current.reset()
@@ -27,7 +26,9 @@ const ContactForm: React.FC = () => {
     <WaveContainer className="contact-form">
       <Section className="contact-form-section">
         <SectionTitle>
-        Let me help &amp; teach you
+          <span className="flex-center row text-break-space">
+            <span>Let me </span><span>help &amp; </span><span>teach you</span>
+          </span>
         </SectionTitle>
         {/* Contact form is a route to a lambda */}
         <form ref={form} aria-disabled={loading ? "true" : "false"} action="/contact-form" method="POST" onSubmit={( e ) => {
