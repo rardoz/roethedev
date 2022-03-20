@@ -1,6 +1,6 @@
 import {  useState, useMemo } from "react"
 import * as contentful from 'contentful'
-import type { BlogField, NormalizedBlogData, NormalizedBlogState, contentType } from './types'
+import type { BlogField, NormalizedBlogData, NormalizedBlogState, ContentType } from './types'
 
 let contentfulClient: contentful.ContentfulClientApi
 
@@ -78,7 +78,7 @@ export const useEntries = ( {
 }: {
   limit?: number,
   skip?: number,
-  contentType?: contentType,
+  contentType?: ContentType,
   order?: string,
   slug?: string
   } ): NormalizedBlogState => {

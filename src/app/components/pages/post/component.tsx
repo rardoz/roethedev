@@ -5,10 +5,10 @@ import { Helmet } from "react-helmet-async"
 import { useParams
 } from "react-router-dom"
 import PostContainer from './components/post-container'
+import { ContentType } from '../../../context/cms/hooks/types'
 
-const PostPage: React.FC = ( props ) => {
+const PostPage: React.FC<{contentType: ContentType}> = ( props ) => {
   const { slug } = useParams()
-  console.log( props )
   return (
     <>
       <Helmet>
@@ -19,7 +19,7 @@ const PostPage: React.FC = ( props ) => {
         todo
       </WaveHero>
       {slug && 
-        <CMSContextProvider slug={slug}>
+        <CMSContextProvider contentType={props.contentType} slug={slug}>
           <PostContainer contentType='blog'/>
         </CMSContextProvider>
       }

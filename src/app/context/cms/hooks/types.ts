@@ -1,12 +1,12 @@
 import { Asset } from 'contentful'
 import {  Document } from '@contentful/rich-text-types'
 
-export type contentType  =  'blog' | 'portfolio' | string
+export type ContentType  =  'blog' | 'portfolio' | string
 
 export interface USE_BLOG_ARGS {
     limit?: number
     skip?: number
-    contentType?: contentType
+    contentType?: ContentType
     slug?: string
 }
 
