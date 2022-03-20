@@ -11,7 +11,7 @@ const RadioField: React.FC<{
     <fieldset name="services[]" className='radio-fieldset'>
       <legend>{title}</legend>
       {options.map( ( option ) => (
-        <RadioInput {...option} key={option.id} />
+        <RadioInput {...option} key={option.name} />
       ) )}
     </fieldset>
   )

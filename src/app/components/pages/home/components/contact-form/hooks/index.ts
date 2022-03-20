@@ -16,6 +16,6 @@ export const useSubmitContactForm = ():[
     
     post( data )
   }
-  console.log( response, loading, error )
+  console.log( response.data, loading, error )
   return [ onSubmit, response, loading, error ]
 }

@@ -37,7 +37,7 @@ const ContactForm: React.FC = () => {
             </div>
             <div className="col-spacer" />
             <div className="col-4">
-              <TextInput title="Email" name="email" id="email-field" type="email"  />
+              <TextInput title="Email" name="email" id="email-field" type="email" required  />
             </div>
           </div>
           <div className="row" >
