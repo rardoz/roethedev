@@ -7,16 +7,22 @@ import SERVICES_OPTIONS from "./constants"
 import Textarea from "./components/textarea/component"
 import TextInput from "./components/text-input"
 import WaveContainer from "../../../../wave-container"
+import { useSubmitContactForm } from "./hooks"
 
 const ContactForm: React.FC = () => {
+  const [ onSubmit ] = useSubmitContactForm()
+
   return (
     <WaveContainer className="contact-form">
       <Section className="contact-form-section">
         <SectionTitle>
         Let me help &amp; teach you
         </SectionTitle>
-
-        <form action="some-lamda-in-aws" method="POST">
+        {/* Contact form is a route to a lambda */}
+        <form action="/contact-form" method="POST" onSubmit={( e ) => {
+          onSubmit( new FormData( e.currentTarget ) )
+          e.preventDefault()
+        }}>
           <div className="row">
             <div className="col-3">
               <RadioFieldset options={SERVICES_OPTIONS} title="Select services" />
@@ -31,7 +37,7 @@ const ContactForm: React.FC = () => {
             </div>
             <div className="col-spacer" />
             <div className="col-4">
-              <TextInput title="Email" name="email" id="email-field" type="email" required />
+              <TextInput title="Email" name="email" id="email-field" type="email"  />
             </div>
           </div>
           <div className="row" >
