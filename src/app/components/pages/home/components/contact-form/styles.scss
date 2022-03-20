@@ -18,6 +18,15 @@
         margin-top: spacer(10);
       }
 
+      @include breakpoint-mixin("tiny-or-less") {
+        &.contact-form-first-row {
+          .col-7 {
+            width: 100%;
+            flex-basis: 100%;
+          }
+        }
+      }
+
       @include breakpoint-mixin("medium-or-less") {
         &.contact-form-name-row {
           margin-top: spacer(4);
