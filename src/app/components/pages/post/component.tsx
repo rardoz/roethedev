@@ -6,8 +6,9 @@ import { useParams
 } from "react-router-dom"
 import PostContainer from './components/post-container'
 
-const PostPage: React.FC = () => {
+const PostPage: React.FC = ( props ) => {
   const { slug } = useParams()
+  console.log( props )
   return (
     <>
       <Helmet>
@@ -19,7 +20,7 @@ const PostPage: React.FC = () => {
       </WaveHero>
       {slug && 
         <CMSContextProvider slug={slug}>
-          <PostContainer />
+          <PostContainer contentType='blog'/>
         </CMSContextProvider>
       }
     </>
