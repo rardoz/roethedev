@@ -1,4 +1,4 @@
-import React from "react"
+import React, { MutableRefObject, useEffect, useRef } from "react"
 import SectionTitle from "../../../../section-title"
 import Section from "../../../../section"
 import './styles.scss'
@@ -10,8 +10,19 @@ import WaveContainer from "../../../../wave-container"
 import { useSubmitContactForm } from "./hooks"
 
 const ContactForm: React.FC = () => {
-  const [ onSubmit ] = useSubmitContactForm()
+  const form = useRef() as MutableRefObject<HTMLFormElement>
+  const { 
+    onSubmit,
+    data,
+    message,
+    loading } = useSubmitContactForm()
 
+  console.log( data )
+  useEffect( () => {
+    if( data?.success ) {
+      form.current.reset()
+    }
+  }, [ data?.success ] )
   return (
     <WaveContainer className="contact-form">
       <Section className="contact-form-section">
@@ -19,7 +30,7 @@ const ContactForm: React.FC = () => {
         Let me help &amp; teach you
         </SectionTitle>
         {/* Contact form is a route to a lambda */}
-        <form action="/contact-form" method="POST" onSubmit={( e ) => {
+        <form ref={form} aria-disabled={loading ? "true" : "false"} action="/contact-form" method="POST" onSubmit={( e ) => {
           onSubmit( new FormData( e.currentTarget ) )
           e.preventDefault()
         }}>
@@ -41,8 +52,28 @@ const ContactForm: React.FC = () => {
             </div>
           </div>
           <div className="row" >
-            <TextInput value="Send to Roe" title="Send message" id="submit-field" type="submit" required />
+            <TextInput
+              disabled={
+                loading || ( data?.success as boolean )
+              }
+              value={(
+                loading 
+                  ? "Sending" 
+                  : data?.success
+                    ? "The message was sent" 
+                    : "Send to Roe" 
+              )}
+              title="Send message" 
+              id="submit-field" 
+              type="submit" 
+              required 
+            />
           </div>
+          <p
+            className="form-message"
+            style={{ visibility: message ? 'visible' : 'hidden' }}>
+            {message}
+          </p>
         </form>
       </Section>
     </WaveContainer>
