@@ -10,11 +10,11 @@ const { Provider } = context
 
 export const CMSContextProvider: React.FC<USE_BLOG_ARGS> = ( { children,
   contentType,
+  slug,
   limit = 10,
   skip = 0
 } ) => {
-  //todo need a pagination hook
-  return <Provider value={useEntries( limit, skip, contentType )}>{children}</Provider>
+  return <Provider value={useEntries( { limit, skip, contentType, slug } )}>{children}</Provider>
 }
 
 export default context

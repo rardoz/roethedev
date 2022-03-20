@@ -1,6 +1,6 @@
-import {  useState, useMemo, useEffect } from "react"
+import {  useState, useMemo } from "react"
 import * as contentful from 'contentful'
-import type { BlogField, NormalizedBlogData, USE_BLOG_ARGS, NormalizedBlogState } from './types'
+import type { BlogField, NormalizedBlogData, NormalizedBlogState, contentType } from './types'
 
 let contentfulClient: contentful.ContentfulClientApi
 
@@ -69,28 +69,46 @@ const normalizeData = ( items: contentful.Entry< BlogField >[]  ):NormalizedBlog
   return normalizedFields
 }
 
-export const useEntries = ( limit = 10, skip = 0, contentType?: 'blog'| string, order?: string ): NormalizedBlogState => {
+export const useEntries = ( {
+  limit = 10,
+  skip = 0, 
+  contentType, 
+  order, 
+  slug 
+}: {
+  limit?: number,
+  skip?: number,
+  contentType?: contentType,
+  order?: string,
+  slug?: string
+  } ): NormalizedBlogState => {
   const [ 
     blogs,
     setBlogs 
   ] = useState( {} as  NormalizedBlogState )
 
   useMemo( () => {
-    console.warn( 'getting em!' )
+    const queryData: Record<string, unknown> = {
+      content_type: contentType || process.env.CONTENTFUL_BLOG_ID,
+      limit,
+      skip,
+      order: order || '-sys.createdAt'
+    }
+
+    if( slug ) 
+      queryData[ "field.slug[is]" ] = slug
+
     getClient()
-      .getEntries( {
-        content_type: contentType || process.env.CONTENTFUL_BLOG_ID,
-        limit,
-        skip,
-        order: order || '-sys.createdAt'
-      } )
+      .getEntries( queryData )
       .then( entry => {
         setBlogs( {
           items: normalizeData( entry.items as contentful.Entry<BlogField>[] )
         } )
-        console.warn( 'done' )
       } )
       .catch( err => console.error( err ) )
-  }, [ limit, skip, contentType, order ] )
+      .finally( () => {
+        console.warn( 'got data' )
+      } )
+  }, [ limit, skip, contentType, order, slug ] )
   return blogs
 }
