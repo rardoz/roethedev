@@ -11,6 +11,7 @@ import Layout from './components/layout'
 const HomePage = React.lazy( () => import( './components/pages/home' ) )
 const AboutPage = React.lazy( () => import( './components/pages/about' ) )
 const BlogPage = React.lazy( () => import( './components/pages/blog' ) )
+const PostPage = React.lazy( () => import( './components/pages/post' ) )
 
 const PortfolioPage = React.lazy( () => import( './components/pages/portfolio' ) )
 
@@ -18,6 +19,7 @@ const Application: React.FC = () => (
   <HelmetProvider>
     <Helmet>
       <title>Roe the Dev</title>
+      <meta name="robots" content="index,follow" />
       <meta name="description"
         content="Javascript Web and Native Mobile Engineer available for consulting, projects, and tutoring." />
     </Helmet>
@@ -27,8 +29,10 @@ const Application: React.FC = () => (
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/about" element={<AboutPage />}/>
-            <Route path="/blog" element={<BlogPage />}/>
+            <Route path="/blog" element={<BlogPage />}/> 
             <Route path="/portfolio" element={<PortfolioPage />}/>
+            <Route path="/blog/:slug" element={<PostPage />} />
+            <Route path="/portfolio/:slug" element={<PostPage />} />
           </Routes>
         </Suspense>
       </Layout>

@@ -2,7 +2,6 @@ import React from 'react'
 import { CMSContextProvider } from '../../../context/cms'
 import WaveHero from '../../wave-hero'
 import WaveHeroTitle from '../../wave-hero/components/wave-hero-title'
-import BlogFeed from '../home/components/blog-feed'
 import { Helmet } from "react-helmet-async"
 import './styles.scss'
 import PortfolioFeed from '../home/components/portfolio-feed'
