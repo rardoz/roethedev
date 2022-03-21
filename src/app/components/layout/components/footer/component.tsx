@@ -1,7 +1,6 @@
 import React from "react"
 import WaveContainer from "../../../wave-container"
 import './styles.scss'
-import Section from '../../../section'
 
 const Footer: React.FC = () => {
   return (

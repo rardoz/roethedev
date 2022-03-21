@@ -9,6 +9,7 @@ import { useParams
 import SectionTitle from '../../../../section-title'
 import { DiscussionEmbed } from 'disqus-react'
 import WaveHeroWithImage from '../../../../wave-hero-with-image'
+import './styles.scss'
 
 const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=> {
   const postRecord = useContext( cMSContext )
@@ -16,30 +17,27 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
   const record = postRecord.items ? postRecord.items.find( item => item.slug === slug ) || {} : {}
 
   const innerNodes = record.content ? (
-    <Section>
+    <Section className='post-content-section'>
       <Helmet>
         <title>{record.title || "Roe the Dev"}</title>
         <meta name="description"
           content={record.description || ""}/>
       </Helmet>
       <article>
-        <SectionTitle>
-          {record.title}
-        </SectionTitle>
         {<ContentfulToReact content={record.content} />}
-
-        <DiscussionEmbed
-          shortname={`${process.env.DISQUS_SHORTNAME}`}
-          config={
-            {
-              url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
-              identifier: `${contentType}-${record.slug}`,
-              title:record.title,
-              language: 'us_EN'
-            }
-          }
-        />
       </article>
+      <SectionTitle />
+      <DiscussionEmbed
+        shortname={`${process.env.DISQUS_SHORTNAME}`}
+        config={
+          {
+            url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
+            identifier: `${contentType}-${record.slug}`,
+            title:record.title,
+            language: 'us_EN'
+          }
+        }
+      />
     </Section>
   ) :( postRecord.items ? <Section>
     <SectionTitle>Post not found</SectionTitle>
@@ -51,7 +49,7 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
   </Section> : <>...</> )
 
   return <>
-    <WaveHeroWithImage src={record.blogPhoto?.url}  />
+    <WaveHeroWithImage src={record.blogPhoto?.url} title={record.title} description={record.description} />
     {innerNodes}
   </>
 }
