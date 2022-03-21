@@ -7,18 +7,18 @@ import SocialIcons from "../../../social-icons/component"
 import MobileMenu from "./components/mobile-menu"
 import { HeaderContext } from "./context"
 
-const Header: React.FC = () => {
+const Header: React.FC<{forceInView?: boolean}> = ( { forceInView = false } ) => {
   const { ref, inView } = useInView( {
     threshold: 1
   } )
 
   useEffect( () => {
-    if( !inView ) {
+    if( !inView || forceInView ) {
       document.body.classList.add( "nav-shadow" )
     } else {
       document.body.classList.remove( "nav-shadow" )
     }
-  }, [ inView ] )
+  }, [ inView, forceInView ] )
 
   return (
     <>

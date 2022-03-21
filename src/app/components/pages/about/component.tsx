@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from '../../layout/components/header'
 
 const AboutPage: React.FC = () => {
   return (
-    <div>
+    <>
+      <Header /> 
+      <div>
             Hello about page!!
-    </div>
+      </div>
+    </>
   )
 }
 

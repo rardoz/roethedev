@@ -1,0 +1,8 @@
+@import "../../../../../styles/tokens";
+@import "../../../../../styles/functions";
+
+.post-content-section {
+  .section-title .hr {
+    margin-top: spacer(4 * 3);
+  }
+}
