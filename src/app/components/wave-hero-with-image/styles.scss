@@ -1,5 +1,6 @@
 @import "../../styles/tokens";
 @import "../../styles/functions";
+@import "../../styles/mixins";
 
 .wave-hero-with-image {
   width: 100%;
@@ -27,6 +28,11 @@
     font-size: font-size(30);
     text-align: center;
     white-space: break-spaces;
+    word-break: break-word;
+
+    @include breakpoint-mixin("tiny-or-less") {
+      font-size: font-size(18);
+    }
   }
 
   p {
