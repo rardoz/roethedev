@@ -48,3 +48,8 @@ There are more but these are the main ones and they must be written in logical o
 
 This app is using the contentful SDK to gather posts.
 See https://www.npmjs.com/package/contentful
+
+## Parcel
+
+### SVGs
+https://parceljs.org/languages/svg/#importing-as-a-react-component

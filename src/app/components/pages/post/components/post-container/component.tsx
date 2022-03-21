@@ -8,15 +8,14 @@ import { useParams
 } from "react-router-dom"
 import SectionTitle from '../../../../section-title'
 import { DiscussionEmbed } from 'disqus-react'
+import WaveHeroWithImage from '../../../../wave-hero-with-image'
 
 const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=> {
   const postRecord = useContext( cMSContext )
   const { slug } = useParams()
   const record = postRecord.items ? postRecord.items.find( item => item.slug === slug ) || {} : {}
-  
-  console.log( record )
 
-  return record.content ? (
+  const innerNodes = record.content ? (
     <Section>
       <Helmet>
         <title>{record.title || "Roe the Dev"}</title>
@@ -50,6 +49,11 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
       <meta name="robots" content="noindex" />
     </Helmet>
   </Section> : <>...</> )
+
+  return <>
+    <WaveHeroWithImage src={record.blogPhoto?.url}  />
+    {innerNodes}
+  </>
 }
 
 export default PostContainer

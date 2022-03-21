@@ -1,6 +1,5 @@
 import React from 'react'
 import { CMSContextProvider } from '../../../context/cms'
-import WaveHero from '../../wave-hero'
 import { Helmet } from "react-helmet-async"
 import { useParams
 } from "react-router-dom"
@@ -15,9 +14,7 @@ const PostPage: React.FC<{contentType: ContentType}> = ( props ) => {
         <title>TODO</title>
         <meta name='description' content="TODO" />
       </Helmet>
-      <WaveHero>
-        todo
-      </WaveHero>
+ 
       {slug && 
         <CMSContextProvider contentType={props.contentType} slug={slug}>
           <PostContainer contentType='blog'/>
