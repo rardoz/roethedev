@@ -20,7 +20,7 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
   const innerNodes = record.content ? (
     <Section className='post-content-section'>
       <Helmet>
-        <title>{record.title || "Roe the Dev"}</title>
+        <title>{`${record.title} | ${contentType.charAt( 0 ).toUpperCase() + contentType.slice( 1 )}` || "Roe the Dev"}</title>
         <meta name="description"
           content={record.description || ""}/>
         <meta property="og:title" content={record.title}/>
@@ -29,9 +29,9 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
         <meta property='twitter:description' content={record.description} />
         <meta name="twitter:title" content={record.title} />
         <meta name="twitter:description" content={record.description}/>
-        <meta name="twitter:image" content={ record.blogPhoto?.url || record.featuredImage?.url} />
-        <meta name="twitter:card" content={record.featuredImage?.url || record.blogPhoto?.url } />
-        <meta property="og:image" content={record.featuredImage?.url || record.blogPhoto?.url }/>
+        <meta name="twitter:image" content={ record.socialPhoto?.url || record.featuredImage?.url} />
+        <meta name="twitter:card" content={record.socialPhoto?.url || record.featuredImage?.url } />
+        <meta property="og:image" content={record.socialPhoto?.url || record.featuredImage?.url }/>
       </Helmet>
       <article>
         {<ContentfulToReact content={record.content} />}
@@ -44,7 +44,8 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
             url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
             identifier: `${contentType}-${record.slug}`,
             title:record.title,
-            language: 'us_EN'
+            language: 'us_EN',
+            categoryID: contentType
           }
         }
       />
