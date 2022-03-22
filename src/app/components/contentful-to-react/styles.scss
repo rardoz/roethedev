@@ -1,0 +1,19 @@
+@import "../../styles/tokens";
+@import "../../styles/functions";
+@import "../../styles/mixins";
+
+.contentful-to-react {
+  p {
+    line-height: 1.7;
+    font-size: font-size(0.7);
+
+    + p {
+      padding-top: spacer(4);
+    }
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+}
