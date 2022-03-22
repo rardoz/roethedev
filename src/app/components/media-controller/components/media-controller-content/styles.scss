@@ -1,0 +1,29 @@
+@import "../../../../styles/tokens";
+
+.media-controller-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  flex: 1 1 100%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+
+    video {
+      background-color: $primary-color;
+      height: 100%;
+
+      &::-webkit-media-controls-panel {
+        background-color: $primary-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/mixins";
+
+.media-controller-button {
+  font-size: font-size(20);
+  position: relative;
+  margin-top: font-size(-20);
+  padding: spacer(4);
+  background: transparent;
+  border: 0;
+  line-height: 0;
+  cursor: pointer;
+  box-shadow: none;
+  color: currentcolor;
+  transition: filter 0.3s ease;
+  animation: media-icon-animation 2s ease-in-out infinite alternate;
+
+  &:hover,
+  :focus {
+    animation-play-state: paused;
+    filter: drop-shadow(1px 1px px-to-rem(100px) $black-color);
+  }
+
+  &:hover,
+  &:focus {
+    animation-play-state: running;
+  }
+
+  .media-controller-label {
+    font-size: 3.25rem;
+    line-height: 3.25rem;
+    margin-left: spacer(4);
+    font-weight: 700;
+  }
+}
+
+@keyframes media-icon-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(px-to-rem(-5px));
+  }
+}

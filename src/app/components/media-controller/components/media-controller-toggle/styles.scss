@@ -1,0 +1,27 @@
+@import "../../../../styles/tokens";
+@import "../../../../styles/functions";
+@import "../../../../styles/mixins";
+
+.media-controller {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: -100%;
+  width: 100vw;
+  height: 100vh;
+  background: $primary-color;
+  z-index: $media-controller-z-index;
+  color: $white-color;
+  padding: spacer(8);
+  left: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+  opacity: 0;
+
+  &.media-controller-open {
+    pointer-events: initial;
+    top: 0;
+    opacity: 1;
+    height: 100%;
+  }
+}
