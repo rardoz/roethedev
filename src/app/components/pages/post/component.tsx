@@ -13,7 +13,7 @@ const PostPage: React.FC<{contentType: ContentType}> = ( props ) => {
       <Header forceInView /> 
       {slug && 
         <CMSContextProvider contentType={props.contentType} slug={slug}>
-          <PostContainer contentType='blog'/>
+          <PostContainer contentType={props.contentType}/>
         </CMSContextProvider>
       }
     </>
