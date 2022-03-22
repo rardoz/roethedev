@@ -9,6 +9,7 @@ import { useParams
 import SectionTitle from '../../../../section-title'
 import { DiscussionEmbed } from 'disqus-react'
 import WaveHeroWithImage from '../../../../wave-hero-with-image'
+import MediaController from '../../../../media-controller'
 import './styles.scss'
 
 const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=> {
@@ -58,7 +59,19 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
   </Section> : <>...</> )
 
   return <>
-    <WaveHeroWithImage src={record.blogPhoto?.url} title={record.title} description={record.description} />
+    <WaveHeroWithImage
+      src={record.blogPhoto?.url}
+      title={record.title}
+      description={record.description}
+    >
+      {record.video?.url && <MediaController>
+        <div className='video-container'>
+          { <video autoPlay width={record.video?.width} height={record.video?.height} controls src={record.video?.url}>
+        Your browser does not support the video tag.
+          </video>}
+        </div>
+      </MediaController>}
+    </WaveHeroWithImage>
     {innerNodes}
   </>
 }
