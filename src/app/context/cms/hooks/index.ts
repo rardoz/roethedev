@@ -63,7 +63,8 @@ const normalizeData = ( items: contentful.Entry< BlogField >[]  ):NormalizedBlog
       title: fieldRow.title,
       dateCreated: createdAt,
       dateUpdated: updatedAt,
-      slug: fieldRow.slug
+      slug: fieldRow.slug,
+      hardRoute: fieldRow.hardRoute
     } )
   } )
   return normalizedFields
@@ -97,7 +98,7 @@ export const useEntries = ( {
 
     if( slug ) 
       queryData[ "field.slug[is]" ] = slug
-
+    
     getClient()
       .getEntries( queryData )
       .then( entry => {

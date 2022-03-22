@@ -1,7 +1,7 @@
 import { Asset } from 'contentful'
 import {  Document } from '@contentful/rich-text-types'
 
-export type ContentType  =  'blog' | 'portfolio' | string
+export type ContentType  =  'blog' | 'portfolio' | 'linkBank' | string
 
 export interface USE_BLOG_ARGS {
     limit?: number
@@ -20,6 +20,7 @@ export interface BlogField {
     title: string
     video: Asset
     slug: string
+    hardRoute?: boolean
 }
 
 export interface NormalizedBlogPhoto {
@@ -46,6 +47,7 @@ export interface NormalizedBlogData {
     dateCreated?: string
     dateUpdated?: string
     slug?: string
+    hardRoute?: boolean
 }
 
 export interface NormalizedBlogState {

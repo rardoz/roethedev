@@ -32,6 +32,7 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
         <meta name="twitter:image" content={ record.socialPhoto?.url || record.featuredImage?.url} />
         <meta name="twitter:card" content={record.socialPhoto?.url || record.featuredImage?.url } />
         <meta property="og:image" content={record.socialPhoto?.url || record.featuredImage?.url }/>
+        <meta name="keywords" content={record.keywords}/>
       </Helmet>
       <article>
         {<ContentfulToReact content={record.content} />}

@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
           <PortfolioFeed />
         </CMSContextProvider>
         <AboutSection />
-        <CMSContextProvider limit={3}>
+        <CMSContextProvider contentType='linkBank' limit={3}>
           <BlogFeed />
         </CMSContextProvider>
       </div>

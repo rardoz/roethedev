@@ -23,10 +23,11 @@ const BlogFeed: React.FC<{
               return (
                 <Card
                   className="flex-grid-item"
-                  key={article.slug} 
+                  key={article.slug}
                   description={article.description || ''}
                   title={article.title || ''}
-                  to={`/blog/${article.slug}`}
+                  to={article.hardRoute ? `${article.slug}` : `/blog/${article.slug}`}
+                  hardRoute={article.hardRoute}
                   featuredImage={article.featuredImage?.url || ''}
                 />
               )
