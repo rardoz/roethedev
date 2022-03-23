@@ -6,14 +6,16 @@ import { Helmet } from "react-helmet-async"
 import './styles.scss'
 import PortfolioFeed from '../home/components/portfolio-feed'
 import Header from '../../layout/components/header'
+import HelmetHead from '../../helmet-head'
 
 const PorfolioPage: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Body of work | Portfolio</title>
-        <meta name='description' content="From by desk is my blog. I talk about art, tech, and my opinions as well as share tutorials and videos." />
-      </Helmet>
+      <HelmetHead
+        title="Body of work | Portfolio"
+        keywords='portfolio, work, web, development, engineering, frontend'
+        description="From by desk is my blog. I talk about art, tech, and my opinions as well as share tutorials and videos."
+      />
       <Header />
       <WaveHero>
         <WaveHeroTitle title1='Body' title2='of' title3='work' />

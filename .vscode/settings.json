@@ -1,4 +1,5 @@
 {
+    "autoimport.autoComplete": true,
     "eslint.enable": true,
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
@@ -18,5 +19,5 @@
     },
     "[scss]": {
         "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
-    },
+    }
 }

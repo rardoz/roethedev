@@ -3,7 +3,6 @@ import Section from '../../../../section'
 import ContentfulToReact from '../../../../contentful-to-react'
 import cMSContext from '../../../../../context/cms'
 import { ContentType } from '../../../../../context/cms/hooks/types'
-import { Helmet } from 'react-helmet-async'
 import { useParams
 } from "react-router-dom"
 import SectionTitle from '../../../../section-title'
@@ -11,6 +10,7 @@ import { DiscussionEmbed } from 'disqus-react'
 import WaveHeroWithImage from '../../../../wave-hero-with-image'
 import MediaController from '../../../../media-controller'
 import './styles.scss'
+import HelmetHead from '../../../../helmet-head'
 
 const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=> {
   const postRecord = useContext( cMSContext )
@@ -19,21 +19,13 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
 
   const innerNodes = record.content ? (
     <Section className='post-content-section'>
-      <Helmet>
-        <title>{`${record.title} | ${contentType.charAt( 0 ).toUpperCase() + contentType.slice( 1 )}` || "Roe the Dev"}</title>
-        <meta name="description"
-          content={record.description || ""}/>
-        <meta property="og:title" content={record.title}/>
-        <meta property='og:description' content={record.description} />
-        <meta property="og:type" content="article" />
-        <meta property='twitter:description' content={record.description} />
-        <meta name="twitter:title" content={record.title} />
-        <meta name="twitter:description" content={record.description}/>
-        <meta name="twitter:image" content={ record.socialPhoto?.url || record.featuredImage?.url} />
-        <meta name="twitter:card" content={record.socialPhoto?.url || record.featuredImage?.url } />
-        <meta property="og:image" content={record.socialPhoto?.url || record.featuredImage?.url }/>
-        <meta name="keywords" content={record.keywords}/>
-      </Helmet>
+      <HelmetHead
+        title={`${record.title} | ${contentType.charAt( 0 ).toUpperCase() + contentType.slice( 1 )}` || "Roe the Dev"}
+        description={record.description}
+        ogType='article'
+        keywords={record.keywords}
+        image={record.socialPhoto?.url || record.featuredImage?.url}
+      />
       <article>
         {<ContentfulToReact content={record.content} />}
       </article>
@@ -54,10 +46,7 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
   ) :( postRecord.items ? <Section>
     <SectionTitle>Post not found</SectionTitle>
     <p className='text-center'>Sorry the page you are looking for no longer exists.</p>
-    <Helmet>
-      <title>Post not found</title>
-      <meta name="robots" content="noindex" />
-    </Helmet>
+    <HelmetHead title='Post not found' follow={false} />
   </Section> : <>...</> )
 
   return <>

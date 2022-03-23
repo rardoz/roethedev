@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.229.0/containers/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local on arm64/Apple Silicon.
+		"args": {
+			"VARIANT": "16-bullseye"
+		}
+	},
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"autoimport.autoComplete": true,
+		"eslint.enable": true,
+		"eslint.alwaysShowStatus": true,
+		"eslint.format.enable": true,
+		"editor.formatOnSave": true,
+		"prettier.enable": false,
+		"typescript.format.enable": false,
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"eslint.validate": [
+			"javascript"
+		],
+		"files.associations": {
+			"*.{jsx}": "javascriptreact",
+			"*.{tsx}": "typescriptreact",
+		},
+		"[scss]": {
+			"editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+		},
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"stylelint.vscode-stylelint",
+		"NuclleaR.vscode-extension-auto-import",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint"
+	],
+	"forwardPorts": [1234],
+	"postCreateCommand": "npm i && npm start",
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+}

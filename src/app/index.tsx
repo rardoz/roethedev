@@ -6,6 +6,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
+import HelmetHead from './components/helmet-head'
 import Layout from './components/layout'
 import Header from './components/layout/components/header'
 
@@ -14,17 +15,11 @@ const AboutPage = React.lazy( () => import( './components/pages/about' ) )
 const BlogPage = React.lazy( () => import( './components/pages/blog' ) )
 const PostPage = React.lazy( () => import( './components/pages/post' ) )
 const NotFoundPage = React.lazy( () => import( './components/pages/not-found' ) )
-
 const PortfolioPage = React.lazy( () => import( './components/pages/portfolio' ) )
 
 const Application: React.FC = () => (
   <HelmetProvider>
-    <Helmet>
-      <title>Roe the Dev</title>
-      <meta name="robots" content="index,follow" />
-      <meta name="description"
-        content="Javascript Web and Native Mobile Engineer available for consulting, projects, and tutoring." />
-    </Helmet>
+    <HelmetHead />
     <BrowserRouter>
       <Layout>
         <Suspense fallback={<Header/>}>
