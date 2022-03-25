@@ -100,7 +100,7 @@ fs.readFile( './src/app/index.tsx', 'utf8' , ( err, data ) => {
     lastmod: new Date().toDateString(),
     urls: [ 
       `${options.hostname}/sitemaps/page.xml`, 
-      `${options.hostname}/sitemaps/portoflio.xml`, 
+      `${options.hostname}/sitemaps/portfolio.xml`, 
       `${options.hostname}/sitemaps/blog.xml`
     ]
   }
