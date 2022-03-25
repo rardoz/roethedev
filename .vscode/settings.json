@@ -19,5 +19,8 @@
     },
     "[scss]": {
         "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
     }
 }
