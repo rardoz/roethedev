@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const env = require( 'dotenv' ) 
-const { SitemapStream, streamToPromise } = require( 'sitemap' )
+const { SitemapStream, streamToPromise, SitemapIndexStream } = require( 'sitemap' )
 const { Readable } = require( 'stream' )
 const contentful = require( 'contentful' )
 const fs = require( 'fs' )
@@ -18,15 +18,21 @@ const contentfulClient = contentful.createClient( {
   space: CONTENTFUL_SPACE_ID,
 } )
 
-const createSitemap = async ( { urls, category, changefreq, priority } ) => {
+const options = {
+  hostname: HOST_NAME || 'https://roethedev.com'
+}
+
+const createSitemap = async ( { urls, category, changefreq, priority, lastmod } ) => {
   let links = []
   if( category === "page" || category === "sitemap" ) {
     links = urls.map( url => {
+
       return {
         url,
         category,
         changefreq,
-        priority
+        priority,
+        lastmod
       }
     } )
    
@@ -41,13 +47,15 @@ const createSitemap = async ( { urls, category, changefreq, priority } ) => {
       return {
         url: `/${category}/${item.fields.slug}`,
         changefreq: 'weekly',
-        lastmod: item.sys.updatedAt,
+        lastmod: item.sys.updatedAt || lastmod,
         priority: 0.5
       }
     } )
   }
 
-  const stream = await new SitemapStream( { hostname: HOST_NAME || 'https://roethedev.com' } )
+  const stream = category === "sitemap" 
+    ? await new SitemapIndexStream( options ) 
+    : await new SitemapStream( options )
   return await streamToPromise( Readable.from( links ).pipe( stream ) ).then( ( data ) =>
   { 
     fs.writeFileSync( `./dist/sitemaps/${category}.xml`, data.toString(), {
@@ -89,6 +97,7 @@ fs.readFile( './src/app/index.tsx', 'utf8' , ( err, data ) => {
     category: 'sitemap',
     changefreq: 'weekly',
     priority: 1,
+    lastmod: new Date().toDateString(),
     urls: [ '/sitemaps/page.xml', '/sitemaps/portoflio.xml', '/sitemaps/blog.xml' ]
   }
 
