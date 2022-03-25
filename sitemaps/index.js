@@ -98,7 +98,11 @@ fs.readFile( './src/app/index.tsx', 'utf8' , ( err, data ) => {
     changefreq: 'weekly',
     priority: 1,
     lastmod: new Date().toDateString(),
-    urls: [ '/sitemaps/page.xml', '/sitemaps/portoflio.xml', '/sitemaps/blog.xml' ]
+    urls: [ 
+      `${options.hostname}/sitemaps/page.xml`, 
+      `${options.hostname}/sitemaps/portoflio.xml`, 
+      `${options.hostname}/sitemaps/blog.xml`
+    ]
   }
 
   data.match( /path=".*"/g,  ).forEach( path => {
