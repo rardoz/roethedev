@@ -12,8 +12,28 @@
     }
   }
 
+  h3 {
+    margin: spacer(10) 0 spacer(4);
+  }
+
+  h3:first-of-type {
+    margin-top: 0;
+  }
+
   a:hover,
   a:focus {
     text-decoration: underline;
+  }
+
+  .contentful-to-react-image-container {
+    img {
+      padding: spacer(12) 0 spacer(2);
+    }
+
+    p {
+      text-align: center;
+      padding-bottom: spacer(6);
+      font-size: font-size(-0.5);
+    }
   }
 }

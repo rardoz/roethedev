@@ -2,12 +2,22 @@ import { BLOCKS, MARKS, INLINES, Document, Block, Inline } from '@contentful/ric
 import { documentToReactComponents, } from '@contentful/rich-text-react-renderer'
 import React from 'react'
 import './styles.scss'
+import LazyImage from '../lazy-image'
 
 const options = {
   renderMark: {
     [ MARKS.BOLD ]: ( text:React.ReactNode ) => <strong>{text}</strong>,
   },
   renderNode: {
+    [ BLOCKS.EMBEDDED_ASSET ]: ( node: Block ) => {
+      const fields = node.data?.target?.fields || {}
+      return ( 
+        <div className='contentful-to-react-image-container'>
+          <LazyImage imgSrc={fields.file?.url} alt={fields.title} />
+          <p><em>{fields.description}</em></p>
+        </div> 
+      )
+    },
     [ INLINES.HYPERLINK ]: ( node: Block | Inline, children: React.ReactNode ) => <a href={node.data.uri} target="_blank">{children}</a>,
     [ BLOCKS.PARAGRAPH ]: ( node: Block | Inline, children: React.ReactNode ) => <p>{children}</p>,
   },

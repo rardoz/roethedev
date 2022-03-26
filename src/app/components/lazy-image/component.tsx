@@ -4,7 +4,8 @@ import { useInView } from 'react-intersection-observer'
 const LazyImage:React.FC<{
     imgSrc: string
     placeholderSrc?: string
-}> = ( { imgSrc, placeholderSrc } ) => {
+    alt?:string
+}> = ( { imgSrc, placeholderSrc, alt } ) => {
   const { ref, inView } = useInView()
   const loadedRef = useRef( false )
   loadedRef.current = loadedRef.current || inView
@@ -14,6 +15,7 @@ const LazyImage:React.FC<{
       className='lazy-image'
       ref={ref}
       width="100%"
+      alt={alt}
       src={inView || loadedRef.current ? imgSrc : placeholderSrc}
     />
   )
