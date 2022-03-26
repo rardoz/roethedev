@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import { render } from 'react-dom'
-import { HelmetProvider, Helmet } from "react-helmet-async"
+import { HelmetProvider } from "react-helmet-async"
 import {
   BrowserRouter,
   Routes,
@@ -17,26 +17,29 @@ const PostPage = React.lazy( () => import( './components/pages/post' ) )
 const NotFoundPage = React.lazy( () => import( './components/pages/not-found' ) )
 const PortfolioPage = React.lazy( () => import( './components/pages/portfolio' ) )
 
-const Application: React.FC = () => (
-  <HelmetProvider>
-    <HelmetHead />
-    <BrowserRouter>
-      <Layout>
-        <Suspense fallback={<Header/>}>
-          <Routes>
-            <Route index element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />}/>
-            <Route path="/blog" element={<BlogPage />}/> 
-            <Route path="/portfolio" element={<PortfolioPage />}/>
-            <Route path="/blog/:slug" element={<PostPage  contentType='blog' />} />
-            <Route path="/portfolio/:slug" element={<PostPage contentType='portfolio' />} />
-            <Route path="*" element={<NotFoundPage/>} />
-          </Routes>
-        </Suspense>
-      </Layout>
-    </BrowserRouter>
-  </HelmetProvider>
-)
+const Application: React.FC = () => {
+
+  return ( 
+    <HelmetProvider>
+      <HelmetHead />
+      <BrowserRouter>
+        <Layout>
+          <Suspense fallback={<Header/>}>
+            <Routes>
+              <Route index element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />}/>
+              <Route path="/blog" element={<BlogPage />}/> 
+              <Route path="/portfolio" element={<PortfolioPage />}/>
+              <Route path="/blog/:slug" element={<PostPage  contentType='blog' />} />
+              <Route path="/portfolio/:slug" element={<PostPage contentType='portfolio' />} />
+              <Route path="*" element={<NotFoundPage/>} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </BrowserRouter>
+    </HelmetProvider>
+  )
+}
 
 render( <Application />, document.getElementById( 'root' ) )
 
