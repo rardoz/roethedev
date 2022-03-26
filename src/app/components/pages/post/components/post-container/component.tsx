@@ -11,6 +11,7 @@ import WaveHeroWithImage from '../../../../wave-hero-with-image'
 import MediaController from '../../../../media-controller'
 import './styles.scss'
 import HelmetHead from '../../../../helmet-head'
+import dayjs from 'dayjs'
 
 const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=> {
   const postRecord = useContext( cMSContext )
@@ -28,6 +29,12 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
       />
       <article>
         {<ContentfulToReact content={record.content} />}
+        {contentType === "blog" && ( 
+          <div className='article-footer'>
+            <p>Written by Roe Greene</p>
+            <p>Last updated on {dayjs( record.dateUpdated ).format( 'MMMM DD, YYYY @ hh:mm A' )}</p>
+          </div> 
+        )}
       </article>
       <SectionTitle />
       <DiscussionEmbed
@@ -36,7 +43,7 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
           {
             url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
             identifier: `${contentType}-${record.slug}`,
-            title:record.title,
+            title: record.title,
             language: 'us_EN',
             categoryID: contentType
           }
@@ -57,9 +64,15 @@ const PostContainer: React.FC<{contentType: ContentType}> = ( { contentType } )=
     >
       {record.video?.url && <MediaController>
         <div className='video-container'>
-          { <video autoPlay width={record.video?.width} height={record.video?.height} controls src={record.video?.url}>
-        Your browser does not support the video tag.
-          </video>}
+          <video
+            autoPlay
+            width={record.video?.width}
+            height={record.video?.height}
+            controls
+            src={record.video?.url}
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
       </MediaController>}
     </WaveHeroWithImage>
