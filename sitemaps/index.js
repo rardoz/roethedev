@@ -76,7 +76,7 @@ fs.readFile( './src/app/index.tsx', 'utf8' , ( err, data ) => {
     category: 'page',
     changefreq: 'daily',
     priority: 1,
-    urls: []
+    urls: [ '/' ]
   }
 
   const blogUrls = {
