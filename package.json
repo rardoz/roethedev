@@ -35,7 +35,8 @@
     "sitemaps": "rm -rf ./dist/sitemaps && mkdir ./dist/sitemaps && node ./sitemaps/index.js",
     "start": "parcel --open",
     "test": "jest",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --coverage",
+    "tokens": "node ./scripts/index-html-tokens/index.js"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {

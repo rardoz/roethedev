@@ -39,6 +39,8 @@ jobs:
         run: echo DISQUS_SHORTNAME=${{ secrets.DISQUS_SHORTNAME }} >> .env &&  echo DISQUS_APP_URL=${{ secrets.DISQUS_APP_URL }} >> .env
       - name: Build React App
         run: npm install && npm run build
+      - name: Map tokens to HTML
+        run: npm run tokens
       - name: Build Sitemaps
         run: npm run sitemaps && npm run robots
       - name: Deploy app build to S3 bucket
