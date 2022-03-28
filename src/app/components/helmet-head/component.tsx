@@ -21,7 +21,7 @@ const HelmetHead: React.FC<HelmetProps & HelmetHeadProps> = ( {
       {description && <meta property='og:description' content={description} />}
       {keywords && <meta name="keywords" content={keywords}/>}
       {ogType && <meta property="og:type" content={ogType}/>}
-      {image && <meta property="og:image" content={image }/>}
+      {image && <meta property="og:image" name="image" content={image }/>}
       {description && <meta property='twitter:description' content={description} />}
       {title && <meta name="twitter:title" content={title} />}
       {description && <meta name="twitter:description" content={description}/>}
