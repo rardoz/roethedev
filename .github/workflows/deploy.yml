@@ -34,7 +34,7 @@ jobs:
       - name: Setup app env variables
         run: echo APP_API_BASE_URL=${{ secrets.APP_API_BASE_URL }} >> .env
       - name: Setup Google Analytics env variables
-        run: echo GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID }} >> .env && echo GA_AD_SENSE_TRACKING_ID=${{ secrets.GA_AD_SENSE_TRACKING_ID }}
+        run: echo GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID }} >> .env && echo GA_AD_SENSE_TRACKING_ID=${{ secrets.GA_AD_SENSE_TRACKING_ID }} >> .env
       - name: Setup Disqus env variables
         run: echo DISQUS_SHORTNAME=${{ secrets.DISQUS_SHORTNAME }} >> .env &&  echo DISQUS_APP_URL=${{ secrets.DISQUS_APP_URL }} >> .env
       - name: Build React App
