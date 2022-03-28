@@ -14,11 +14,9 @@ const HelmetHead: React.FC<HelmetProps & HelmetHeadProps> = ( {
   return ( 
     <Helmet>
       {title && <title>{title}</title>}
-      {description && <meta name="description"
-        content={description}/>}
       <meta name="robots" content={follow ? "index,follow" : "noindex" }/>
       {title && <meta property="og:title" content={title}/>}
-      {description && <meta property='og:description' content={description} />}
+      {description && <meta property='og:description' name="description" content={description} />}
       {keywords && <meta name="keywords" content={keywords}/>}
       {ogType && <meta property="og:type" content={ogType}/>}
       {image && <meta property="og:image" name="image" content={image }/>}
