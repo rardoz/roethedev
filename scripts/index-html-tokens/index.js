@@ -5,14 +5,15 @@ const fs = require( 'fs' )
 const path = require( 'path' )
 const tokens = env.config().parsed
 const htmlPath = path.join( process.cwd(), 'dist/index.html' )
-const data = fs.readFileSync(  process.cwd()  +  '/dist/index.html' )
+let data = fs.readFileSync(  htmlPath ).toString()
 
 Object.keys( tokens ).forEach( key => {
-  console.log( key )
-  fs.writeFileSync(
-    htmlPath, 
-    data.toString().replace(
-      new RegExp( `{{{%${key}%}}}`, 'g' ),
-      tokens[ key ]
-    ), { encoding: 'utf-8' } )
+  data = data.replace(
+    new RegExp( `{{{%${key}%}}}`, 'g' ),
+    tokens[ key ]
+  )
 } )
+
+fs.writeFileSync(
+  htmlPath, 
+  data, { encoding: 'utf-8' } )
