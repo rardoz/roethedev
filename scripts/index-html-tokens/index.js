@@ -2,12 +2,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const env = require( 'dotenv' ) 
 const fs = require( 'fs' )
+const path = require( 'path' )
 const tokens = env.config().parsed
-const data = fs.readFileSync( './dist/index.html' )
+const htmlPath = path.join( process.cwd(), 'dist/index.html' )
+console.log( htmlPath  )
+const data = fs.readFileSync(  process.cwd()  +  '/dist/index.html' )
 
 Object.keys( tokens ).forEach( key => {
+  console.log( key )
   fs.writeFileSync(
-    './dist/index.html', 
+    htmlPath, 
     data.toString().replace(
       new RegExp( `{{{%${key}%}}}`, 'g' ),
       tokens[ key ]
