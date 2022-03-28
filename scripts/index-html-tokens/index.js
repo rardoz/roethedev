@@ -5,11 +5,9 @@ const fs = require( 'fs' )
 const path = require( 'path' )
 const tokens = env.config().parsed
 const htmlPath = path.join( process.cwd(), 'dist/index.html' )
-console.log( htmlPath  )
 const data = fs.readFileSync(  process.cwd()  +  '/dist/index.html' )
 
 Object.keys( tokens ).forEach( key => {
-  console.log( key )
   fs.writeFileSync(
     htmlPath, 
     data.toString().replace(
