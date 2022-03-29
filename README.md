@@ -4,25 +4,23 @@ Personal website made with ReactJS, NodeJS, SCSS, Jest, Typescript, and Parcel.
 [![Deploy](https://github.com/rardoz/roethedev/actions/workflows/deploy.yml/badge.svg)](https://github.com/rardoz/roethedev/actions/workflows/deploy.yml)
 
 
-### Goals for this site
+## Goals for this site
 
 I really want this site to be a starting point for a set of classes I want to create. Each chapter will focus on different parts of this application. There are intentional refactors scattered throughout the code. I hope to get M1 of the class done within the next few weeks.
 
 In the meantime, take a look at my code. Its open source and I love feedback and good conversation!
-
-### Specs
-
-Node 16+
-
-npm 8+
-
-Linux
 
 ## Development
 1. Copy the `.env.example` file to `.env` file in the project root
 1. Setup env tokens with contentful
 1. Then start the app
 1. The app will run even if contentful is not setup
+
+### Specs
+
+• Node 16+
+• npm 8+
+• Linux
 
 ### Install the app
 `npm i`
