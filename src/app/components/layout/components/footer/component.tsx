@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="d-flex flex-center">
               <div className="d-flex flex-end flex-center">
-                &copy; 2022.&nbsp;<a href="https://byrojo.com" target="_blank"><small>Find more at byrojo.com</small></a>.
+                <small> &copy; 2022&nbsp;<a href="https://byrojo.com" target="_blank">Find more at byrojo.com</a></small>
               </div>
             </div>
           </nav>
