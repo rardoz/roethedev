@@ -33,7 +33,7 @@ In the meantime, take a look at my code. Its open source and I love feedback and
 ### Test the app
 `npm test`
 
-### HTML Token Mapping
+## HTML Token Mapping
 The command `npm run tokens` will map any env variable contained within the .env file to the token set within the HTML. This happens just after the build process when running inside of the github action.
 
 The format for a token looks like this:
@@ -51,7 +51,7 @@ Will map to:
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123"></script>
 ```
 
-### Mixin examples
+## Mixin examples
 
 #### Responsive SCSS Mixin
 There are more but these are the main ones and they must be written in logical order
@@ -74,7 +74,7 @@ There are more but these are the main ones and they must be written in logical o
   }
 ```
 
-### CMS - Contentful
+## CMS - Contentful
 
 This app is using the contentful SDK to gather posts.
 See https://www.npmjs.com/package/contentful
