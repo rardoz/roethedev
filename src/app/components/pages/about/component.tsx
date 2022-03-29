@@ -29,7 +29,6 @@ const AboutPage: React.FC = () => {
           <a className='app-link' href="https://roe-files.s3.amazonaws.com/Roe-Greene-Resume.pdf" download><h2>Download my resume</h2></a>
         </div>
       </Section>
-  
       <br />
     </>
   )

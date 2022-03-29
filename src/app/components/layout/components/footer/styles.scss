@@ -9,9 +9,31 @@
   nav {
     width: 100%;
     padding: spacer(4);
+    margin: spacer(20) 0;
   }
 
   .section {
     padding-bottom: spacer(0);
+  }
+
+  .app-footer-github-section {
+    .fa-github {
+      font-size: font-size(50);
+    }
+
+    p {
+      margin-top: spacer(4);
+      font-weight: bold;
+    }
+  }
+
+  .app-flip-on-hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(0.9);
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+
+    &:hover {
+      transform: rotateY(180deg) rotateX(360deg) scale(1);
+    }
   }
 }
