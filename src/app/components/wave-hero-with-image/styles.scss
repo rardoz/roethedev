@@ -26,12 +26,11 @@
   h1 {
     font-size: font-size(30);
     text-align: center;
-    white-space: break-spaces;
     word-break: break-word;
     width: 100%;
 
     @include breakpoint-mixin("tiny-or-less") {
-      font-size: font-size(18);
+      font-size: font-size(11);
     }
   }
 

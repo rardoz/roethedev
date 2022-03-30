@@ -15,11 +15,6 @@ const MenuItems: React.FC = () => {
         </AppLink>
       </li>
       <li>
-        <AppLink to="/services" inverted size="xxl">
-                Services
-        </AppLink>
-      </li>
-      <li>
         <AppLink to="/about" inverted size="xxl">
                About Roe
         </AppLink>
