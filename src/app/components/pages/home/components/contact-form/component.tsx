@@ -27,7 +27,7 @@ const ContactForm: React.FC = () => {
       <Section className="contact-form-section">
         <SectionTitle>
           <span className="flex-center row text-break-space">
-            <span>Let me</span><span> help you </span>
+            <span>I'm here</span><span> to help </span>
           </span>
         </SectionTitle>
         {/* Contact form is a route to a lambda */}
