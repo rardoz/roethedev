@@ -5,12 +5,20 @@ import ContactForm from './components/contact-form'
 import PortfolioFeed from './components/portfolio-feed'
 import { CMSContextProvider } from '../../../context/cms'
 import Header from '../../layout/components/header'
+import BlubSection from './components/blurb-section'
+import WaveHero from '../../wave-hero'
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Header />
       <div>
+        <WaveHero>
+          <BlubSection />
+        </WaveHero>
+        <br/><br/>
+        <br/><br/>
+        <BlubSection />
         <ContactForm />
         <CMSContextProvider limit={3} contentType={process.env.CONTENTFUL_PORTFOLIO_ID}>
           <PortfolioFeed />

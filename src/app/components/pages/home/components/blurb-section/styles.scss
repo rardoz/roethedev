@@ -1,0 +1,10 @@
+@import "../../../../../styles/tokens";
+@import "../../../../../styles/functions";
+
+.blurb-section {
+  p {
+    margin-bottom: spacer(8);
+    font-size: font-size(1.5);
+    text-align: center;
+  }
+}
