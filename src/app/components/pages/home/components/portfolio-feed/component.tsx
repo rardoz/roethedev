@@ -3,7 +3,6 @@ import AppLink from "../../../../app-link"
 import Section from "../../../../section"
 import SectionTitle from "../../../../section-title"
 import Card from "../../../../card"
-import './styles.scss'
 import cmsContext from '../../../../../context/cms'
 import classNames from "classnames"
 const PortfolioFeed: React.FC<{
@@ -16,7 +15,7 @@ const PortfolioFeed: React.FC<{
     <>
       <Section className={classNames( "section-wider", "portfolio-feed", className )}>
         { enableTitle && <SectionTitle>Portfolio</SectionTitle>}
-        <div className="flex-grid">
+        <div className="flex-grid gutters">
           {items?.map(
             ( article ) => {
               return (

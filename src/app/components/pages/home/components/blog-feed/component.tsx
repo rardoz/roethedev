@@ -3,7 +3,6 @@ import AppLink from "../../../../app-link"
 import Section from "../../../../section"
 import SectionTitle from "../../../../section-title"
 import Card from "../../../../card"
-import './styles.scss'
 import cmsContext from '../../../../../context/cms'
 import classNames from 'classnames'
 
@@ -17,7 +16,7 @@ const BlogFeed: React.FC<{
     <>
       <Section className={classNames( "section-wider","blog-feed", className )}>
         { enableTitle && <SectionTitle>From my desk</SectionTitle>}
-        <div className="flex-grid">
+        <div className="flex-grid gutters">
           {items?.map(
             ( article ) => {
               return (

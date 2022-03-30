@@ -7,6 +7,7 @@ import { CMSContextProvider } from '../../../context/cms'
 import Header from '../../layout/components/header'
 import BlubSection from './components/blurb-section'
 import WaveHero from '../../wave-hero'
+import PreSignupForm from './components/pre-signup-form'
 
 const HomePage: React.FC = () => {
   return (
@@ -14,10 +15,8 @@ const HomePage: React.FC = () => {
       <Header />
       <div>
         <WaveHero>
-          <BlubSection />
+          <PreSignupForm />
         </WaveHero>
-        <br/><br/>
-        <br/><br/>
         <BlubSection />
         <ContactForm />
         <CMSContextProvider limit={3} contentType={process.env.CONTENTFUL_PORTFOLIO_ID}>

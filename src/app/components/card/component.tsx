@@ -16,7 +16,8 @@ const Card: React.FC<{
     to: string
     featuredImage: string
     hardRoute?: boolean
-}> = ( { className, description, to, title, featuredImage, hardRoute } ) => {
+    showLink?: boolean
+}> = ( { className, description, to, title, featuredImage, hardRoute, showLink = true } ) => {
 
   const linkContent = ( <>
     <div className='card-image'>
@@ -28,7 +29,7 @@ const Card: React.FC<{
         <p>{description}</p>
       </div>
     </div>
-    <small className='read'>Read</small>
+    {showLink && <small className='read'>Read</small>}
   </> )
 
   return ( 

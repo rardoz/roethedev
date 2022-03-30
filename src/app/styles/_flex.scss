@@ -33,6 +33,10 @@
 .flex-grid {
   display: flex;
   flex-flow: row wrap;
+
+  &.gutters {
+    margin: spacer(-4);
+  }
 }
 
 .flex-column {
