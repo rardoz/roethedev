@@ -1,7 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
-import { faNpm } from '@fortawesome/free-brands-svg-icons/faNpm'
+import { faTwitch } from '@fortawesome/free-brands-svg-icons/faTwitch'
+import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons/faTwitterSquare'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin'
 import { faFile } from '@fortawesome/free-solid-svg-icons/faFile'
@@ -16,22 +17,28 @@ const SOCIAL_ICONS = [
     href: "https://github.com/rardoz"
   },
   {
-    icon: faNpm,
-    ariaLabel: "Link to npm",
-    title: "npm",
-    href: "https://www.npmjs.com/~rardoz"
+    icon: faTwitch,
+    ariaLabel: "Link to Twitch",
+    title: "Twitch",
+    href: "https://twitch.tv/roe_the_dev"
   },
   {
-    icon: faEnvelope,
-    ariaLabel: "Link to email",
-    title: "Email",
-    href: "mailto:robert@byrojo.com?subject=Hello Roe!"
+    icon: faTwitterSquare,
+    ariaLabel: "Link to Twitter",
+    title: "Twitter",
+    href: "https://twitter.com/roe_the_dev"
   },
   {
     icon: faLinkedin,
     ariaLabel: "Link to LinkedIn",
     title: "Linkedin",
     href: "https://linkedin.com/in/rardoz"
+  },
+  {
+    icon: faEnvelope,
+    ariaLabel: "Link to email",
+    title: "Email",
+    href: "mailto:robert@byrojo.com?subject=Hello Roe!"
   },
   {
     icon: faFile,
