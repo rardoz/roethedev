@@ -1,26 +1,30 @@
 import useFetch from 'use-http'
 
-export const useSubmitContactForm = ():{
-    onSubmit: ( formData: FormData ) => void, 
-    data?: Record<string, unknown>
-    loading?: boolean,
-    message?: string
+export const useSubmitContactForm = (): {
+  onSubmit: ( formData: FormData ) => void
+  data?: Record<string, unknown>
+  loading?: boolean
+  message?: string
 } => {
-  const {  post, response, loading, error } = useFetch( `${process.env.APP_API_BASE_URL}/v1/contact-form` )
+  const { post, response, loading, error } = useFetch( `${process.env.APP_API_BASE_URL}/v1/contact-form` )
 
-  const onSubmit =  ( formData: FormData ):void  => {
-    const data: Record<string, unknown>  = {}
+  const onSubmit = ( formData: FormData ): void => {
+    const data: Record<string, unknown> = {
+    }
     formData.forEach( ( value, key ) => {
-      data[ key ]  = value
+      data[ key ] = value
     } )
-    
+
     post( data )
   }
   return {
     onSubmit,
-    data: response.data || {},
+    data: response.data || {
+    },
     loading: loading,
-    message: 
-     error?.message  || ( !response.data?.success && response.data?.message ) ? "There was an error! Try again or email me directly at robert@byrojo.com." : response.data?.message
+    message:
+      error?.message || ( !response.data?.success && response.data?.message )
+        ? 'There was an error! Try again or email me directly at robert@byrojo.com.'
+        : response.data?.message,
   }
 }

@@ -1,19 +1,24 @@
-import React from "react"
-import { useLocation } from "react-router-dom"
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 
-import analytics from "../../analytics"
+import analytics from '../../analytics'
 
-const usePageView = ():void => {
+const usePageView = (): void => {
   const location = useLocation()
 
   React.useEffect( () => {
     analytics.init()
-  }, [] )
+  },
+  [
+  ] )
 
   React.useEffect( () => {
     const currentPath = location.pathname + location.search
     analytics.sendPageview( currentPath )
-  }, [ location ] )
+  },
+  [
+    location 
+  ] )
 }
 
 export default usePageView

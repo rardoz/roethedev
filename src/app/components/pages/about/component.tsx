@@ -11,22 +11,46 @@ import HelmetHead from '../../helmet-head'
 const AboutPage: React.FC = () => {
   return (
     <>
-      <Header /> 
-      <HelmetHead title="About Roe" description={`Download Roe's resume and learn a little more about his career.`}/>
+      <Header />
+      <HelmetHead
+        title='About Roe'
+        description={`Download Roe's resume and learn a little more about his career.`}
+      />
       <WaveContainer>
-        <h1 className='text-center'>About Roe</h1>
+        <h1
+          className='text-center'
+        >
+About Roe
+        </h1>
       </WaveContainer>
       <br />
-      <br /> 
+      <br />
       <Section>
-        <div className="flex-grid space-between">
-          <BigAvatar avatarImg={avatarImg} avatarImgAlt={avatarImgAlt} />
-          <ContentBlock className="col-5"  />
+        <div
+          className='flex-grid space-between'
+        >
+          <BigAvatar
+            avatarImg={avatarImg}
+            avatarImgAlt={avatarImgAlt}
+          />
+          <ContentBlock
+            className='col-5'
+          />
         </div>
-        <br/>
-        <br/>
-        <div className="d-flex flex-center app-link-container">
-          <a className='app-link' href="https://roe-files.s3.amazonaws.com/Roe-Greene-Resume.pdf" download><h2>Download my resume</h2></a>
+        <br />
+        <br />
+        <div
+          className='d-flex flex-center app-link-container'
+        >
+          <a
+            className='app-link'
+            href='https://roe-files.s3.amazonaws.com/Roe-Greene-Resume.pdf'
+            download
+          >
+            <h2>
+Download my resume
+            </h2>
+          </a>
         </div>
       </Section>
       <br />

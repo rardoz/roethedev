@@ -1,11 +1,7 @@
 import React, { Suspense } from 'react'
 import { render } from 'react-dom'
-import { HelmetProvider } from "react-helmet-async"
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom"
+import { HelmetProvider } from 'react-helmet-async'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HelmetHead from './components/helmet-head'
 import Layout from './components/layout'
 import Header from './components/layout/components/header'
@@ -18,21 +14,51 @@ const NotFoundPage = React.lazy( () => import( './components/pages/not-found' ) 
 const PortfolioPage = React.lazy( () => import( './components/pages/portfolio' ) )
 
 const Application: React.FC = () => {
-
-  return ( 
+  return (
     <HelmetProvider>
       <HelmetHead />
       <BrowserRouter>
         <Layout>
-          <Suspense fallback={<Header/>}>
+          <Suspense
+            fallback={<Header />}
+          >
             <Routes>
-              <Route index element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />}/>
-              <Route path="/blog" element={<BlogPage />}/> 
-              <Route path="/portfolio" element={<PortfolioPage />}/>
-              <Route path="/blog/:slug" element={<PostPage  contentType='blog' />} />
-              <Route path="/portfolio/:slug" element={<PostPage contentType='portfolio' />} />
-              <Route path="*" element={<NotFoundPage/>} />
+              <Route
+                index
+                element={<HomePage />}
+              />
+              <Route
+                path='/about'
+                element={<AboutPage />}
+              />
+              <Route
+                path='/blog'
+                element={<BlogPage />}
+              />
+              <Route
+                path='/portfolio'
+                element={<PortfolioPage />}
+              />
+              <Route
+                path='/blog/:slug'
+                element={
+                  <PostPage
+                    contentType='blog'
+                  />
+                }
+              />
+              <Route
+                path='/portfolio/:slug'
+                element={
+                  <PostPage
+                    contentType='portfolio'
+                  />
+                }
+              />
+              <Route
+                path='*'
+                element={<NotFoundPage />}
+              />
             </Routes>
           </Suspense>
         </Layout>
@@ -41,7 +67,8 @@ const Application: React.FC = () => {
   )
 }
 
-render( <Application />, document.getElementById( 'root' ) )
+render( <Application />,
+  document.getElementById( 'root' ) )
 
 if ( module.hot ) {
   module.hot.accept()

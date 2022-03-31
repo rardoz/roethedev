@@ -12,11 +12,17 @@ const HomePage: React.FC = () => {
       <Header />
       <div>
         <ContactForm />
-        <CMSContextProvider limit={3} contentType={process.env.CONTENTFUL_PORTFOLIO_ID}>
+        <CMSContextProvider
+          limit={3}
+          contentType={process.env.CONTENTFUL_PORTFOLIO_ID}
+        >
           <PortfolioFeed />
         </CMSContextProvider>
         <AboutSection />
-        <CMSContextProvider contentType='linkBank' limit={3}>
+        <CMSContextProvider
+          contentType='linkBank'
+          limit={3}
+        >
           <BlogFeed />
         </CMSContextProvider>
       </div>

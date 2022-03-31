@@ -3,13 +3,19 @@ import './styles.scss'
 
 const Textarea: React.FC = () => {
   return (
-    <div className='textarea'>
-      <label htmlFor="message-textarea">Write a message</label>
+    <div
+      className='textarea'
+    >
+      <label
+        htmlFor='message-textarea'
+      >
+Write a message
+      </label>
       <textarea
-        name="message"
-        id="message-textarea"
+        name='message'
+        id='message-textarea'
         className='textarea-input'
-        placeholder="Please tell me your needs. Be sure to include helpful details."
+        placeholder='Please tell me your needs. Be sure to include helpful details.'
       />
     </div>
   )

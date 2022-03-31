@@ -1,17 +1,19 @@
 {
-    "autoimport.autoComplete": true,
+    "autoimport.autoComplete": false,
     "eslint.enable": true,
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
     "editor.formatOnSave": true,
-    "prettier.enable": false,
     "typescript.format.enable": false,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
     "eslint.validate": [
-        "javascript"
+        "javascript",
+        "typescript",
+        "reacttypescript",
+        "reactjavascript"
     ],
     "files.associations": {
         "*.{jsx}": "javascriptreact",
