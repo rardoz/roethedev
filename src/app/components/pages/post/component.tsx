@@ -9,12 +9,21 @@ const PostPage: React.FC<{ contentType: ContentType }> = ( props ) => {
   const { slug } = useParams()
   return (
     <>
-      <Header forceInView />
-      {slug && (
-        <CMSContextProvider contentType={props.contentType} slug={slug}>
-          <PostContainer contentType={props.contentType} />
-        </CMSContextProvider>
-      )}
+      <Header
+        forceInView
+      />
+      {
+        slug && (
+          <CMSContextProvider
+            contentType={props.contentType}
+            slug={slug}
+          >
+            <PostContainer
+              contentType={props.contentType}
+            />
+          </CMSContextProvider>
+        )
+      }
     </>
   )
 }

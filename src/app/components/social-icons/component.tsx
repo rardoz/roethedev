@@ -51,19 +51,37 @@ const SOCIAL_ICONS = [
 
 const SocialIcons: React.FC<{ inverted?: boolean; className?: string }> = ( { inverted, className } ) => {
   const itemClassName = classnames( 'social-icon-item',
-    { inverted } )
+    {
+      inverted 
+    } )
   return (
     <>
-      {SOCIAL_ICONS.map( ( { icon, ariaLabel, title, href, download } ) => {
-        return (
-          <li className={classnames( itemClassName,
-            className )} key={title}>
-            <a title={title} href={href} aria-label={ariaLabel} target='_blank' download={download} rel="noreferrer">
-              <FontAwesomeIcon icon={icon} />
-            </a>
-          </li>
-        )
-      } )}
+      {
+        SOCIAL_ICONS.map( ( { icon, ariaLabel, title, href, download } ) => {
+          return (
+            <li
+              className={
+                classnames( itemClassName,
+                  className )
+              }
+              key={title}
+            >
+              <a
+                title={title}
+                href={href}
+                aria-label={ariaLabel}
+                target='_blank'
+                download={download}
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={icon}
+                />
+              </a>
+            </li>
+          )
+        } )
+      }
     </>
   )
 }

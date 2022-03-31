@@ -7,10 +7,18 @@ import HelmetHead from '../../helmet-head'
 const NotFoundPage: React.FC = () => {
   return (
     <>
-      <HelmetHead title='404 not found' description='Nothing to see here...' follow={false} />
+      <HelmetHead
+        title='404 not found'
+        description='Nothing to see here...'
+        follow={false}
+      />
       <Header />
       <WaveHero>
-        <WaveHeroTitle title1='404' title2='not' title3='found' />
+        <WaveHeroTitle
+          title1='404'
+          title2='not'
+          title3='found'
+        />
       </WaveHero>
     </>
   )

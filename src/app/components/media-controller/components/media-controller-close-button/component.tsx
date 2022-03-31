@@ -5,29 +5,41 @@ import './styles.scss'
 import { useMediaControllerToggled } from '../../context'
 
 const MediaControllerCloseButton: React.FC = () => {
-  const [ toggled,
-    setToggled ] = useMediaControllerToggled()
+  const [
+    toggled,
+    setToggled 
+  ] = useMediaControllerToggled()
   const closeButtonRef = useRef() as React.RefObject<HTMLButtonElement>
   return (
-    <div className='d-flex flex-end media-controller-close-button'>
-      {toggled && (
-        <div
-          tabIndex={0}
-          onFocus={( e ) => {
-            e.preventDefault()
-            closeButtonRef.current?.focus()
-          }}
-        />
-      )}
+    <div
+      className='d-flex flex-end media-controller-close-button'
+    >
+      {
+        toggled && (
+          <div
+            tabIndex={0}
+            onFocus={
+              ( e ) => {
+                e.preventDefault()
+                closeButtonRef.current?.focus()
+              }
+            }
+          />
+        )
+      }
 
       <button
         ref={closeButtonRef}
         aria-label='close modal'
-        onClick={() => {
-          setToggled( false )
-        }}
+        onClick={
+          () => {
+            setToggled( false )
+          }
+        }
       >
-        <FontAwesomeIcon icon={faXmark} />
+        <FontAwesomeIcon
+          icon={faXmark}
+        />
       </button>
     </div>
   )

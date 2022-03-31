@@ -6,7 +6,9 @@ const WaveHero: React.FC = ( { children } ) => {
   return (
     <div>
       <WaveContainer>
-        <Section>{children}</Section>
+        <Section>
+          {children}
+        </Section>
       </WaveContainer>
     </div>
   )

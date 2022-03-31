@@ -13,20 +13,83 @@ const HelmetHead: React.FC<HelmetProps & HelmetHeadProps> = ( {
 } ) => {
   return (
     <Helmet>
-      {title && <title>{title}</title>}
-      <meta name='robots' content={follow ? 'index,follow' : 'noindex'} />
-      {title && <meta property='og:title' content={title} />}
-      {description && <meta property='og:description' name='description' content={description} />}
-      {keywords && <meta name='keywords' content={keywords} />}
-      {ogType && <meta property='og:type' content={ogType} />}
-      {image && <meta property='og:image' name='image' content={image} />}
-      {description && <meta property='twitter:description' content={description} />}
-      {title && <meta name='twitter:title' content={title} />}
-      {description && <meta name='twitter:description' content={description} />}
-      {image && <meta name='twitter:image' content={image} />}
-      <meta name='twitter:card' content='summary' />
-      <meta name='author' content='Roe Greene' />
-      <meta name='copyright' content='Copyright 2022' />
+      {
+        title && <title>
+          {title}
+        </title>
+      }
+      <meta
+        name='robots'
+        content={follow ? 'index,follow' : 'noindex'}
+      />
+      {
+        title && <meta
+          property='og:title'
+          content={title}
+        />
+      }
+      {
+        description && <meta
+          property='og:description'
+          name='description'
+          content={description}
+        />
+      }
+      {
+        keywords && <meta
+          name='keywords'
+          content={keywords}
+        />
+      }
+      {
+        ogType && <meta
+          property='og:type'
+          content={ogType}
+        />
+      }
+      {
+        image && <meta
+          property='og:image'
+          name='image'
+          content={image}
+        />
+      }
+      {
+        description && <meta
+          property='twitter:description'
+          content={description}
+        />
+      }
+      {
+        title && <meta
+          name='twitter:title'
+          content={title}
+        />
+      }
+      {
+        description && <meta
+          name='twitter:description'
+          content={description}
+        />
+      }
+      {
+        image && <meta
+          name='twitter:image'
+          content={image}
+        />
+      }
+      <meta
+        name='twitter:card'
+        content='summary'
+      />
+      <meta
+        name='author'
+        content='Roe Greene'
+      />
+      <meta
+        name='copyright'
+        content='Copyright 2022'
+      />
       {children}
     </Helmet>
   )

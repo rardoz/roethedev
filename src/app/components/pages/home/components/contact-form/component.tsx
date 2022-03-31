@@ -18,14 +18,28 @@ const ContactForm: React.FC = () => {
       form.current.reset()
     }
   },
-  [ data?.success ] )
+  [
+    data?.success 
+  ] )
   return (
-    <WaveContainer className='contact-form'>
-      <Section className='contact-form-section'>
+    <WaveContainer
+      className='contact-form'
+    >
+      <Section
+        className='contact-form-section'
+      >
         <SectionTitle>
-          <span className='flex-center row text-break-space'>
-            <span>I'm here</span>
-            <span> to help </span>
+          <span
+            className='flex-center row text-break-space'
+          >
+            <span>
+I'm here
+            </span>
+            <span>
+              {' '}
+to help
+              {' '}
+            </span>
           </span>
         </SectionTitle>
         {/* Contact form is a route to a lambda */}
@@ -34,29 +48,62 @@ const ContactForm: React.FC = () => {
           aria-disabled={loading ? 'true' : 'false'}
           action='/contact-form'
           method='POST'
-          onSubmit={( e ) => {
-            onSubmit( new FormData( e.currentTarget ) )
-            e.preventDefault()
-          }}
+          onSubmit={
+            ( e ) => {
+              onSubmit( new FormData( e.currentTarget ) )
+              e.preventDefault()
+            }
+          }
         >
-          <div className='row contact-form-first-row'>
-            <div className='col-3'>
-              <RadioFieldset options={SERVICES_OPTIONS} title='Select services' />
+          <div
+            className='row contact-form-first-row'
+          >
+            <div
+              className='col-3'
+            >
+              <RadioFieldset
+                options={SERVICES_OPTIONS}
+                title='Select services'
+              />
             </div>
-            <div className='col-7'>
+            <div
+              className='col-7'
+            >
               <Textarea />
             </div>
           </div>
-          <div className='row contact-form-name-row'>
-            <div className='col-4'>
-              <TextInput title='Name' name='name' id='name-field' type='name' required />
+          <div
+            className='row contact-form-name-row'
+          >
+            <div
+              className='col-4'
+            >
+              <TextInput
+                title='Name'
+                name='name'
+                id='name-field'
+                type='name'
+                required
+              />
             </div>
-            <div className='col-spacer' />
-            <div className='col-4'>
-              <TextInput title='Email' name='email' id='email-field' type='email' required />
+            <div
+              className='col-spacer'
+            />
+            <div
+              className='col-4'
+            >
+              <TextInput
+                title='Email'
+                name='email'
+                id='email-field'
+                type='email'
+                required
+              />
             </div>
           </div>
-          <div className='row'>
+          <div
+            className='row'
+          >
             <TextInput
               disabled={loading || ( data?.success as boolean )}
               value={loading ? 'Sending' : data?.success ? 'The message was sent' : 'Send to Roe'}
@@ -66,7 +113,14 @@ const ContactForm: React.FC = () => {
               required
             />
           </div>
-          <p className='form-message' style={{ visibility: message ? 'visible' : 'hidden' }}>
+          <p
+            className='form-message'
+            style={
+              {
+                visibility: message ? 'visible' : 'hidden' 
+              }
+            }
+          >
             {message}
           </p>
         </form>

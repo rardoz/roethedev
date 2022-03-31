@@ -8,9 +8,16 @@ const WaveContainer: React.FC<JSX.IntrinsicElements['div'] & { type?: 'bottom' }
   ...props
 } ) => {
   return (
-    <div className={classnames( 'wave-container',
-      className,
-      { 'wave-bottom': type === 'bottom' } )} {...props}>
+    <div
+      className={
+        classnames( 'wave-container',
+          className,
+          {
+            'wave-bottom': type === 'bottom' 
+          } )
+      }
+      {...props}
+    >
       {children}
     </div>
   )

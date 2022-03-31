@@ -19,31 +19,64 @@ const Card: React.FC<{
 }> = ( { className, description, to, title, featuredImage, hardRoute } ) => {
   const linkContent = (
     <>
-      <div className='card-image'>
-        <LazyImage imgSrc={featuredImage} />
+      <div
+        className='card-image'
+      >
+        <LazyImage
+          imgSrc={featuredImage}
+        />
       </div>
-      <div className='card-content'>
-        <h3 className='clamp-title'>{title}</h3>
-        <div className='clamp-content'>
-          <p>{description}</p>
+      <div
+        className='card-content'
+      >
+        <h3
+          className='clamp-title'
+        >
+          {title}
+        </h3>
+        <div
+          className='clamp-content'
+        >
+          <p>
+            {description}
+          </p>
         </div>
       </div>
-      <small className='read'>Read</small>
+      <small
+        className='read'
+      >
+Read
+      </small>
     </>
   )
 
   return (
-    <div className={classnames( 'card',
-      className )}>
-      {hardRoute ? (
-        <a {...commonProps} href={to} target='_blank'>
-          {linkContent}
-        </a>
-      ) : (
-        <Link to={to} tabIndex={1} className='card-link-wrapper'>
-          {linkContent}
-        </Link>
-      )}
+    <div
+      className={
+        classnames( 'card',
+          className )
+      }
+    >
+      {
+        hardRoute ? (
+          <a
+            {...commonProps}
+            href={to}
+            target='_blank'
+            rel="noreferrer"
+          >
+            {linkContent}
+          </a>
+        ) : (
+          <Link
+            to={to}
+            tabIndex={1}
+            className='card-link-wrapper'
+          >
+            {linkContent}
+          </Link>
+        )
+      }
     </div>
   )
 }

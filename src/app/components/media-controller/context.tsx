@@ -7,7 +7,9 @@ interface MediaControllerContextState {
 }
 
 const DEFAULT_STATE: MediaControllerContextState = {
-  state: { toggled: false },
+  state: {
+    toggled: false 
+  },
   dispatch: {
     setToggled: ( value: React.SetStateAction<boolean> ) => {
       console.warn( 'No dispatch set for header context. Value is: ',
@@ -20,8 +22,10 @@ const context = createContext( DEFAULT_STATE )
 const { Provider } = context
 
 export const MediaControllerContextProvider: React.FC = ( { children } ) => {
-  const [ toggled,
-    setToggled ] = useLockScroll( false )
+  const [
+    toggled,
+    setToggled 
+  ] = useLockScroll( false )
 
   useEffect( () => {
     if ( toggled ) {
@@ -41,9 +45,25 @@ export const MediaControllerContextProvider: React.FC = ( { children } ) => {
       }
     }
   },
-  [ toggled, setToggled ] )
+  [
+    toggled,
+    setToggled 
+  ] )
 
-  return <Provider value={{ state: { toggled }, dispatch: { setToggled } }}>{children}</Provider>
+  return ( <Provider
+    value={
+      {
+        state: {
+          toggled 
+        },
+        dispatch: {
+          setToggled 
+        } 
+      }
+    }
+  >
+    {children}
+  </Provider> )
 }
 
 export const useMediaControllerToggled = (): [boolean, MediaControllerContextState['dispatch']['setToggled']] => {
@@ -52,7 +72,10 @@ export const useMediaControllerToggled = (): [boolean, MediaControllerContextSta
     dispatch: { setToggled },
   } = useContext( context )
 
-  return [ toggled, setToggled ]
+  return [
+    toggled,
+    setToggled 
+  ]
 }
 
 export default context

@@ -15,10 +15,14 @@ import dayjs from 'dayjs'
 const PostContainer: React.FC<{ contentType: ContentType }> = ( { contentType } ) => {
   const postRecord = useContext( cMSContext )
   const { slug } = useParams()
-  const record = postRecord.items ? postRecord.items.find( ( item ) => item.slug === slug ) || {} : {}
+  const record = postRecord.items ? postRecord.items.find( ( item ) => item.slug === slug ) || {
+  } : {
+  }
 
   const innerNodes = record.content ? (
-    <Section className='post-content-section'>
+    <Section
+      className='post-content-section'
+    >
       <HelmetHead
         title={`${record.title} | ${contentType.charAt( 0 ).toUpperCase() + contentType.slice( 1 )}` || 'Roe the Dev'}
         description={record.description}
@@ -27,54 +31,88 @@ const PostContainer: React.FC<{ contentType: ContentType }> = ( { contentType } 
         image={record.socialPhoto?.url || record.featuredImage?.url}
       />
       <article>
-        {<ContentfulToReact content={record.content} />}
-        {contentType === 'blog' && (
-          <div className='article-footer'>
-            <p>Written by Roe Greene</p>
-            <p>Last updated on {dayjs( record.dateUpdated ).format( 'MMMM DD, YYYY @ hh:mm A' )}</p>
-          </div>
-        )}
+        {
+          <ContentfulToReact
+            content={record.content}
+          />
+        }
+        {
+          contentType === 'blog' && (
+            <div
+              className='article-footer'
+            >
+              <p>
+Written by Roe Greene
+              </p>
+              <p>
+Last updated on
+                {dayjs( record.dateUpdated ).format( 'MMMM DD, YYYY @ hh:mm A' )}
+              </p>
+            </div>
+          )
+        }
       </article>
       <SectionTitle />
       <DiscussionEmbed
         shortname={`${process.env.DISQUS_SHORTNAME}`}
-        config={{
-          url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
-          identifier: `${contentType}-${record.slug}`,
-          title: record.title,
-          language: 'us_EN',
-          categoryID: contentType,
-        }}
+        config={
+          {
+            url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
+            identifier: `${contentType}-${record.slug}`,
+            title: record.title,
+            language: 'us_EN',
+            categoryID: contentType,
+          }
+        }
       />
     </Section>
   ) : postRecord.items ? (
     <Section>
-      <SectionTitle>Post not found</SectionTitle>
-      <p className='text-center'>Sorry the page you are looking for no longer exists.</p>
-      <HelmetHead title='Post not found' follow={false} />
+      <SectionTitle>
+Post not found
+      </SectionTitle>
+      <p
+        className='text-center'
+      >
+Sorry the page you are looking for no longer exists.
+      </p>
+      <HelmetHead
+        title='Post not found'
+        follow={false}
+      />
     </Section>
   ) : (
-    <>...</>
+    <>
+...
+    </>
   )
 
   return (
     <>
-      <WaveHeroWithImage src={record.blogPhoto?.url} title={record.title} description={record.description}>
-        {record.video?.url && (
-          <MediaController>
-            <div className='video-container'>
-              <video
-                autoPlay
-                width={record.video?.width}
-                height={record.video?.height}
-                controls
-                src={record.video?.url}
+      <WaveHeroWithImage
+        src={record.blogPhoto?.url}
+        title={record.title}
+        description={record.description}
+      >
+        {
+          record.video?.url && (
+            <MediaController>
+              <div
+                className='video-container'
               >
+                <video
+                  autoPlay
+                  width={record.video?.width}
+                  height={record.video?.height}
+                  controls
+                  src={record.video?.url}
+                >
                 Your browser does not support the video tag.
-              </video>
-            </div>
-          </MediaController>
-        )}
+                </video>
+              </div>
+            </MediaController>
+          )
+        }
       </WaveHeroWithImage>
       {innerNodes}
     </>

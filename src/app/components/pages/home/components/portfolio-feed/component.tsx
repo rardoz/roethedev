@@ -14,31 +14,50 @@ const PortfolioFeed: React.FC<{
   const { items } = useContext( cmsContext )
   return (
     <>
-      <Section className={classNames( 'section-wider',
-        'portfolio-feed',
-        className )}>
-        {enableTitle && <SectionTitle>Portfolio</SectionTitle>}
-        <div className='flex-grid'>
-          {items?.map( ( article ) => {
-            return (
-              <Card
-                className='flex-grid-item'
-                key={article.slug}
-                description={article.description || ''}
-                title={article.title || ''}
-                to={`/portfolio/${article.slug}`}
-                featuredImage={article.featuredImage?.url || ''}
-              />
-            )
-          } )}
+      <Section
+        className={
+          classNames( 'section-wider',
+            'portfolio-feed',
+            className )
+        }
+      >
+        {
+          enableTitle && <SectionTitle>
+Portfolio
+          </SectionTitle>
+        }
+        <div
+          className='flex-grid'
+        >
+          {
+            items?.map( ( article ) => {
+              return (
+                <Card
+                  className='flex-grid-item'
+                  key={article.slug}
+                  description={article.description || ''}
+                  title={article.title || ''}
+                  to={`/portfolio/${article.slug}`}
+                  featuredImage={article.featuredImage?.url || ''}
+                />
+              )
+            } )
+          }
         </div>
-        {linkEnabled && (
-          <p className='text-right'>
-            <AppLink to='/portfolio' className='app-link-lg'>
+        {
+          linkEnabled && (
+            <p
+              className='text-right'
+            >
+              <AppLink
+                to='/portfolio'
+                className='app-link-lg'
+              >
               See portfolio
-            </AppLink>
-          </p>
-        )}
+              </AppLink>
+            </p>
+          )
+        }
       </Section>
     </>
   )

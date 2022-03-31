@@ -3,8 +3,14 @@ import './styles.scss'
 
 const Textarea: React.FC = () => {
   return (
-    <div className='textarea'>
-      <label htmlFor='message-textarea'>Write a message</label>
+    <div
+      className='textarea'
+    >
+      <label
+        htmlFor='message-textarea'
+      >
+Write a message
+      </label>
       <textarea
         name='message'
         id='message-textarea'

@@ -11,14 +11,30 @@ import AppLink from '../../../../app-link'
 
 const AboutSection: React.FC = () => {
   return (
-    <WaveContainer className='about-section'>
+    <WaveContainer
+      className='about-section'
+    >
       <Section>
-        <SectionTitle>About Roe</SectionTitle>
-        <div className='flex-grid space-between'>
-          <BigAvatar avatarImg={avatarImg} avatarImgAlt={avatarImgAlt} />
-          <ContentBlock className='col-5'>
-            <div className='d-flex flex-end app-link-container'>
-              <AppLink to='/about' inverted>
+        <SectionTitle>
+About Roe
+        </SectionTitle>
+        <div
+          className='flex-grid space-between'
+        >
+          <BigAvatar
+            avatarImg={avatarImg}
+            avatarImgAlt={avatarImgAlt}
+          />
+          <ContentBlock
+            className='col-5'
+          >
+            <div
+              className='d-flex flex-end app-link-container'
+            >
+              <AppLink
+                to='/about'
+                inverted
+              >
                 Learn more
               </AppLink>
             </div>

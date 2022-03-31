@@ -8,7 +8,9 @@ interface HeaderContextState {
 }
 
 const DEFAULT_STATE: HeaderContextState = {
-  state: { toggled: false },
+  state: {
+    toggled: false 
+  },
   dispatch: {
     setToggled: ( value: React.SetStateAction<boolean> ) => {
       console.warn( 'No dispatch set for header context. Value is: ',
@@ -21,15 +23,20 @@ const context = createContext( DEFAULT_STATE )
 const { Provider } = context
 
 export const HeaderContext: React.FC = ( { children } ) => {
-  const [ toggled,
-    setToggled ] = useLockScroll( false )
+  const [
+    toggled,
+    setToggled 
+  ] = useLockScroll( false )
 
   const onResize = useCallback( () => {
     if ( toggled ) {
       setToggled( parseFloat( getComputedStyle( document.body ).width ) < 1200 )
     }
   },
-  [ toggled, setToggled ] )
+  [
+    toggled,
+    setToggled 
+  ] )
 
   useEffect( () => {
     if ( toggled ) {
@@ -49,10 +56,31 @@ export const HeaderContext: React.FC = ( { children } ) => {
       }
     }
   },
-  [ toggled, setToggled ] )
+  [
+    toggled,
+    setToggled 
+  ] )
 
-  useResizeDetector( { onResize, handleHeight: false, handleWidth: true, targetRef: useRef( document.body ) } )
-  return <Provider value={{ state: { toggled }, dispatch: { setToggled } }}>{children}</Provider>
+  useResizeDetector( {
+    onResize,
+    handleHeight: false,
+    handleWidth: true,
+    targetRef: useRef( document.body ) 
+  } )
+  return ( <Provider
+    value={
+      {
+        state: {
+          toggled 
+        },
+        dispatch: {
+          setToggled 
+        } 
+      }
+    }
+  >
+    {children}
+  </Provider> )
 }
 
 export const useHeaderToggled = (): [boolean, HeaderContextState['dispatch']['setToggled']] => {
@@ -61,7 +89,10 @@ export const useHeaderToggled = (): [boolean, HeaderContextState['dispatch']['se
     dispatch: { setToggled },
   } = useContext( context )
 
-  return [ toggled, setToggled ]
+  return [
+    toggled,
+    setToggled 
+  ]
 }
 
 export default context

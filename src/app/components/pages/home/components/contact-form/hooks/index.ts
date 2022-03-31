@@ -9,7 +9,8 @@ export const useSubmitContactForm = (): {
   const { post, response, loading, error } = useFetch( `${process.env.APP_API_BASE_URL}/v1/contact-form` )
 
   const onSubmit = ( formData: FormData ): void => {
-    const data: Record<string, unknown> = {}
+    const data: Record<string, unknown> = {
+    }
     formData.forEach( ( value, key ) => {
       data[ key ] = value
     } )
@@ -18,7 +19,8 @@ export const useSubmitContactForm = (): {
   }
   return {
     onSubmit,
-    data: response.data || {},
+    data: response.data || {
+    },
     loading: loading,
     message:
       error?.message || ( !response.data?.success && response.data?.message )

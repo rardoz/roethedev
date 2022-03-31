@@ -7,11 +7,21 @@ const RadioField: React.FC<{
   title: string
 }> = ( { options, title } ) => {
   return (
-    <fieldset name='services[]' className='radio-fieldset'>
-      <legend>{title}</legend>
-      {options.map( ( option ) => (
-        <RadioInput {...option} key={option.name} />
-      ) )}
+    <fieldset
+      name='services[]'
+      className='radio-fieldset'
+    >
+      <legend>
+        {title}
+      </legend>
+      {
+        options.map( ( option ) => (
+          <RadioInput
+            {...option}
+            key={option.name}
+          />
+        ) )
+      }
     </fieldset>
   )
 }

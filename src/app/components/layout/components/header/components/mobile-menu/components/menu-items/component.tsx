@@ -3,19 +3,33 @@ import AppLink from '../../../../../../../app-link'
 import './styles.scss'
 const MenuItems: React.FC = () => {
   return (
-    <ul className='mobile-menu-items'>
+    <ul
+      className='mobile-menu-items'
+    >
       <li>
-        <AppLink to='/portfolio' inverted size='xxl'>
+        <AppLink
+          to='/portfolio'
+          inverted
+          size='xxl'
+        >
           Portfolio
         </AppLink>
       </li>
       <li>
-        <AppLink to='/blog' inverted size='xxl'>
+        <AppLink
+          to='/blog'
+          inverted
+          size='xxl'
+        >
           Blog
         </AppLink>
       </li>
       <li>
-        <AppLink to='/about' inverted size='xxl'>
+        <AppLink
+          to='/about'
+          inverted
+          size='xxl'
+        >
           About Roe
         </AppLink>
       </li>

@@ -7,9 +7,17 @@ const BigAvatar: React.FC<{
   avatarImgAlt?: string
 }> = ( { avatarImg, avatarImgAlt } ) => {
   return (
-    <div className='big-avatar'>
-      <LazyImage imgSrc={avatarImg} />
-      {avatarImgAlt && <LazyImage imgSrc={avatarImgAlt} />}
+    <div
+      className='big-avatar'
+    >
+      <LazyImage
+        imgSrc={avatarImg}
+      />
+      {
+        avatarImgAlt && <LazyImage
+          imgSrc={avatarImgAlt}
+        />
+      }
     </div>
   )
 }

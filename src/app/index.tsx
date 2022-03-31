@@ -19,15 +19,46 @@ const Application: React.FC = () => {
       <HelmetHead />
       <BrowserRouter>
         <Layout>
-          <Suspense fallback={<Header />}>
+          <Suspense
+            fallback={<Header />}
+          >
             <Routes>
-              <Route index element={<HomePage />} />
-              <Route path='/about' element={<AboutPage />} />
-              <Route path='/blog' element={<BlogPage />} />
-              <Route path='/portfolio' element={<PortfolioPage />} />
-              <Route path='/blog/:slug' element={<PostPage contentType='blog' />} />
-              <Route path='/portfolio/:slug' element={<PostPage contentType='portfolio' />} />
-              <Route path='*' element={<NotFoundPage />} />
+              <Route
+                index
+                element={<HomePage />}
+              />
+              <Route
+                path='/about'
+                element={<AboutPage />}
+              />
+              <Route
+                path='/blog'
+                element={<BlogPage />}
+              />
+              <Route
+                path='/portfolio'
+                element={<PortfolioPage />}
+              />
+              <Route
+                path='/blog/:slug'
+                element={
+                  <PostPage
+                    contentType='blog'
+                  />
+                }
+              />
+              <Route
+                path='/portfolio/:slug'
+                element={
+                  <PostPage
+                    contentType='portfolio'
+                  />
+                }
+              />
+              <Route
+                path='*'
+                element={<NotFoundPage />}
+              />
             </Routes>
           </Suspense>
         </Layout>

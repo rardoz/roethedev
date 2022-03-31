@@ -16,4 +16,6 @@ Object.keys( tokens ).forEach( ( key ) => {
 
 fs.writeFileSync( htmlPath,
   data,
-  { encoding: 'utf-8' } )
+  {
+    encoding: 'utf-8' 
+  } )

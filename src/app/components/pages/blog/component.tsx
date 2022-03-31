@@ -12,14 +12,30 @@ const BlogPage: React.FC = () => {
     <>
       <HelmetHead
         title='From my desk | Blog'
-        description='From by desk is my nerdy blog. I talk about art, tech, and my opinions as well as share tutorials and videos.'
+        description={
+          `From by desk is my nerdy blog.
+          I talk about art, tech, and my
+          opinions as well as share tutorials
+          and videos.`
+        }
       />
       <Header />
       <WaveHero>
-        <WaveHeroTitle title1='From' title2='my' title3='desk' />
+        <WaveHeroTitle
+          title1='From'
+          title2='my'
+          title3='desk'
+        />
       </WaveHero>
-      <CMSContextProvider limit={20} contentType={process.env.CONTENTFUL_BLOG_ID}>
-        <BlogFeed className='blog-page-blog-feed' linkEnabled={false} enableTitle={false} />
+      <CMSContextProvider
+        limit={20}
+        contentType={process.env.CONTENTFUL_BLOG_ID}
+      >
+        <BlogFeed
+          className='blog-page-blog-feed'
+          linkEnabled={false}
+          enableTitle={false}
+        />
       </CMSContextProvider>
     </>
   )

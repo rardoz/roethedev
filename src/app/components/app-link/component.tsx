@@ -11,10 +11,14 @@ const AppLink: React.FC<
 > = ( { className, size, inverted, ...props } ) => {
   return (
     <Link
-      className={classnames( className,
-        'app-link',
-        size === 'xxl' ? 'app-link-xxl' : false,
-        { inverted } )}
+      className={
+        classnames( className,
+          'app-link',
+          size === 'xxl' ? 'app-link-xxl' : false,
+          {
+            inverted 
+          } )
+      }
       {...props}
     />
   )

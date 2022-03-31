@@ -9,13 +9,16 @@ const usePageView = (): void => {
   React.useEffect( () => {
     analytics.init()
   },
-  [] )
+  [
+  ] )
 
   React.useEffect( () => {
     const currentPath = location.pathname + location.search
     analytics.sendPageview( currentPath )
   },
-  [ location ] )
+  [
+    location 
+  ] )
 }
 
 export default usePageView

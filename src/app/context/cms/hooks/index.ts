@@ -19,7 +19,8 @@ const getClient = (): contentful.ContentfulClientApi => {
 }
 
 const normalizeData = ( items: contentful.Entry<BlogField>[] ): NormalizedBlogData[] => {
-  const normalizedFields: NormalizedBlogData[] = []
+  const normalizedFields: NormalizedBlogData[] = [
+  ]
   items.forEach( ( { fields: fieldRow, sys: { createdAt, updatedAt } } ) => {
     // todo make this not hurt my heart to look at
     normalizedFields.push( {
@@ -85,8 +86,11 @@ export const useEntries = ( {
   order?: string
   slug?: string
 } ): NormalizedBlogState => {
-  const [ blogs,
-    setBlogs ] = useState( {} as NormalizedBlogState )
+  const [
+    blogs,
+    setBlogs 
+  ] = useState( {
+  } as NormalizedBlogState )
 
   useMemo( () => {
     const queryData: Record<string, unknown> = {
@@ -110,6 +114,12 @@ export const useEntries = ( {
         console.warn( 'got data' )
       } )
   },
-  [ limit, skip, contentType, order, slug ] )
+  [
+    limit,
+    skip,
+    contentType,
+    order,
+    slug 
+  ] )
   return blogs
 }

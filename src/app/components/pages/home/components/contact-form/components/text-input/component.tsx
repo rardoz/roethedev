@@ -12,8 +12,14 @@ const TextInput: React.FC<{
   disabled?: boolean
 }> = ( { name, title, id, type, required, placeholder, value, disabled } ) => {
   return (
-    <div className='text-input'>
-      <label htmlFor={id}>{title}</label>
+    <div
+      className='text-input'
+    >
+      <label
+        htmlFor={id}
+      >
+        {title}
+      </label>
       <input
         disabled={disabled}
         value={value}

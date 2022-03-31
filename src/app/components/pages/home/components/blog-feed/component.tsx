@@ -15,32 +15,51 @@ const BlogFeed: React.FC<{
   const { items } = useContext( cmsContext )
   return (
     <>
-      <Section className={classNames( 'section-wider',
-        'blog-feed',
-        className )}>
-        {enableTitle && <SectionTitle>From my desk</SectionTitle>}
-        <div className='flex-grid'>
-          {items?.map( ( article ) => {
-            return (
-              <Card
-                className='flex-grid-item'
-                key={article.slug}
-                description={article.description || ''}
-                title={article.title || ''}
-                to={article.hardRoute ? `${article.slug}` : `/blog/${article.slug}`}
-                hardRoute={article.hardRoute}
-                featuredImage={article.featuredImage?.url || ''}
-              />
-            )
-          } )}
+      <Section
+        className={
+          classNames( 'section-wider',
+            'blog-feed',
+            className )
+        }
+      >
+        {
+          enableTitle && <SectionTitle>
+From my desk
+          </SectionTitle>
+        }
+        <div
+          className='flex-grid'
+        >
+          {
+            items?.map( ( article ) => {
+              return (
+                <Card
+                  className='flex-grid-item'
+                  key={article.slug}
+                  description={article.description || ''}
+                  title={article.title || ''}
+                  to={article.hardRoute ? `${article.slug}` : `/blog/${article.slug}`}
+                  hardRoute={article.hardRoute}
+                  featuredImage={article.featuredImage?.url || ''}
+                />
+              )
+            } )
+          }
         </div>
-        {linkEnabled && (
-          <p className='text-right'>
-            <AppLink to='/blog' className='app-link-lg'>
+        {
+          linkEnabled && (
+            <p
+              className='text-right'
+            >
+              <AppLink
+                to='/blog'
+                className='app-link-lg'
+              >
               See blog
-            </AppLink>
-          </p>
-        )}
+              </AppLink>
+            </p>
+          )
+        }
       </Section>
     </>
   )

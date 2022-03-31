@@ -6,7 +6,10 @@ const { Readable } = require( 'stream' )
 const contentful = require( 'contentful' )
 const fs = require( 'fs' )
 const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID, HOST_NAME } = env.config().parsed
-const BLACKLIST = [ '*', '/404' ]
+const BLACKLIST = [
+  '*',
+  '/404' 
+]
 
 const contentfulClient = contentful.createClient( {
   accessToken: CONTENTFUL_ACCESS_TOKEN,
@@ -18,7 +21,8 @@ const options = {
 }
 
 const createSitemap = async ( { urls, category, changefreq, priority, lastmod } ) => {
-  let links = []
+  let links = [
+  ]
   if ( category === 'page' || category === 'sitemap' ) {
     links = urls.map( ( url ) => {
       return {
@@ -71,21 +75,25 @@ fs.readFile( './src/app/index.tsx',
       category: 'page',
       changefreq: 'daily',
       priority: 1,
-      urls: [ '/' ],
+      urls: [
+        '/' 
+      ],
     }
 
     const blogUrls = {
       category: 'blog',
       changefreq: 'monthly',
       priority: 0.3,
-      urls: [],
+      urls: [
+      ],
     }
 
     const portfolioUrls = {
       category: 'portfolio',
       changefreq: 'weekly',
       priority: 0.5,
-      urls: [],
+      urls: [
+      ],
     }
 
     const mainSitemapUrls = {
