@@ -16,7 +16,7 @@ module.exports = {
   ],
   extends: [
     'eslint:recommended',
-    "plugin:react/recommended",
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier' 
   ],
@@ -94,8 +94,8 @@ module.exports = {
       },
     ],
     'array-bracket-newline': [
-      "error",
-      "always" 
+      'error',
+      'always' 
     ],
     'array-element-newline': [
       'error',
@@ -107,71 +107,79 @@ module.exports = {
       },
     ],
     'function-call-argument-newline': [
-      "error",
-      "always" 
+      'error',
+      'always' 
     ],
-    "react/jsx-max-props-per-line": [
+    'react/jsx-max-props-per-line': [
       'error',
       {
-        "maximum": {
-          "single": 1,
-          "multi": 1 
+        'maximum': {
+          'single': 1,
+          'multi': 1 
         } 
       } 
     ],
-    "react/jsx-curly-newline": [
+    'react/jsx-curly-newline': [
       'error',
       {
-        multiline: "require",
-        singleline: "consistent" 
+        multiline: 'require',
+        singleline: 'consistent' 
       } 
     ],
-    "react/jsx-one-expression-per-line": [
-      "error",
+    'react/jsx-one-expression-per-line': [
+      'error',
       {
-        "allow": "none" 
+        'allow': 'none' 
       } 
     ],
-    "react/jsx-props-no-multi-spaces": "error",
-    "react/jsx-wrap-multilines": [
-      "error",
+    'react/jsx-props-no-multi-spaces': 'error',
+    'react/jsx-wrap-multilines': [
+      'error',
       {
-        declaration: "parens-new-line" 
+        declaration: 'parens-new-line' 
       } 
     ],
-    "react/jsx-tag-spacing": [
-      "error",
+    'react/jsx-tag-spacing': [
+      'error',
       {
-        "closingSlash": "never",
-        "beforeSelfClosing": "always",
-        "afterOpening": "never",
-        "beforeClosing": "never"
+        'closingSlash': 'never',
+        'beforeSelfClosing': 'always',
+        'afterOpening': 'never',
+        'beforeClosing': 'never'
       }
     ],
-    "react/jsx-closing-bracket-location": [
-      "error",
+    'react/jsx-closing-bracket-location': [
+      'error',
       'line-aligned' 
     ],
-    "react/jsx-first-prop-new-line": [
-      "error",
-      "always" 
+    'react/jsx-first-prop-new-line': [
+      'error',
+      'always' 
     ],
     'object-property-newline':[
-      "error",
+      'error',
       {
-        "allowAllPropertiesOnSameLine": false 
+        'allowAllPropertiesOnSameLine': false 
       } 
     ],
-    "object-curly-newline": [
-      "error",
+    'object-curly-newline': [
+      'error',
       {
-        "ObjectExpression": "always",
-        "ObjectPattern": {
-          "multiline": true 
+        'ObjectExpression': 'always',
+        'ObjectPattern': {
+          'multiline': true 
         }
       } 
     ],
-    "react/no-unescaped-entities": "off",
+    'react/no-unescaped-entities': 'off',
+    'quotes': [
+      'error',
+      'single',
+      {
+        'avoidEscape': true,
+        'allowTemplateLiterals': true
+      } 
+    ]
   },
   settings: {
     'import/resolver': {

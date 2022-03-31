@@ -53,8 +53,10 @@ Read
   return (
     <div
       className={
-        classnames( 'card',
-          className )
+        classnames( 
+          'card',
+          className 
+        )
       }
     >
       {
