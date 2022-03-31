@@ -10,14 +10,23 @@ const MediaControllerCloseButton: React.FC = () => {
   const closeButtonRef = useRef() as React.RefObject<HTMLButtonElement>
   return (
     <div className='d-flex flex-end media-controller-close-button'>
-      {toggled && <div tabIndex={0} onFocus={( e ) => {
-        e.preventDefault()
-        closeButtonRef.current?.focus()
-      }} />}
-      
-      <button ref={closeButtonRef} aria-label='close modal' onClick={() => {
-        setToggled( false )
-      }}>
+      {toggled && (
+        <div
+          tabIndex={0}
+          onFocus={( e ) => {
+            e.preventDefault()
+            closeButtonRef.current?.focus()
+          }}
+        />
+      )}
+
+      <button
+        ref={closeButtonRef}
+        aria-label='close modal'
+        onClick={() => {
+          setToggled( false )
+        }}
+      >
         <FontAwesomeIcon icon={faXmark} />
       </button>
     </div>

@@ -9,10 +9,15 @@ const MediaControllerFooter: React.FC = ( { children } ) => {
     <div className='media-controller-footer'>
       {children}
       <div ref={focusRef} tabIndex={0} />
-      {toggled && <div tabIndex={0} onFocus={( e ) => {
-        e.preventDefault()
-        focusRef.current?.focus()
-      }} />}
+      {toggled && (
+        <div
+          tabIndex={0}
+          onFocus={( e ) => {
+            e.preventDefault()
+            focusRef.current?.focus()
+          }}
+        />
+      )}
     </div>
   )
 }

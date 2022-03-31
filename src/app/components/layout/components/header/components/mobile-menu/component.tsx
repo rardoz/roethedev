@@ -8,19 +8,19 @@ import MenuItems from './components/menu-items'
 import MenuFooter from './components/menu-footer'
 
 const MobileMenu: React.FC = () => {
-  const [ toggled ] =  useHeaderToggled()
+  const [ toggled ] = useHeaderToggled()
 
   return (
     <>
       <MenuButton />
-      <div className={classnames( 'mobile-menu', { 'mobile-menu-open' : toggled } )}>
+      <div className={classnames( 'mobile-menu',
+        { 'mobile-menu-open': toggled } )}>
         <div className='mobile-menu-content-wrapper'>
           <CloseButton />
           <MenuItems />
           <MenuFooter />
         </div>
       </div>
- 
     </>
   )
 }

@@ -12,7 +12,7 @@ const BlogPage: React.FC = () => {
     <>
       <HelmetHead
         title='From my desk | Blog'
-        description="From by desk is my nerdy blog. I talk about art, tech, and my opinions as well as share tutorials and videos."
+        description='From by desk is my nerdy blog. I talk about art, tech, and my opinions as well as share tutorials and videos.'
       />
       <Header />
       <WaveHero>

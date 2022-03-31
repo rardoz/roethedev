@@ -6,13 +6,14 @@ import usePageView from '../../hooks/use-page-view'
 
 const Layout: React.FC = ( { children } ) => {
   const location = useLocation()
-  
+
   useEffect( () => {
     window.scrollTo( { top: 0 } )
-  }, [ location ] )
+  },
+  [ location ] )
 
   usePageView()
-  
+
   return (
     <>
       {children}

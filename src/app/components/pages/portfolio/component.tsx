@@ -2,7 +2,6 @@ import React from 'react'
 import { CMSContextProvider } from '../../../context/cms'
 import WaveHero from '../../wave-hero'
 import WaveHeroTitle from '../../wave-hero/components/wave-hero-title'
-import { Helmet } from "react-helmet-async"
 import './styles.scss'
 import PortfolioFeed from '../home/components/portfolio-feed'
 import Header from '../../layout/components/header'
@@ -12,9 +11,14 @@ const PorfolioPage: React.FC = () => {
   return (
     <>
       <HelmetHead
-        title="Body of work | Portfolio"
+        title='Body of work | Portfolio'
         keywords='portfolio, work, web, development, engineering, frontend'
-        description="From by desk is my blog. I talk about art, tech, and my opinions as well as share tutorials and videos."
+        description={`
+          From by desk is my blog.
+          I talk about art, tech,
+          and my opinions as well as 
+          share tutorials and videos.
+        `}
       />
       <Header />
       <WaveHero>

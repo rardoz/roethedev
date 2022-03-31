@@ -12,9 +12,7 @@ const MediaController: React.FC = ( { children } ) => {
       <MediaControllerButton />
       <MediaControllerToggle>
         <MediaControllerCloseButton />
-        <MediaControllerContent>
-          {children}
-        </MediaControllerContent>
+        <MediaControllerContent>{children}</MediaControllerContent>
         <MediaControllerFooter />
       </MediaControllerToggle>
     </MediaControllerContextProvider>

@@ -1,55 +1,55 @@
 import { Asset } from 'contentful'
-import {  Document } from '@contentful/rich-text-types'
+import { Document } from '@contentful/rich-text-types'
 
-export type ContentType  =  'blog' | 'portfolio' | 'linkBank' | string
+export type ContentType = 'blog' | 'portfolio' | 'linkBank' | string
 
 export interface USE_BLOG_ARGS {
-    limit?: number
-    skip?: number
-    contentType?: ContentType
-    slug?: string
+  limit?: number
+  skip?: number
+  contentType?: ContentType
+  slug?: string
 }
 
 export interface BlogField {
-    blogPhoto: Asset,
-    content: Document
-    description: string
-    featuredImage: Asset
-    keywords: string
-    socialPhoto: Asset
-    title: string
-    video: Asset
-    slug: string
-    hardRoute?: boolean
+  blogPhoto: Asset
+  content: Document
+  description: string
+  featuredImage: Asset
+  keywords: string
+  socialPhoto: Asset
+  title: string
+  video: Asset
+  slug: string
+  hardRoute?: boolean
 }
 
 export interface NormalizedBlogPhoto {
-    url?: string
-    description?: string
-    contentType?: string
-    fileName?: string
-    width?: number
-    height?: number
-    title?: string
+  url?: string
+  description?: string
+  contentType?: string
+  fileName?: string
+  width?: number
+  height?: number
+  title?: string
 }
 // todo convert this to NormalizedContentfulAsset
 export type NormalizedBlogVideo = NormalizedBlogPhoto
 
 export interface NormalizedBlogData {
-    blogPhoto?: NormalizedBlogPhoto
-    content?: Document
-    description?: string
-    featuredImage?: NormalizedBlogPhoto
-    keywords?: string
-    socialPhoto?: NormalizedBlogPhoto
-    title?: string
-    video?: NormalizedBlogVideo
-    dateCreated?: string
-    dateUpdated?: string
-    slug?: string
-    hardRoute?: boolean
+  blogPhoto?: NormalizedBlogPhoto
+  content?: Document
+  description?: string
+  featuredImage?: NormalizedBlogPhoto
+  keywords?: string
+  socialPhoto?: NormalizedBlogPhoto
+  title?: string
+  video?: NormalizedBlogVideo
+  dateCreated?: string
+  dateUpdated?: string
+  slug?: string
+  hardRoute?: boolean
 }
 
 export interface NormalizedBlogState {
-    items?: NormalizedBlogData[]
+  items?: NormalizedBlogData[]
 }

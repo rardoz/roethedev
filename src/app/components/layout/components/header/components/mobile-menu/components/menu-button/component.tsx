@@ -4,12 +4,12 @@ import mobilemMenuButtonImg from './assets/mobile-menu-icon.svg'
 import './styles.scss'
 
 const MenuButton: React.FC = () => {
-  const setToggled =  useHeaderToggled()[ 1 ]
+  const setToggled = useHeaderToggled()[ 1 ]
 
-  return ( 
-    <button onClick={() => setToggled( true )} className="header-mobile-menu-button">
-      <img width="33px" height="33px" src={mobilemMenuButtonImg} />
-    </button> 
+  return (
+    <button onClick={() => setToggled( true )} className='header-mobile-menu-button'>
+      <img width='33px' height='33px' src={mobilemMenuButtonImg} />
+    </button>
   )
 }
 

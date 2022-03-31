@@ -12,10 +12,15 @@ const MenuFooter: React.FC = () => {
         <SocialIcons inverted />
       </ul>
       <div ref={focusRef} tabIndex={0} />
-      {toggled && <div tabIndex={0} onFocus={( e ) => {
-        e.preventDefault()
-        focusRef.current?.focus()
-      }} />}
+      {toggled && (
+        <div
+          tabIndex={0}
+          onFocus={( e ) => {
+            e.preventDefault()
+            focusRef.current?.focus()
+          }}
+        />
+      )}
     </div>
   )
 }

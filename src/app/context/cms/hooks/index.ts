@@ -1,22 +1,24 @@
-import {  useState, useMemo } from "react"
+import { useState, useMemo } from 'react'
 import * as contentful from 'contentful'
 import type { BlogField, NormalizedBlogData, NormalizedBlogState, ContentType } from './types'
 
 let contentfulClient: contentful.ContentfulClientApi
 
 const getClient = (): contentful.ContentfulClientApi => {
-  contentfulClient = contentfulClient || contentful.createClient( {
-    // A space is like a project folder in Contentful terms
-    space: `${process.env.CONTENTFUL_SPACE_ID}`,
-    //Normally you get both ID and the token in the Contentful web app
-    accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-    //ENABLE PREVIEW API  host: "preview.contentful.com"
-    host: process.env.CONTENTFUL_HOST,
-  } )
+  contentfulClient =
+    contentfulClient ||
+    contentful.createClient( {
+      // A space is like a project folder in Contentful terms
+      space: `${process.env.CONTENTFUL_SPACE_ID}`,
+      //Normally you get both ID and the token in the Contentful web app
+      accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      //ENABLE PREVIEW API  host: "preview.contentful.com"
+      host: process.env.CONTENTFUL_HOST,
+    } )
   return contentfulClient
 }
 
-const normalizeData = ( items: contentful.Entry< BlogField >[]  ):NormalizedBlogData[] => {
+const normalizeData = ( items: contentful.Entry<BlogField>[] ): NormalizedBlogData[] => {
   const normalizedFields: NormalizedBlogData[] = []
   items.forEach( ( { fields: fieldRow, sys: { createdAt, updatedAt } } ) => {
     // todo make this not hurt my heart to look at
@@ -64,7 +66,7 @@ const normalizeData = ( items: contentful.Entry< BlogField >[]  ):NormalizedBlog
       dateCreated: createdAt,
       dateUpdated: updatedAt,
       slug: fieldRow.slug,
-      hardRoute: fieldRow.hardRoute
+      hardRoute: fieldRow.hardRoute,
     } )
   } )
   return normalizedFields
@@ -72,44 +74,42 @@ const normalizeData = ( items: contentful.Entry< BlogField >[]  ):NormalizedBlog
 
 export const useEntries = ( {
   limit = 10,
-  skip = 0, 
-  contentType, 
-  order, 
-  slug 
+  skip = 0,
+  contentType,
+  order,
+  slug,
 }: {
-  limit?: number,
-  skip?: number,
-  contentType?: ContentType,
-  order?: string,
+  limit?: number
+  skip?: number
+  contentType?: ContentType
+  order?: string
   slug?: string
-  } ): NormalizedBlogState => {
-  const [ 
-    blogs,
-    setBlogs 
-  ] = useState( {} as  NormalizedBlogState )
+} ): NormalizedBlogState => {
+  const [ blogs,
+    setBlogs ] = useState( {} as NormalizedBlogState )
 
   useMemo( () => {
     const queryData: Record<string, unknown> = {
       content_type: contentType || process.env.CONTENTFUL_BLOG_ID,
       limit,
       skip,
-      order: order || '-sys.createdAt'
+      order: order || '-sys.createdAt',
     }
 
-    if( slug ) 
-      queryData[ "field.slug[is]" ] = slug
-    
+    if ( slug ) queryData[ 'field.slug[is]' ] = slug
+
     getClient()
       .getEntries( queryData )
-      .then( entry => {
+      .then( ( entry ) => {
         setBlogs( {
-          items: normalizeData( entry.items as contentful.Entry<BlogField>[] )
+          items: normalizeData( entry.items as contentful.Entry<BlogField>[] ),
         } )
       } )
-      .catch( err => console.error( err ) )
+      .catch( ( err ) => console.error( err ) )
       .finally( () => {
         console.warn( 'got data' )
       } )
-  }, [ limit, skip, contentType, order, slug ] )
+  },
+  [ limit, skip, contentType, order, slug ] )
   return blogs
 }
