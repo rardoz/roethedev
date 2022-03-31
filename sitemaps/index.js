@@ -108,9 +108,11 @@ fs.readFile( './src/app/index.tsx',
       ],
     }
 
-    data.match( /path=".*"/g ).forEach( ( path ) => {
-      const url = path.replace( /path=|"/g,
-        '' )
+    data.match( /path='.*'/g ).forEach( ( path ) => {
+      const url = path.replace( 
+        /path=|'/g,
+        '' 
+      )
       if ( url.includes( ':' ) ) {
       //get the sub pages
       } else if ( !BLACKLIST.includes( url ) ) {
