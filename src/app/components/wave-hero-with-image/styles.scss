@@ -29,7 +29,7 @@
     word-break: break-word;
     width: 100%;
 
-    @include breakpoint-mixin("tiny-or-less") {
+    @include breakpoint-mixin("small-or-less") {
       font-size: font-size(11);
     }
   }

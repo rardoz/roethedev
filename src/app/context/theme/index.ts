@@ -1,0 +1,1 @@
+export { default, themeContext } from './component'

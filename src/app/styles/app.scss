@@ -3,6 +3,26 @@
 @import "flex";
 @import "mixins";
 
+body {
+  --app-background-color: #{$background-color};
+  --app-black-color: #{$black-color};
+  --app-white-color: #{$white-color};
+  --app-primary-color: #{$primary-color};
+  --app-default-text-color: #{$default-text-color};
+  --app-default-font-family: #{$default-font-family};
+  --app-secondary-font-family: #{$secondary-font-family};
+
+  // &.app-theme-dark {
+  //   --app-background-color: #0a0a0a;
+  //   --app-black-color: #0a0a0a;
+  //   --app-white-color: #e3daeb;
+  //   --app-primary-color: #320064;
+  //   --app-default-text-color: #e3daeb;
+  // }
+  background: $background-color;
+  color: $primary-color;
+}
+
 html,
 body {
   padding: 0;
@@ -13,11 +33,6 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-body {
-  background: $white-color;
-  color: $primary-color;
 }
 
 #root {

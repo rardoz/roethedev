@@ -2,10 +2,25 @@
 @import "../../styles/functions";
 @import "../../styles/mixins";
 
+.wave-svg-container {
+  position: relative;
+
+  > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    path {
+      fill: $primary-color;
+    }
+  }
+}
+
 .wave-container {
   width: 100%;
-  background: url("./assets/wave-bg.svg") no-repeat center center;
-  background-size: 100%;
   padding: spacer(24) 0;
   color: $white-color;
 
@@ -14,13 +29,6 @@
   }
 
   &.wave-bottom {
-    background: url("./assets/wave-bottom.svg") no-repeat center center;
     padding: 0;
-  }
-
-  &:not(.wave-bottom) {
-    @include breakpoint-mixin("small-or-less") {
-      background: url("./assets/wave-bg-mobile.svg") no-repeat center center;
-    }
   }
 }
