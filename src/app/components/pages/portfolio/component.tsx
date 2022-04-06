@@ -13,12 +13,7 @@ const PorfolioPage: React.FC = () => {
         title='Body of work | Portfolio'
         keywords='portfolio, work, web, development, engineering, frontend'
         description={
-          `
-          From by desk is my blog.
-          I talk about art, tech,
-          and my opinions as well as 
-          share tutorials and videos.
-        `
+          `This is the best and most recent collection of my work.`
         }
       />
       <Header
@@ -28,14 +23,13 @@ const PorfolioPage: React.FC = () => {
         className='section-wider'
       >
         <SectionTitle>
-        From my desk
+        Body of work
         </SectionTitle>
         <CMSContextProvider
           limit={20}
           contentType={process.env.CONTENTFUL_PORTFOLIO_ID}
         >
           <PortfolioFeed
-            className='portfolio-page-portfolio-feed'
             linkEnabled={false}
             enableTitle={false}
           />

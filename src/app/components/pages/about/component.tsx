@@ -7,6 +7,7 @@ import avatarImg from '../home/components/about-section/assets/roe-greene.png'
 import avatarImgAlt from '../home/components/about-section/assets/roe-greene-alt.png'
 import WaveContainer from '../../wave-container'
 import HelmetHead from '../../helmet-head'
+import SectionTitle from '../../section-title'
 
 const AboutPage: React.FC = () => {
   return (
@@ -18,16 +19,11 @@ const AboutPage: React.FC = () => {
         title='About Roe'
         description={`Download Roe's resume and learn a little more about his career.`}
       />
-      <WaveContainer>
-        <h1
-          className='text-center'
-        >
-About Roe
-        </h1>
-      </WaveContainer>
-      <br />
-      <br />
+      
       <Section>
+        <SectionTitle>
+       About Roe
+        </SectionTitle>
         <div
           className='flex-grid space-between'
         >
