@@ -9,23 +9,21 @@ const CarouselSection: React.FC = () => {
   const { items } = useContext( cmsContext )
   return( 
     <Carousel
+      key={items?.length}
       className='carousel-section'
       autoPlay
       dynamicHeight
       infiniteLoop
-      interval={3000}
+      interval={3500}
       showArrows
-      stopOnHover
-      swipeable
-      emulateTouch
       useKeyboardArrows
+      showStatus={false}
       showThumbs={false}
       animationHandler="slide"
     >
       {
         ( items || [
           {
-         
           } 
         ] ).map( item => ( 
           <CarouselSlide

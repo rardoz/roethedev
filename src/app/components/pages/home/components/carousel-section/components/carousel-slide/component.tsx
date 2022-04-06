@@ -27,7 +27,7 @@ const CarouselSlide: React.FC<NormalizedBlogData> = (
         />
       </div>
       <Section
-        className='section-wider'
+        className='section'
       >
         <div
           className='carousel-slide-content'
