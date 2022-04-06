@@ -45,7 +45,7 @@ const PostContainer: React.FC<{ contentType: ContentType }> = ( { contentType } 
 Written by Roe Greene
               </p>
               <p>
-Last updated on
+Last updated on&nbsp;
                 {dayjs( record.dateUpdated ).format( 'MMMM DD, YYYY @ hh:mm A' )}
               </p>
             </div>
