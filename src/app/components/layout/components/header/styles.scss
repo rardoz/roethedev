@@ -30,12 +30,13 @@
     right: spacer(6);
     top: 0;
 
-    svg {
+    > .social-icon-item svg {
       color: $white-color;
     }
   }
 
   .header-mobile-menu-button {
+    top: 0;
     filter: brightness(20);
   }
 
@@ -72,8 +73,12 @@
     box-shadow: 10px 0 20px $primary-color;
     background-color: $white-color;
 
+    .header-mobile-menu-button {
+      filter: initial;
+    }
+
     .nav-link-bank {
-      svg {
+      > .social-icon-item svg {
         color: $primary-color;
       }
     }

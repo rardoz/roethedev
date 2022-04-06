@@ -1,11 +1,10 @@
 import React from 'react'
 import { CMSContextProvider } from '../../../context/cms'
-import WaveHero from '../../wave-hero'
-import WaveHeroTitle from '../../wave-hero/components/wave-hero-title'
-import './styles.scss'
 import PortfolioFeed from '../home/components/portfolio-feed'
 import Header from '../../layout/components/header'
 import HelmetHead from '../../helmet-head'
+import Section from '../../section'
+import SectionTitle from '../../section-title'
 
 const PorfolioPage: React.FC = () => {
   return (
@@ -22,24 +21,26 @@ const PorfolioPage: React.FC = () => {
         `
         }
       />
-      <Header />
-      <WaveHero>
-        <WaveHeroTitle
-          title1='Body'
-          title2='of'
-          title3='work'
-        />
-      </WaveHero>
-      <CMSContextProvider
-        limit={20}
-        contentType={process.env.CONTENTFUL_PORTFOLIO_ID}
+      <Header
+        forceInView
+      />
+      <Section
+        className='section-wider'
       >
-        <PortfolioFeed
-          className='portfolio-page-portfolio-feed'
-          linkEnabled={false}
-          enableTitle={false}
-        />
-      </CMSContextProvider>
+        <SectionTitle>
+        From my desk
+        </SectionTitle>
+        <CMSContextProvider
+          limit={20}
+          contentType={process.env.CONTENTFUL_PORTFOLIO_ID}
+        >
+          <PortfolioFeed
+            className='portfolio-page-portfolio-feed'
+            linkEnabled={false}
+            enableTitle={false}
+          />
+        </CMSContextProvider>
+      </Section>
     </>
   )
 }

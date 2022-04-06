@@ -49,3 +49,8 @@ body {
     display: none;
   }
 }
+
+#tidio-chat {
+  z-index: 2;
+  position: relative;
+}

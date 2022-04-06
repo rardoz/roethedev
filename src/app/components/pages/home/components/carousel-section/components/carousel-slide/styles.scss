@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:color";
 @import "../../../../../../../styles/functions";
+@import "../../../../../../../styles/mixins";
 
 .carousel-slide {
   position: relative;
@@ -55,19 +56,32 @@
     p {
       color: $white-color;
       text-shadow: 1px 1px 1px $primary-color;
+      text-align: left;
     }
 
     h2 {
       font-size: font-size(15);
+
+      @include breakpoint-mixin("small-or-less") {
+        font-size: font-size(8);
+      }
     }
 
     p {
       font-size: font-size(10);
+
+      @include breakpoint-mixin("small-or-less") {
+        font-size: font-size(4);
+      }
     }
 
     .carousel-link {
       width: 100%;
       text-align: right;
+
+      @include breakpoint-mixin("small-or-less") {
+        text-align: left;
+      }
     }
   }
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import { CMSContextProvider } from '../../../context/cms'
-import WaveHero from '../../wave-hero'
-import WaveHeroTitle from '../../wave-hero/components/wave-hero-title'
 import BlogFeed from '../home/components/blog-feed'
-import './styles.scss'
 import Header from '../../layout/components/header'
 import HelmetHead from '../../helmet-head'
+import SectionTitle from '../../section-title'
+import Section from '../../section'
 
 const BlogPage: React.FC = () => {
   return (
@@ -19,24 +18,26 @@ const BlogPage: React.FC = () => {
           and videos.`
         }
       />
-      <Header />
-      <WaveHero>
-        <WaveHeroTitle
-          title1='From'
-          title2='my'
-          title3='desk'
-        />
-      </WaveHero>
-      <CMSContextProvider
-        limit={20}
-        contentType={process.env.CONTENTFUL_BLOG_ID}
+      <Header
+        forceInView
+      />
+      <Section
+        className='section-wider'
       >
-        <BlogFeed
-          className='blog-page-blog-feed'
-          linkEnabled={false}
-          enableTitle={false}
-        />
-      </CMSContextProvider>
+        <SectionTitle>
+        From my desk
+        </SectionTitle>
+        <CMSContextProvider
+          limit={20}
+          contentType={process.env.CONTENTFUL_BLOG_ID}
+        >
+          <BlogFeed
+            linkEnabled={false}
+            enableTitle={false}
+          />
+        </CMSContextProvider>
+
+      </Section>
     </>
   )
 }

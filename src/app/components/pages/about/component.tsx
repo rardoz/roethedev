@@ -11,7 +11,9 @@ import HelmetHead from '../../helmet-head'
 const AboutPage: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header
+        forceInView
+      />
       <HelmetHead
         title='About Roe'
         description={`Download Roe's resume and learn a little more about his career.`}

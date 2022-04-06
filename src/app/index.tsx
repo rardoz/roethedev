@@ -13,6 +13,7 @@ const BlogPage = React.lazy( () => import( './components/pages/blog' ) )
 const PostPage = React.lazy( () => import( './components/pages/post' ) )
 const NotFoundPage = React.lazy( () => import( './components/pages/not-found' ) )
 const PortfolioPage = React.lazy( () => import( './components/pages/portfolio' ) )
+const TutorialsPage = React.lazy( () => import( './components/pages/tutorials' ) )
 
 const Application: React.FC = () => {
 
@@ -56,6 +57,12 @@ const Application: React.FC = () => {
                     <PostPage
                       contentType='portfolio'
                     />
+                  }
+                />
+                <Route
+                  path='/tutorials'
+                  element={
+                    <TutorialsPage />
                   }
                 />
                 <Route
