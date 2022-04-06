@@ -5,12 +5,19 @@ import ContactForm from './components/contact-form'
 import PortfolioFeed from './components/portfolio-feed'
 import { CMSContextProvider } from '../../../context/cms'
 import Header from '../../layout/components/header'
+import CarouselSection from './components/carousel-section'
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Header />
       <div>
+        <CMSContextProvider
+          order='fields.orderOverride'
+          contentType="featuredContent"
+        >
+          <CarouselSection />
+        </CMSContextProvider>
         <ContactForm />
         <CMSContextProvider
           limit={3}

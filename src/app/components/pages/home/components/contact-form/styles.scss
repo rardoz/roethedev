@@ -18,7 +18,7 @@
         margin-top: spacer(10);
       }
 
-      @include breakpoint-mixin("tiny-or-less") {
+      @include breakpoint-mixin("small-or-less") {
         &.contact-form-first-row {
           .col-7 {
             width: 100%;

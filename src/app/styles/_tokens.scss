@@ -1,35 +1,41 @@
+@use "sass:map";
+@use "sass:meta";
+
 /* Colors */
-$black-color: rgb(6 1 27);
-$white-color: #fff;
-$primary-color: #5800eb;
-$bright-white-color: #fff;
+$colors: (
+  black-color: rgb(6 1 27),
+  white-color: #fff,
+  primary-color: #5800eb,
+  text-color: #fff,
+);
+$background-color: var(--app-background-color, map.get($colors, "white-color"));
+$black-color: var(--app-black-color, map.get($colors, "black-color"));
+$white-color: var(--app-white-color, map.get($colors, "white-color"));
+$primary-color: var(--app-primary-color, map.get($colors, "primary-color"));
+$default-text-color: var(--app-default-text-color, map.get($colors, "text-color"));
 
 /* Typography */
-$default-font-family: "Roboto", sans-serif;
-$secondary-font-family: "Roboto Slab", serif;
-$default-text-color: $white-color;
+$default-font-family: var(--app-default-font-family, "Roboto", sans-serif);
+$secondary-font-family: var(--app-secondary-font-family, "Roboto Slab", serif);
 $base-font-size: 16px;
 
 /* Sizes */
 $spacer-increment: 0.25;
 $breakpoints: (
   "tiny-or-less": (
-    max-width: 765px,
+    max-width: 500px,
   ),
   "small-or-less": (
-    max-width: 989px,
-  ),
-  "small-or-greater": (
-    min-width: 600px,
+    max-width: 700px,
   ),
   "medium-or-less": (
-    max-width: 1199px,
+    max-width: 1099px,
   ),
   "medium-or-greater": (
     min-width: 900px,
   ),
   "large-or-greater": (
-    min-width: 1200px,
+    min-width: 1100px,
   ),
 );
 

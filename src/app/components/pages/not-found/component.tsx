@@ -12,7 +12,9 @@ const NotFoundPage: React.FC = () => {
         description='Nothing to see here...'
         follow={false}
       />
-      <Header />
+      <Header
+        forceInView
+      />
       <WaveHero>
         <WaveHeroTitle
           title1='404'

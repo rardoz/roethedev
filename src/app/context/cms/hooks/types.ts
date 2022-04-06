@@ -1,13 +1,14 @@
 import { Asset } from 'contentful'
 import { Document } from '@contentful/rich-text-types'
 
-export type ContentType = 'blog' | 'portfolio' | 'linkBank' | string
+export type ContentType = 'blog' | 'portfolio' | 'linkBank' | 'featuredContent' | string
 
 export interface USE_BLOG_ARGS {
   limit?: number
   skip?: number
   contentType?: ContentType
   slug?: string
+  order?: string
 }
 
 export interface BlogField {

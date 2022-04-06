@@ -1,0 +1,20 @@
+@import "../../../../../styles/functions";
+
+.carousel-section {
+  margin-top: -165px;
+  background-color: $black-color;
+
+  .carousel .control-arrow:hover {
+    background: transparent;
+  }
+
+  .carousel .control-dots {
+    bottom: 150px;
+  }
+
+  + .wave-svg-container {
+    margin-top: -130px;
+    position: relative;
+    z-index: 1;
+  }
+}

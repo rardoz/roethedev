@@ -1,1 +1,1 @@
-export { default, CMSContextProvider } from './component'
+export { default, CMSContextProvider, Consumer } from './component'
