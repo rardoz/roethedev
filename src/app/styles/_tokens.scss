@@ -8,11 +8,11 @@ $colors: (
   primary-color: #5800eb,
   text-color: #fff,
 );
-$background-color: var(--app-background-color, meta.inspect(map.get($colors, "white-color")));
-$black-color: var(--app-black-color, meta.inspect(map.get($colors, "black-color")));
-$white-color: var(--app-white-color, meta.inspect(map.get($colors, "white-color")));
-$primary-color: var(--app-primary-color, meta.inspect(map.get($colors, "primary-color")));
-$default-text-color: var(--app-default-text-color, meta.inspect(map.get($colors, "text-color")));
+$background-color: var(--app-background-color, map.get($colors, "white-color"));
+$black-color: var(--app-black-color, map.get($colors, "black-color"));
+$white-color: var(--app-white-color, map.get($colors, "white-color"));
+$primary-color: var(--app-primary-color, map.get($colors, "primary-color"));
+$default-text-color: var(--app-default-text-color, map.get($colors, "text-color"));
 
 /* Typography */
 $default-font-family: var(--app-default-font-family, "Roboto", sans-serif);

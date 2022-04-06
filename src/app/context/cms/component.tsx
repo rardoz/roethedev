@@ -8,10 +8,13 @@ const DEFAULT_STATE: NormalizedBlogState = {
 const context = createContext( DEFAULT_STATE )
 
 const { Provider } = context
+export const { Consumer } = context
 
 export const CMSContextProvider: React.FC<USE_BLOG_ARGS> = ( {
   children, 
-  contentType, slug, 
+  contentType, 
+  slug, 
+  order,
   limit = 10,
   skip = 0 
 } ) => {
@@ -21,12 +24,12 @@ export const CMSContextProvider: React.FC<USE_BLOG_ARGS> = ( {
         limit,
         skip,
         contentType,
-        slug 
+        slug,
+        order
       } )
     }
   >
     {children}
   </Provider> )
 }
-
 export default context

@@ -9,6 +9,15 @@
   z-index: $nav-index;
   background-color: transparent;
 
+  nav {
+    display: block;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+  }
+
   .nav-link-bank {
     list-style: none;
     display: flex;
@@ -16,13 +25,18 @@
     position: absolute;
     right: spacer(6);
     top: 0;
+
+    svg {
+      color: $white-color;
+    }
   }
 
   .app-logo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 25px 0;
+    filter: brightness(20);
 
     img {
       transition: all 0.25s ease;
@@ -50,8 +64,15 @@
     box-shadow: 10px 0 20px $primary-color;
     background-color: $white-color;
 
+    .nav-link-bank {
+      svg {
+        color: $primary-color;
+      }
+    }
+
     .app-logo {
       padding: 10px 0;
+      filter: initial;
 
       img {
         max-width: 100px;

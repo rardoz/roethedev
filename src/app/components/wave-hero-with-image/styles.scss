@@ -47,7 +47,7 @@
   }
 
   &::after {
-    content: ""; // :before and :after both require content
+    content: "";
     position: absolute;
     z-index: -1;
     top: 0;

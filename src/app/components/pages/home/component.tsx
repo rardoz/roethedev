@@ -12,7 +12,12 @@ const HomePage: React.FC = () => {
     <>
       <Header />
       <div>
-        <CarouselSection />
+        <CMSContextProvider
+          order='fields.orderOverride'
+          contentType="featuredContent"
+        >
+          <CarouselSection />
+        </CMSContextProvider>
         <ContactForm />
         <CMSContextProvider
           limit={3}

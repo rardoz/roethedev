@@ -33,9 +33,7 @@ const Header: React.FC<{ forceInView?: boolean }> = ( { forceInView = false } ) 
       <header
         className='app-nav'
       >
-        <nav
-          className='d-flex flex-center'
-        >
+        <nav>
           <Link
             to='/'
             aria-label='Logo'

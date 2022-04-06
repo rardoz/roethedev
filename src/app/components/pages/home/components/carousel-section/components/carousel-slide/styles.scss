@@ -1,0 +1,71 @@
+@use "sass:map";
+@import "../../../../../../../styles/functions";
+
+.carousel-slide {
+  position: relative;
+  height: 100vh;
+  max-height: 700px;
+  min-height: 300px;
+
+  .carousel-slide-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .section-wider {
+    height: 100%;
+    padding-bottom: spacer(16);
+    padding-top: spacer(16);
+  }
+
+  .carousel-slide-content {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: flex-start;
+    padding: spacer(8);
+
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: transparentize(map.get($colors, "black-color"), 0.6);
+    //     z-index: -1;
+    // }
+    h2,
+    p {
+      color: $white-color;
+      text-shadow: 1px 1px 1px $primary-color;
+    }
+
+    h2 {
+      font-size: font-size(15);
+    }
+
+    p {
+      font-size: font-size(10);
+    }
+
+    .carousel-link {
+      width: 100%;
+      text-align: right;
+    }
+  }
+}

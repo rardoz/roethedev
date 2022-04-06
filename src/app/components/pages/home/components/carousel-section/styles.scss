@@ -1,0 +1,12 @@
+@import "../../../../../styles/functions";
+
+.carousel-section {
+  margin-top: -165px;
+  background-color: $black-color;
+
+  + * {
+    margin-top: -130px;
+    position: relative;
+    z-index: 1;
+  }
+}
