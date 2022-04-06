@@ -20,6 +20,7 @@ const CarouselSection: React.FC = () => {
       showStatus={false}
       showThumbs={false}
       animationHandler="slide"
+      preventMovementUntilSwipeScrollTolerance
     >
       {
         ( items || [

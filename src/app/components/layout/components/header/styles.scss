@@ -37,7 +37,7 @@
 
   .header-mobile-menu-button {
     top: 0;
-    filter: brightness(20);
+    filter: grayscale(1) brightness(20);
   }
 
   .app-logo {
@@ -45,7 +45,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 25px 0;
-    filter: brightness(20);
+    filter: grayscale(1) brightness(20);
 
     img {
       transition: all 0.25s ease;
