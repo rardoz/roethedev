@@ -143,14 +143,14 @@ const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
               console.error = console.log;
               </script>
           ` )
-
+        if( iFrame )
+          iFrame.onload =  defaultIframeWrite
+        defaultIframeWrite()
         code.parentNode?.querySelectorAll( '.code-reset-btn' )[ 0 ].addEventListener( 'click',
           () => {
             iFrame?.contentWindow?.location.reload()
-            defaultIframeWrite()
+           
           } )
-        
-        defaultIframeWrite()
 
         code.parentNode?.querySelectorAll( '.code-run-btn' )[ 0 ].addEventListener( 'click',
           () => {
