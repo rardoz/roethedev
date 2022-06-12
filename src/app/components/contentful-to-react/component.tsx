@@ -1,17 +1,22 @@
 import { BLOCKS, MARKS, INLINES, Document, Block, Inline } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import React from 'react'
+import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
+import React, { MutableRefObject, useEffect, useRef } from 'react'
 import './styles.scss'
 import LazyImage from '../lazy-image'
+import { basicSetup, EditorView } from 'codemirror'
+import { EditorState, Compartment } from '@codemirror/state'
+import { javascript } from '@codemirror/lang-javascript'
 
-const options = {
+const  tabSize = new Compartment
+
+const options: Options = {
   renderMark: {
     [ MARKS.BOLD ]: ( text: React.ReactNode ) => ( <strong>
       {text}
     </strong> ),
   },
   renderNode: {
-    [ BLOCKS.EMBEDDED_ASSET ]: ( node: Block ) => {
+    [ BLOCKS.EMBEDDED_ASSET ]: ( node: Block | Inline ) => {
       const fields = node.data?.target?.fields || {
       }
       return (
@@ -64,15 +69,78 @@ const options = {
   },
 }
 
-const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => (
-  <div
-    className='contentful-to-react'
-  >
-    {
-      documentToReactComponents( content,
-        options )
+const selectWithCodeWrapper = ( content: Document ): Document => {
+  const nodes = [
+    ...content.content 
+  ] || [
+  ]
+  try {
+    for( let i = nodes.length - 1; i > -1; i -- ) {
+      if( 
+        nodes[ i ] && 
+      nodes[ i - 1 ] &&
+      nodes[ i ].nodeType === BLOCKS.PARAGRAPH 
+      && ( nodes[ i ].content[ 0 ] as any )?.marks?.[ 0 ]?.type === MARKS.CODE 
+      && ( nodes[ i - 1 ].content[ 0 ] as any )?.marks?.[ 0 ]?.type === MARKS.CODE
+      ) {
+        ( nodes[ i - 1 ].content[ 0 ] as any ).value += `\r` + ( nodes[ i ]?.content[ 0 ] as any ).value
+        delete nodes[ i ]
+      }
     }
-  </div>
-)
+    return {
+      ...content,
+      content: nodes 
+    }
+  }
+  catch ( e ) {console.error( e )}
+  return content
+}
+
+function decodeHtml( html:string ): string {
+  const txt = document.createElement( 'textarea' )
+  txt.innerHTML = html
+  return txt.value.replaceAll( '<br>',
+    '\n' )
+}
+
+const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
+  
+  const ref = useRef() as MutableRefObject<HTMLDivElement>
+ 
+  useEffect( () => {
+    if( ref.current )
+      Array.from( ref.current.getElementsByTagName( 'code' ) ).forEach( code => {
+
+        const text= code.innerHTML
+        code.innerText = ''
+
+        new EditorView( {
+       
+          parent: code,
+          extensions: [
+            basicSetup,
+            javascript(),
+            tabSize.of( EditorState.tabSize.of( 4 ) )
+          ],
+          doc: decodeHtml( text )
+        } )
+      
+      } )
+  },
+  [
+  ] )
+
+  return  (
+    <div
+      className='contentful-to-react'
+      ref={ref}
+    >
+      {
+        documentToReactComponents( selectWithCodeWrapper( content ),
+          options )
+      }
+    </div>
+  )
+}
 
 export default ContentfulToReact

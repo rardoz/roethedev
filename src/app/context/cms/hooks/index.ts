@@ -110,9 +110,7 @@ export const useEntries = ( {
         } )
       } )
       .catch( ( err ) => console.error( err ) )
-      .finally( () => {
-        console.warn( 'got data' )
-      } )
+      
   },
   [
     limit,
