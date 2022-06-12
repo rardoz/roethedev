@@ -1,0 +1,31 @@
+@import "../../../styles/tokens";
+@import "../../../styles/functions";
+@import "../../../styles/mixins";
+
+.code-iframe {
+    background: $white-color;
+    border: 1px dotted $primary-color;
+    flex: 1 1 auto;
+    margin-left: 1rem;
+    width: 0;
+    height: px-to-rem(76px);
+}
+.code {
+    margin-top: 1rem;
+    display: block;
+}
+.code-playground {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    display: flex;
+}
+.code-btn-container {
+    max-width: 150px;
+    button:first-of-type {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.cm-scroller {
+    border: 1px dotted $primary-color;
+}

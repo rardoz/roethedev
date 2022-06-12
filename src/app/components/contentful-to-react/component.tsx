@@ -6,6 +6,7 @@ import LazyImage from '../lazy-image'
 import { basicSetup, EditorView } from 'codemirror'
 import { EditorState, Compartment } from '@codemirror/state'
 import { javascript } from '@codemirror/lang-javascript'
+import Code from './code'
 
 const  tabSize = new Compartment
 
@@ -14,6 +15,10 @@ const options: Options = {
     [ MARKS.BOLD ]: ( text: React.ReactNode ) => ( <strong>
       {text}
     </strong> ),
+    [ MARKS.CODE ]: ( text: React.ReactNode ) => ( <Code>
+      {text}
+    </Code>
+    )
   },
   renderNode: {
     [ BLOCKS.EMBEDDED_ASSET ]: ( node: Block | Inline ) => {
@@ -109,14 +114,11 @@ const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
 
   useEffect( () => {
     if( ref.current )
-
-      Array.from( ref.current.getElementsByTagName( 'code' ) ).forEach( code => {
-
+      Array.from( ref.current.getElementsByClassName( 'code' ) ).forEach( code => {
         const text= code.innerHTML
-        code.innerText = ''
+        code.innerHTML = ''
 
-        new EditorView( {
-       
+        const view = new EditorView( {
           parent: code,
           extensions: [
             basicSetup,
@@ -125,6 +127,47 @@ const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
           ],
           doc: decodeHtml( text )
         } )
+
+        const iFrame =  code.parentNode?.querySelectorAll( 'iframe' )?.[ 0 ] as HTMLIFrameElement
+
+        code.parentNode?.querySelectorAll( '.code-reset-btn' )[ 0 ].addEventListener( 'click',
+          () => {
+            iFrame?.contentWindow?.location.reload()
+          } )
+
+        code.parentNode?.querySelectorAll( '.code-run-btn' )[ 0 ].addEventListener( 'click',
+          () => {
+            const escapedString = encodeURIComponent( view.state.doc as unknown as string )
+            iFrame?.contentDocument?.write( `
+            <body></body>
+            <script type="text/javascript">
+              console.log = (...log) => {
+                document.getElementsByTagName('body')[0].innerText += ">> " + log.join(\`
+            \`);
+            document.getElementsByTagName('body')[0].innerText +=\`
+            \`
+            window.scrollTo(window.scrollX, window.outerHeight * 10)
+              }
+              console.error = console.log
+          
+              try {
+                const retVal = eval(decodeURIComponent("${escapedString}"));
+                if(retVal) {
+                  document.getElementsByTagName('body')[0].innerText += ">> " + JSON.stringify(retVal)
+                  document.getElementsByTagName('body')[0].innerText += \`
+                  \`
+                }
+                
+              } catch(e) {
+                
+                document.getElementsByTagName('body')[0].innerText +=  ">> "  + (e.message || JSON.stringify(e.message)) + \`\r\n\`;
+              }
+              window.scrollTo(window.scrollX, window.outerHeight * 10)
+            </script>
+            ` )
+          } )
+
+        //view.state.doc
       
       } )
   },

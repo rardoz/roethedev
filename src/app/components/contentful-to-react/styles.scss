@@ -3,9 +3,23 @@
 @import "../../styles/mixins";
 
 .contentful-to-react {
-  .cm-scroller {
-    border: 1px dotted $primary-color;
+  button {
+    background: transparent;
+    color: $primary-color;
+    border-color: $primary-color;
+    cursor: pointer;
+    border-radius: px-to-rem(5px);
+    transition: all 0.25s ease-in-out;
+    height: 2rem;
+    width: 100%;
+    font-weight: bold;
+    text-transform: capitalize;
+    &:hover {
+      background: $primary-color;
+      color: $white-color;
+    }
   }
+
   p {
     line-height: 1.7;
     font-size: font-size(0.7);
