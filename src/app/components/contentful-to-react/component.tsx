@@ -137,8 +137,7 @@ const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
               setTimeout(() => {
                 window.scrollTo(window.scrollX, window.outerHeight * 10);
               })
-              return log.join(\`
-              \`)
+              return log[0]
             };
             console.log = (...log) => {
                 document.getElementsByTagName('body')[0].innerText += ">> " + log.join(\`
