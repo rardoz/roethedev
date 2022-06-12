@@ -10,14 +10,25 @@
     + p {
       padding-top: spacer(4);
     }
+    color: $black-color;
+  }
+
+  h2 {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 1rem;
   }
 
   h3 {
-    margin: spacer(10) 0 spacer(4);
+    margin: spacer(10) 0 spacer(0);
   }
 
   h3:first-of-type {
     margin-top: 0;
+  }
+
+  h3 {
+    font-size: $base-font-size * 1.75;
   }
 
   a {
@@ -34,5 +45,9 @@
       padding-bottom: spacer(6);
       font-size: font-size(-0.5);
     }
+  }
+
+  ul li {
+    margin-bottom: 1rem;
   }
 }

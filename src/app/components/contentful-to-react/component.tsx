@@ -106,9 +106,10 @@ function decodeHtml( html:string ): string {
 const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
   
   const ref = useRef() as MutableRefObject<HTMLDivElement>
- 
+
   useEffect( () => {
     if( ref.current )
+
       Array.from( ref.current.getElementsByTagName( 'code' ) ).forEach( code => {
 
         const text= code.innerHTML
