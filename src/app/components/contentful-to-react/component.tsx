@@ -130,32 +130,43 @@ const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
 
         const iFrame =  code.parentNode?.querySelectorAll( 'iframe' )?.[ 0 ] as HTMLIFrameElement
 
-        code.parentNode?.querySelectorAll( '.code-reset-btn' )[ 0 ].addEventListener( 'click',
-          () => {
-            iFrame?.contentWindow?.location.reload()
-          } )
-
-        code.parentNode?.querySelectorAll( '.code-run-btn' )[ 0 ].addEventListener( 'click',
-          () => {
-            const escapedString = encodeURIComponent( view.state.doc as unknown as string )
-            iFrame?.contentDocument?.write( `
-            <body></body>
+        const defaultIframeWrite = ():void =>  iFrame?.contentDocument?.write( `
+        <body></body>
             <script type="text/javascript">
               console.log = (...log) => {
                 document.getElementsByTagName('body')[0].innerText += ">> " + log.join(\`
             \`);
             document.getElementsByTagName('body')[0].innerText +=\`
-            \`
-            window.scrollTo(window.scrollX, window.outerHeight * 10)
+            \`;
+            window.scrollTo(window.scrollX, window.outerHeight * 10);
               }
-              console.error = console.log
-          
+              console.error = console.log;
+              </script>
+          ` )
+
+        code.parentNode?.querySelectorAll( '.code-reset-btn' )[ 0 ].addEventListener( 'click',
+          () => {
+            iFrame?.contentWindow?.location.reload()
+            defaultIframeWrite()
+          } )
+        
+        defaultIframeWrite()
+
+        code.parentNode?.querySelectorAll( '.code-run-btn' )[ 0 ].addEventListener( 'click',
+          () => {
+            const escapedString = encodeURIComponent( view.state.doc as unknown as string )
+            iFrame?.contentDocument?.write( `
+            <script type="text/javascript">
+         
               try {
                 const retVal = eval(decodeURIComponent("${escapedString}"));
+  
                 if(retVal) {
-                  document.getElementsByTagName('body')[0].innerText += ">> " + JSON.stringify(retVal)
+                  document.getElementsByTagName('body')[0].innerText += ">> " + JSON.stringify(retVal);
                   document.getElementsByTagName('body')[0].innerText += \`
-                  \`
+                  \`;
+                } else if(retVal === undefined) {
+                  console.log('undefined')
                 }
                 
               } catch(e) {
