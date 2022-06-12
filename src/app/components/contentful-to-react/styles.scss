@@ -3,6 +3,9 @@
 @import "../../styles/mixins";
 
 .contentful-to-react {
+  .cm-scroller {
+    border: 1px dotted $primary-color;
+  }
   p {
     line-height: 1.7;
     font-size: font-size(0.7);
