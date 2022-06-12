@@ -133,7 +133,7 @@ const ContentfulToReact: React.FC<{ content: Document }> = ( { content } ) => {
         const defaultIframeWrite = ():void =>  iFrame?.contentDocument?.write( `
         <body></body>
             <script type="text/javascript">
-            console.logInIframe = (...log) => {
+            console.info = (...log) => {
               setTimeout(() => {
                 window.scrollTo(window.scrollX, window.outerHeight * 10);
               })
