@@ -53,18 +53,20 @@ Last updated on&nbsp;
         }
       </article>
       <SectionTitle />
-      <DiscussionEmbed
-        shortname={`${process.env.DISQUS_SHORTNAME}`}
-        config={
-          {
-            url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
-            identifier: `${contentType}-${record.slug}`,
-            title: record.title,
-            language: 'us_EN',
-            categoryID: contentType,
+      {
+        record.slug && <DiscussionEmbed
+          shortname={`${process.env.DISQUS_SHORTNAME}`}
+          config={
+            {
+              url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
+              identifier: `${contentType}-${record.slug}`,
+              title: record.title,
+              language: 'us_EN',
+              categoryID: contentType,
+            }
           }
-        }
-      />
+        />
+      }
     </Section>
   ) : postRecord.items ? (
     <Section>
