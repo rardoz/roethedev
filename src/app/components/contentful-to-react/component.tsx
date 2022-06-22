@@ -52,6 +52,21 @@ const options: Options = {
     [ BLOCKS.PARAGRAPH ]: ( node: Block | Inline, children: React.ReactNode ) => ( <p>
       {children}
     </p> ),
+    [ BLOCKS.EMBEDDED_ENTRY ]: ( node: Block | Inline, children: React.ReactNode ) => {
+      console.log( node )
+      return node.data?.target?.sys?.contentType?.sys?.id === 'iframe' ? ( <div
+        className='extra-iframe'
+        dangerouslySetInnerHTML={
+          {
+            __html: node.data?.target?.fields?.html 
+          }
+        }
+      >
+        
+      </div> ) : <>
+        
+      </>
+    }
   },
   renderText: ( text: string ) => {
     try {
