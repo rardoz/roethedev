@@ -38,7 +38,7 @@ const SOCIAL_ICONS = [
     icon: faEnvelope,
     ariaLabel: 'Link to email',
     title: 'Email',
-    href: 'mailto:robert@byrojo.com?subject=Hello Roe!',
+    href: 'mailto:roethedev@gmail.com?subject=Hello Roe!',
   },
   {
     icon: faFile,
