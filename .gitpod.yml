@@ -5,7 +5,7 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: sudo apt-get install -y xdg-utils && nvm install 16.14.0 && nvm use 16.14.0 && npm install
+  - init: sudo apt-get install -y xdg-utils && nvm install 20.9.0 && nvm use 20.9.0 && npm install
     command: npm run dev
 ports:
     - name: Web App
