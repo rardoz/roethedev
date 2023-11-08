@@ -18,14 +18,14 @@ const HomePage: React.FC = () => {
         >
           <CarouselSection />
         </CMSContextProvider>
-        <ContactForm />
+        <AboutSection />
         <CMSContextProvider
           limit={3}
           contentType={process.env.CONTENTFUL_PORTFOLIO_ID}
         >
           <PortfolioFeed />
         </CMSContextProvider>
-        <AboutSection />
+        
         <CMSContextProvider
           contentType='linkBank'
           limit={3}

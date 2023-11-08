@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 className='d-flex flex-end flex-center'
               >
                 <small>
-                  &copy; 2022&nbsp;
+                  &copy; 2023&nbsp;
                   <a
                     href='https://byrojo.com'
                     target='_blank'
