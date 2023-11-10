@@ -61,8 +61,7 @@ Last updated on&nbsp;
               url: `${process.env.DISQUS_APP_URL}${window.location.pathname}`,
               identifier: `${contentType}-${record.slug}`,
               title: record.title,
-              language: 'us_EN',
-              categoryID: contentType,
+              language: 'us_EN'
             }
           }
         />
